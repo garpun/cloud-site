@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>С чего начать on Garpun Cloud</title>
+    <link>https://cloud.garpun.com/get_started/</link>
+    <description>Recent content in С чего начать on Garpun Cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    
+	<atom:link href="https://cloud.garpun.com/get_started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Добавление проекта и приложения</title>
+      <link>https://cloud.garpun.com/get_started/create_project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/get_started/create_project/</guid>
+      <description>Все дальнейшие действия обязательны для любой интеграции с Garpun Cloud, если вы хотите получить что-то более, чем вход в ваш сервис через https://account.garpun.com.
+Зарегистрируйте проект Войдите под своей учетной записью в https://console.cloud.garpun.com и добавьте новый проект.
+Идентификатор проекта глобально уникальный и его нельзя изменить после создания.
+Включите необходимые вам API В проекте на вкладке &amp;ldquo;API и сервисы / Библиотека API&amp;rdquo; нажмите на плитке нужного вам сервиса и активируите его апи для вашего проекта.</description>
+    </item>
+    
+  </channel>
+</rss>

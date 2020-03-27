@@ -1,0 +1,117 @@
+a {
+    text-decoration: none;
+}
+.header-logo-link, .header-logo-link:active, .header-logo-link:focus {
+    color: #fff;
+    display: inline-block;
+    transition: color .2s;
+}
+.header-logo-link:hover {
+    color: #dcdcdc;
+}
+p {
+    margin: 16px 0;
+    padding: 0;
+    font-size: 15px;
+}
+body {
+    color: #212121;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.devsite-full-site-width, .devsite-toast-fill {
+    margin: 0;
+    max-width: 1600px;
+    min-width: 1000px;
+    padding: 0;
+    height: 93vh;
+}
+
+.devsite-nav  {
+    background: #f7f7f78c;
+    margin: 0;
+    max-width: 300px;
+}
+.devsite-nav ul li {
+    font-size: 14px;
+}
+.devsite-nav ul, #TableOfContents ul {
+    list-style-type: none;
+    line-height: 16px;
+}
+.devsite-nav ul {
+    padding: 0;
+}
+
+#TableOfContents ul {
+    padding: 5px 0;
+}
+#TableOfContents ul li {
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.devsite-section-nav-main > .devsite-nav-item-main {
+    border-bottom: 1px solid #cfd8dc;
+    padding: 6px 0px 14px;
+}
+.devsite-nav-expandable .devsite-nav-item {
+    padding-left: 10px;
+}
+.devsite-nav-item {
+    line-height: 19px;
+    padding: 6px;
+    position: relative;
+    color: #000;
+}
+.devsite-nav-title {
+    color: #212121;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.devsite-nav-item-main-title {
+    color: #757575;
+    font-weight: bold;
+    padding-right: 24px;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+.devsite-section-nav {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px 20px;
+    max-width: 310px;
+    min-width: 175px;
+}
+.devsite-nav-item.active > .devsite-nav-title {
+    color: #5195fb!important;
+}
+
+.devsite-nav-item.active {
+    background: #e8f0fe!important;
+    border-radius: 0 66px 66px 0;
+}
+
+#TableOfContents {
+    border-left: 4px solid #4285f4;
+    padding: 0;
+    margin: 0;
+}
+
+.devsite-content  {
+    padding: 0 20px
+}
+
+.devsite-console-link {
+    padding-left: 40px;
+}
