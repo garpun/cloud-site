@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://cloud.garpun.com/get_started/create_project/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/accountmanagement/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/get_started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/authenticate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/authenticate/oauth2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/</loc>
+    <lastmod>2018-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/authenticate/service_account/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/accountmanagement/api/v1beta1/</loc>
+    <lastmod>2018-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/accountmanagement/api/v1beta2/</loc>
+    <lastmod>2018-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/accountmanagement/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/overview/</loc>
+  </url>
+  
+</urlset>
