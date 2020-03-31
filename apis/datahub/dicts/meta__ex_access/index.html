@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Авторизация — Garpun Cloud</title>
+    <title>meta.ex_access — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T3H3XF7');</script>
 
   </head>
-  <body class="" data-url="/authenticate/">
+  <body class="" data-url="/apis/datahub/dicts/meta__ex_access/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3H3XF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -146,8 +146,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/authenticate/" class="devsite-nav-item devsite-nav-item-main
-                        parent
-                        active
+                        
+                        
                         
                         ">
                 
@@ -217,7 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -339,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -506,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/apis/datahub/dicts/meta__ex_access/" class="devsite-nav-item dd-item ">
+            <li data-nav-id="/apis/datahub/dicts/meta__ex_access/" class="devsite-nav-item dd-item active">
                 <a href="https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/" class="devsite-nav-title">
                     <span>meta.ex_access</span>
                 </a>
@@ -632,7 +632,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > Авторизация
+
+
+
+
+
+
+
+
+
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/apis/'>APIs</a> > <a href='https://cloud.garpun.com/apis/datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/apis/datahub/dicts/'>Справочники</a> > meta.ex_access
+
+
+
+
+
+
 
 
 
@@ -644,52 +659,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Авторизация</h1>
+            <h1>meta.ex_access</h1>
           
 
 
 
-
-
-
-
-	
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/oauth2/">Авторизация через OAuth2</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/service_account/">Авторизация с помощью сервисного аккаунта</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	
+<p>Entity: meta.ex_access</p>
+<p>Description: Подключение</p>
+<p>Kind: DICT</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Additional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>ID</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Название</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>author_user_id</td>
+<td>Подключил</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>company_id</td>
+<td>Компания</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system">ex_system_id</a></td>
+<td>Внешняя системы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>user_status</td>
+<td>Статус</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>Дата подключения</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>modification_time</td>
+<td>Дата изменения</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>status_check_time</td>
+<td>Последня проверка</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -726,3 +759,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </body>
 </html>
+

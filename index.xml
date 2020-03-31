@@ -36,6 +36,19 @@ curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &a
     </item>
     
     <item>
+      <title>Обзор</title>
+      <link>https://cloud.garpun.com/apis/datahub/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/overview/</guid>
+      <description>Пример обращения в API В качестве базавого URL используется https://datahub-api.garpun.com
+curl --compressed -v -N -X POST \  -H &amp;#34;Content-Type:application/json&amp;#34; \  &amp;#34;https://datahub-api.garpun.com/feeds/stream_feed/{feed_key}?format=csv&amp;amp;from=2020-01-01&amp;amp;to=2020-01-10&amp;#34; curl --compressed -v -N -X POST \  -H &amp;#34;Content-Type:application/json&amp;#34; \  &amp;#34;https://datahub-api.garpun.com/feeds/feed_schema/{feed_key}&amp;#34; Базовое описание методов   stream_feed Получение данных потока (должен быть в статусе ENABLED).
+Параметры запроса:
+secure_key - ключ получения доступа к данным. Получить можно после создания фида с типом назначения HttpEndpoint
+format - доступные варианты nljson, tsv, csv</description>
+    </item>
+    
+    <item>
       <title>Авторизация через OAuth2</title>
       <link>https://cloud.garpun.com/authenticate/oauth2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -78,16 +91,137 @@ curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &a
     </item>
     
     <item>
-      <title>Обзор</title>
-      <link>https://cloud.garpun.com/apis/datahub/overview/</link>
+      <title>adplatform.account</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cloud.garpun.com/apis/datahub/overview/</guid>
-      <description>Пример обращения в API В качестве базавого URL используется https://datahub-api.garpun.com
-curl --compressed -v -N -X POST \  -H &amp;#34;Content-Type:application/json&amp;#34; \  &amp;#34;https://datahub-api.garpun.com/feeds/stream_feed/{feed_key}?format=csv&amp;amp;from=2020-01-01&amp;amp;to=2020-01-10&amp;#34; curl --compressed -v -N -X POST \  -H &amp;#34;Content-Type:application/json&amp;#34; \  &amp;#34;https://datahub-api.garpun.com/feeds/feed_schema/{feed_key}&amp;#34; Базовое описание методов   stream_feed Получение данных потока (должен быть в статусе ENABLED).
-Параметры запроса:
-secure_key - ключ получения доступа к данным. Получить можно после создания фида с типом назначения HttpEndpoint
-format - доступные варианты nljson, tsv, csv</description>
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</guid>
+      <description>Entity: adplatform.account
+Description: Аккаунт во внешней системе
+Kind: DICT
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Полное название аккаунта Type: TEXT
+Semantic role: DIMENSION   engine Система Type: TEXT
+Semantic role: DIMENSION   login Login.
+Внешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT
+Semantic role: DIMENSION   title Название аккаунта Type: TEXT</description>
+    </item>
+    
+    <item>
+      <title>adplatform.campaign_stats_report</title>
+      <link>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</guid>
+      <description>Entity: adplatform.campaign_stats_report
+Description: Статистика до уровня рекламных кампаний
+Kind: REPORT
+   Name Description Additional     stat_date Дата Type: DATE
+Semantic role: DIMENSION
+Semantic type: YEAR_MONTH_DAY   campaign_remote_id ID рекламной кампании во внешней системе Type: TEXT
+Semantic role: DIMENSION   campaign_type Тип рекламной кампании Type: TEXT
+Semantic role: DIMENSION   category_id Категория клиента Type: LONG
+Semantic role: DIMENSION   category_name Название категории Type: TEXT</description>
+    </item>
+    
+    <item>
+      <title>adplatform.client</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</guid>
+      <description>Entity: adplatform.client
+Description: Клиент. В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании
+Kind: DICT
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Название клиента Type: TEXT
+Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
+Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME
+Semantic role: DIMENSION   is_enabled Активный Type: BOOLEAN
+Semantic role: DIMENSION   is_archived Архивный Type: BOOLEAN</description>
+    </item>
+    
+    <item>
+      <title>adplatform.client_category</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</guid>
+      <description>Entity: adplatform.client_category
+Description: Категория клиента
+Kind: DICT
+   Name Description Additional     id ID Type: TEXT
+Semantic role: DIMENSION   name Название категории Type: TEXT
+Semantic role: DIMENSION   is_active Активная Type: BOOLEAN
+Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
+Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME
+Semantic role: DIMENSION    </description>
+    </item>
+    
+    <item>
+      <title>adplatform.engine</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</guid>
+      <description>Entity: adplatform.engine
+Description: Система
+Kind: DICT
+   Name Description Additional     engine ID Type: TEXT
+Semantic role: DIMENSION   name Название системы Type: TEXT
+Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
+Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME
+Semantic role: DIMENSION    </description>
+    </item>
+    
+    <item>
+      <title>adplatform.product</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</guid>
+      <description>Entity: adplatform.product
+Description: Продукт. Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное
+Kind: DICT
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Название Type: TEXT
+Semantic role: DIMENSION   is_active Активный.
+Выводить в списках Type: BOOLEAN
+Semantic role: DIMENSION   client_id Клиент Type: LONG</description>
+    </item>
+    
+    <item>
+      <title>meta.ex_access</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/</guid>
+      <description>Entity: meta.ex_access
+Description: Подключение
+Kind: DICT
+   Name Description Additional     id ID Type: TEXT
+Semantic role: DIMENSION   name Название Type: TEXT
+Semantic role: DIMENSION   author_user_id Подключил Type: LONG
+Semantic role: DIMENSION   company_id Компания Type: LONG
+Semantic role: DIMENSION   ex_system_id Внешняя системы Type: TEXT
+Semantic role: DIMENSION   user_status Статус Type: TEXT
+Semantic role: DIMENSION   creation_time Дата подключения Type: DATETIME</description>
+    </item>
+    
+    <item>
+      <title>meta.ex_system</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system/</guid>
+      <description>Entity: meta.ex_system
+Description: Внешняя системы. Системы, для которых хранятся токены для доступа в API
+Kind: DICT
+   Name Description Additional     id ID Type: TEXT
+Semantic role: DIMENSION   name Название внешней системы Type: TEXT
+Semantic role: DIMENSION   is_allowed Может ли использоваться Type: BOOLEAN
+Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
+Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME</description>
     </item>
     
   </channel>

@@ -14,8 +14,29 @@
 	"content": "Высокоуровневые операции с аккаунтами внешних систем\nУправление бюджетом, создание аккаунтов в Яндекс Директе, Google Ads и пр\nПример обращения в API В качестве базавого URL используется https://accountmanagement-api.garpun.com Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке Authorization:Bearer и запрос в формате JSON после параметра -d\ncurl -i -X POST \\  -H \u0026#34;Authorization:Bearer eyJ...arSQ\u0026#34; \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  -d \u0026#39;{ \u0026#34;client_id\u0026#34;: \u0026#34;12345\u0026#34;, \u0026#34;balance_slice\u0026#34;: \u0026#34;ENGINE\u0026#34; }\u0026#39; \\  \u0026#39;https://accountmanagement-api.garpun.com/v1beta1/budget-order/limit\u0026#39; Описание ошибок При нормальной работе сервиса вы всегда будете получать ответ со статусом 200, код ошибки можно получить по ключу \u0026ldquo;code\u0026rdquo;. В нашем сервисе мы используни gRPC поэтому ошибки всегда будут соответсвовать этому документу https://cloud.google.com/inference/reference/rest/v1/Code?hl=ru\n Ошибка\n Описание\n HTTP Mapping\n Код ответа\n  OK Не ошибка, запрос успешно выполнился\n HTTP Mapping: 200 OK\n 0\n  CANCELLED Операция была отменена\n HTTP Mapping: 499 Client Closed Request\n 1  UNKNOWN Неизвестная ошибка, обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 2  INVALID_ARGUMENT Вы передали неправильный параметр.\n HTTP Mapping: 400 Bad Request\n 3  DEADLINE_EXCEEDED Неудалось выполнить операцию за разумное время\n HTTP Mapping: 504 Gateway Timeout\n 4  PERMISSION_DENIED У вас нет прав на выполнение операции\n HTTP Mapping: 403 Forbidden\n 7  FAILED_PRECONDITION Операция была отклонена, поскольку система не находится в состоянии, необходимом для выполнения операции. Например, удаляемый каталог не является пустым, бюджет аккаунта находится в неверном состоянии\n HTTP Mapping: 400 Bad Request\n 9  INTERNAL Ошибка возникла на уровне нашей системы. Обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 13    "
 },
 {
+	"uri": "https://cloud.garpun.com/apis/datahub/overview/",
+	"title": "Обзор",
+	"tags": [],
+	"description": "",
+	"content": "Пример обращения в API В качестве базавого URL используется https://datahub-api.garpun.com\ncurl --compressed -v -N -X POST \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  \u0026#34;https://datahub-api.garpun.com/feeds/stream_feed/{feed_key}?format=csv\u0026amp;from=2020-01-01\u0026amp;to=2020-01-10\u0026#34; curl --compressed -v -N -X POST \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  \u0026#34;https://datahub-api.garpun.com/feeds/feed_schema/{feed_key}\u0026#34; Базовое описание методов   stream_feed Получение данных потока (должен быть в статусе ENABLED).\nПараметры запроса:\nsecure_key - ключ получения доступа к данным. Получить можно после создания фида с типом назначения HttpEndpoint\nformat - доступные варианты nljson, tsv, csv\nfrom - дата начала периода выборки данных\nto - дата конца периода выборки данных, не может быть старше 180 дней от from\nhint_fields - Список имен полей через запятую. Для BI систем часто надо возвращать не все огромные данные по пресету, а ограниченный и по возможности доагрегированный набор данных по указанным полям\n  feed_schema Получение списка полей запроса с описанием и типами по feed_id.\n  Описание ошибок Ошибки всегда будут соответсвовать этому документу https://cloud.google.com/inference/reference/rest/v1/Code?hl=ru\n Ошибка\n Описание\n HTTP Mapping\n Код ответа\n  OK Не ошибка, запрос успешно выполнился\n HTTP Mapping: 200 OK\n 0\n  CANCELLED Операция была отменена\n HTTP Mapping: 499 Client Closed Request\n 1  UNKNOWN Неизвестная ошибка, обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 2  INVALID_ARGUMENT Вы передали неправильный параметр.\n HTTP Mapping: 400 Bad Request\n 3  DEADLINE_EXCEEDED Неудалось выполнить операцию за разумное время\n HTTP Mapping: 504 Gateway Timeout\n 4  PERMISSION_DENIED У вас нет прав на выполнение операции\n HTTP Mapping: 403 Forbidden\n 7  FAILED_PRECONDITION Операция была отклонена, поскольку система не находится в состоянии, необходимом для выполнения операции. Например, удаляемый каталог не является пустым, бюджет аккаунта находится в неверном состоянии\n HTTP Mapping: 400 Bad Request\n 9  INTERNAL Ошибка возникла на уровне нашей системы. Обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 13    "
+},
+{
 	"uri": "https://cloud.garpun.com/get_started/",
 	"title": "С чего начать",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/",
+	"title": "Справочники",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/reports/",
+	"title": "Отчеты",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -77,6 +98,48 @@
 	"content": "Garpun Cloud Регистрируйте свои приложения и используйте API.\nЧтобы вызывать апи вам нужно:\n Добавить приложение Получить токен испольуя oauth браузерную авторизацию или авторизацию через сервисный аккаунт Сделать запрос к нужному вам API  "
 },
 {
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/",
+	"title": "adplatform.account",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.account\nDescription: Аккаунт во внешней системе\nKind: DICT\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Полное название аккаунта Type: TEXT\nSemantic role: DIMENSION   engine Система Type: TEXT\nSemantic role: DIMENSION   login Login.\nВнешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT\nSemantic role: DIMENSION   title Название аккаунта Type: TEXT\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/",
+	"title": "adplatform.campaign_stats_report",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.campaign_stats_report\nDescription: Статистика до уровня рекламных кампаний\nKind: REPORT\n   Name Description Additional     stat_date Дата Type: DATE\nSemantic role: DIMENSION\nSemantic type: YEAR_MONTH_DAY   campaign_remote_id ID рекламной кампании во внешней системе Type: TEXT\nSemantic role: DIMENSION   campaign_type Тип рекламной кампании Type: TEXT\nSemantic role: DIMENSION   category_id Категория клиента Type: LONG\nSemantic role: DIMENSION   category_name Название категории Type: TEXT\nSemantic role: DIMENSION   channel Канала рекламы Type: TEXT\nSemantic role: DIMENSION   channel_name Название канала рекламы Type: TEXT\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   client_name Название клиента Type: TEXT\nSemantic role: DIMENSION   company_id Компания Type: LONG\nSemantic role: DIMENSION   engine Система Type: TEXT\nSemantic role: DIMENSION   engine_name Название системы Type: TEXT\nSemantic role: DIMENSION   engine_type Тип системы Type: TEXT\nSemantic role: DIMENSION   modification_time Дата модификации статистики Type: DATETIME\nSemantic role: DIMENSION   account_id Аккаунт Type: LONG\nSemantic role: DIMENSION   product_id Продукт Type: LONG\nSemantic role: DIMENSION   product_name Название продукта Type: TEXT\nSemantic role: DIMENSION   url_example URL одного из объявлений кампании Type: TEXT\nSemantic role: DIMENSION\nSemantic type: URL   account_name Название аккаунта Type: TEXT\nSemantic role: DIMENSION   area_id Площадка Type: LONG\nSemantic role: DIMENSION   area_name Название площадки Type: TEXT\nSemantic role: DIMENSION   campaign_id Рекламная кампания Type: LONG\nSemantic role: DIMENSION   campaign_name Название рекламной кампании Type: TEXT\nSemantic role: DIMENSION   clicks Клики Type: LONG\nSemantic role: METRIC   duration Длительность сессии Type: LONG\nSemantic role: METRIC\nSemantic type: DURATION   calls Звонки Type: LONG\nSemantic role: METRIC   calls_duration Длительность звонка Type: LONG\nSemantic role: METRIC\nSemantic type: DURATION   unique_calls Уникальные звонки Type: LONG\nSemantic role: METRIC   target_calls Целевые звонки Type: LONG\nSemantic role: METRIC   new_visits Новые посетители Type: LONG\nSemantic role: METRIC   pageviews Просмотры страниц Type: LONG\nSemantic role: METRIC   cost Стоимость Type: DECIMAL\nSemantic role: METRIC   rest Остаток на РК на дату записи статистики Type: DECIMAL\nSemantic role: METRIC   transaction_revenue Сумма заказов Type: DECIMAL\nSemantic role: METRIC   transactions Заказы Type: LONG\nSemantic role: METRIC   impressions Показы Type: LONG\nSemantic role: METRIC   visits Сессии Type: LONG\nSemantic role: METRIC   all_price_limit Общий лимит кампании Type: DECIMAL\nSemantic role: METRIC   day_price_limit Дневной лимит кампании Type: DECIMAL\nSemantic role: METRIC   video_views Общее количество видеопоказов Type: LONG\nSemantic role: METRIC   video_views_full Общее количество видеопоказов, просмотренных на 100% Type: LONG\nSemantic role: METRIC   video_views_half Общее количество видеопоказов, просмотренных на 50% Type: LONG\nSemantic role: METRIC   video_views_quarter Общее количество видеопоказов, просмотренных на 25% Type: LONG\nSemantic role: METRIC   video_clicks_site Общее количество видеокликов Type: LONG\nSemantic role: METRIC   leads Лиды Type: LONG\nSemantic role: METRIC   account_cost Стоимость в валюте аккаунта Type: DECIMAL\nSemantic role: METRIC   bounces Отказы Type: INT\nSemantic role: METRIC    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/",
+	"title": "adplatform.client",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.client\nDescription: Клиент. В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании\nKind: DICT\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название клиента Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION   is_enabled Активный Type: BOOLEAN\nSemantic role: DIMENSION   is_archived Архивный Type: BOOLEAN\nSemantic role: DIMENSION   category_id Категория клиента Type: LONG\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/",
+	"title": "adplatform.client_category",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.client_category\nDescription: Категория клиента\nKind: DICT\n   Name Description Additional     id ID Type: TEXT\nSemantic role: DIMENSION   name Название категории Type: TEXT\nSemantic role: DIMENSION   is_active Активная Type: BOOLEAN\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/",
+	"title": "adplatform.engine",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.engine\nDescription: Система\nKind: DICT\n   Name Description Additional     engine ID Type: TEXT\nSemantic role: DIMENSION   name Название системы Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/",
+	"title": "adplatform.product",
+	"tags": [],
+	"description": "",
+	"content": "Entity: adplatform.product\nDescription: Продукт. Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное\nKind: DICT\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название Type: TEXT\nSemantic role: DIMENSION   is_active Активный.\nВыводить в списках Type: BOOLEAN\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   utm UTM.\nПодстрока для поиска продукта в ссылках объявлений Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
 	"uri": "https://cloud.garpun.com/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -91,16 +154,23 @@
 	"content": ""
 },
 {
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/",
+	"title": "meta.ex_access",
+	"tags": [],
+	"description": "",
+	"content": "Entity: meta.ex_access\nDescription: Подключение\nKind: DICT\n   Name Description Additional     id ID Type: TEXT\nSemantic role: DIMENSION   name Название Type: TEXT\nSemantic role: DIMENSION   author_user_id Подключил Type: LONG\nSemantic role: DIMENSION   company_id Компания Type: LONG\nSemantic role: DIMENSION   ex_system_id Внешняя системы Type: TEXT\nSemantic role: DIMENSION   user_status Статус Type: TEXT\nSemantic role: DIMENSION   creation_time Дата подключения Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION   status_check_time Последня проверка Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system/",
+	"title": "meta.ex_system",
+	"tags": [],
+	"description": "",
+	"content": "Entity: meta.ex_system\nDescription: Внешняя системы. Системы, для которых хранятся токены для доступа в API\nKind: DICT\n   Name Description Additional     id ID Type: TEXT\nSemantic role: DIMENSION   name Название внешней системы Type: TEXT\nSemantic role: DIMENSION   is_allowed Может ли использоваться Type: BOOLEAN\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
 	"uri": "https://cloud.garpun.com/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://cloud.garpun.com/apis/datahub/overview/",
-	"title": "Обзор",
-	"tags": [],
-	"description": "",
-	"content": "Пример обращения в API В качестве базавого URL используется https://datahub-api.garpun.com\ncurl --compressed -v -N -X POST \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  \u0026#34;https://datahub-api.garpun.com/feeds/stream_feed/{feed_key}?format=csv\u0026amp;from=2020-01-01\u0026amp;to=2020-01-10\u0026#34; curl --compressed -v -N -X POST \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  \u0026#34;https://datahub-api.garpun.com/feeds/feed_schema/{feed_key}\u0026#34; Базовое описание методов   stream_feed Получение данных потока (должен быть в статусе ENABLED).\nПараметры запроса:\nsecure_key - ключ получения доступа к данным. Получить можно после создания фида с типом назначения HttpEndpoint\nformat - доступные варианты nljson, tsv, csv\nfrom - дата начала периода выборки данных\nto - дата конца периода выборки данных, не может быть старше 180 дней от from\nhint_fields - Список имен полей через запятую. Для BI систем часто надо возвращать не все огромные данные по пресету, а ограниченный и по возможности доагрегированный набор данных по указанным полям\n  feed_schema Получение списка полей запроса с описанием и типами по feed_id.\n  Описание ошибок Ошибки всегда будут соответсвовать этому документу https://cloud.google.com/inference/reference/rest/v1/Code?hl=ru\n Ошибка\n Описание\n HTTP Mapping\n Код ответа\n  OK Не ошибка, запрос успешно выполнился\n HTTP Mapping: 200 OK\n 0\n  CANCELLED Операция была отменена\n HTTP Mapping: 499 Client Closed Request\n 1  UNKNOWN Неизвестная ошибка, обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 2  INVALID_ARGUMENT Вы передали неправильный параметр.\n HTTP Mapping: 400 Bad Request\n 3  DEADLINE_EXCEEDED Неудалось выполнить операцию за разумное время\n HTTP Mapping: 504 Gateway Timeout\n 4  PERMISSION_DENIED У вас нет прав на выполнение операции\n HTTP Mapping: 403 Forbidden\n 7  FAILED_PRECONDITION Операция была отклонена, поскольку система не находится в состоянии, необходимом для выполнения операции. Например, удаляемый каталог не является пустым, бюджет аккаунта находится в неверном состоянии\n HTTP Mapping: 400 Bad Request\n 9  INTERNAL Ошибка возникла на уровне нашей системы. Обратитесь в тех.поддержку.\n HTTP Mapping: 500 Internal Server Error\n 13    "
 }]

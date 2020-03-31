@@ -11,7 +11,19 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/apis/datahub/overview/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/get_started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/reports/</loc>
   </url>
   
   <url>
@@ -52,6 +64,30 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/categories/</loc>
   </url>
   
@@ -60,11 +96,15 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/tags/</loc>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/overview/</loc>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/tags/</loc>
   </url>
   
 </urlset>

@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Авторизация — Garpun Cloud</title>
+    <title>adplatform.campaign_stats_report — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T3H3XF7');</script>
 
   </head>
-  <body class="" data-url="/authenticate/">
+  <body class="" data-url="/apis/datahub/reports/adplatform__campaign_stats_report/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3H3XF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -146,8 +146,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/authenticate/" class="devsite-nav-item devsite-nav-item-main
-                        parent
-                        active
+                        
+                        
                         
                         ">
                 
@@ -217,7 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -339,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -551,7 +551,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/reports/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -579,7 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/apis/datahub/reports/adplatform__campaign_stats_report/" class="devsite-nav-item dd-item ">
+            <li data-nav-id="/apis/datahub/reports/adplatform__campaign_stats_report/" class="devsite-nav-item dd-item active">
                 <a href="https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/" class="devsite-nav-title">
                     <span>adplatform.campaign_stats_report</span>
                 </a>
@@ -632,7 +632,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > Авторизация
+
+
+
+
+
+
+
+
+
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/apis/'>APIs</a> > <a href='https://cloud.garpun.com/apis/datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/apis/datahub/reports/'>Отчеты</a> > adplatform.campaign_stats_report
+
+
+
+
+
+
 
 
 
@@ -644,52 +659,260 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Авторизация</h1>
+            <h1>adplatform.campaign_stats_report</h1>
           
 
 
 
-
-
-
-
-	
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/oauth2/">Авторизация через OAuth2</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/service_account/">Авторизация с помощью сервисного аккаунта</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	
+<p>Entity: adplatform.campaign_stats_report</p>
+<p>Description: Статистика до уровня рекламных кампаний</p>
+<p>Kind: REPORT</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Additional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stat_date</td>
+<td>Дата</td>
+<td>Type: DATE<br>Semantic role: DIMENSION<br>Semantic type: YEAR_MONTH_DAY</td>
+</tr>
+<tr>
+<td>campaign_remote_id</td>
+<td>ID рекламной кампании во внешней системе</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>campaign_type</td>
+<td>Тип рекламной кампании</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category">category_id</a></td>
+<td>Категория клиента</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>category_name</td>
+<td>Название категории</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>Канала рекламы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>channel_name</td>
+<td>Название канала рекламы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__client">client_id</a></td>
+<td>Клиент</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>client_name</td>
+<td>Название клиента</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>company_id</td>
+<td>Компания</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine">engine</a></td>
+<td>Система</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>engine_name</td>
+<td>Название системы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>engine_type</td>
+<td>Тип системы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>modification_time</td>
+<td>Дата модификации статистики</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__account">account_id</a></td>
+<td>Аккаунт</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__product">product_id</a></td>
+<td>Продукт</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>Название продукта</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>url_example</td>
+<td>URL одного из объявлений кампании</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION<br>Semantic type: URL</td>
+</tr>
+<tr>
+<td>account_name</td>
+<td>Название аккаунта</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>area_id</td>
+<td>Площадка</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>area_name</td>
+<td>Название площадки</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>Рекламная кампания</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>Название рекламной кампании</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>clicks</td>
+<td>Клики</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Длительность сессии</td>
+<td>Type: LONG<br>Semantic role: METRIC<br>Semantic type: DURATION</td>
+</tr>
+<tr>
+<td>calls</td>
+<td>Звонки</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>calls_duration</td>
+<td>Длительность звонка</td>
+<td>Type: LONG<br>Semantic role: METRIC<br>Semantic type: DURATION</td>
+</tr>
+<tr>
+<td>unique_calls</td>
+<td>Уникальные звонки</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>target_calls</td>
+<td>Целевые звонки</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>new_visits</td>
+<td>Новые посетители</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>pageviews</td>
+<td>Просмотры страниц</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>Стоимость</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>rest</td>
+<td>Остаток на РК на дату записи статистики</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>transaction_revenue</td>
+<td>Сумма заказов</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>transactions</td>
+<td>Заказы</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>impressions</td>
+<td>Показы</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>visits</td>
+<td>Сессии</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>all_price_limit</td>
+<td>Общий лимит кампании</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>day_price_limit</td>
+<td>Дневной лимит кампании</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>video_views</td>
+<td>Общее количество видеопоказов</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>video_views_full</td>
+<td>Общее количество видеопоказов, просмотренных на 100%</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>video_views_half</td>
+<td>Общее количество видеопоказов, просмотренных на 50%</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>video_views_quarter</td>
+<td>Общее количество видеопоказов, просмотренных на 25%</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>video_clicks_site</td>
+<td>Общее количество видеокликов</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>leads</td>
+<td>Лиды</td>
+<td>Type: LONG<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>account_cost</td>
+<td>Стоимость в валюте аккаунта</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>bounces</td>
+<td>Отказы</td>
+<td>Type: INT<br>Semantic role: METRIC</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -726,3 +949,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </body>
 </html>
+
