@@ -71,7 +71,6 @@ body {
 }
 .devsite-nav-title {
     color: #212121;
-    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-user-select: none;
@@ -99,7 +98,6 @@ body {
 
 .devsite-nav-item.active {
     background: #e8f0fe!important;
-    border-radius: 0 66px 66px 0;
 }
 
 #TableOfContents {

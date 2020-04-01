@@ -11,13 +11,13 @@
     
     
     <item>
-      <title>adplatform.campaign_stats_report</title>
+      <title>Статистика по кампаниям (adplatform.campaign_stats_report)</title>
       <link>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</guid>
       <description>Entity: adplatform.campaign_stats_report
-Description: Статистика до уровня рекламных кампаний
+Description: Статистика по кампаниям
 Kind: REPORT
    Name Description Additional     stat_date Дата Type: DATE
 Semantic role: DIMENSION

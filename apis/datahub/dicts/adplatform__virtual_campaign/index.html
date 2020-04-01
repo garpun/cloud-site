@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Продукт (adplatform.product) — Garpun Cloud</title>
+    <title>Виртуальная кампания (adplatform.virtual_campaign) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T3H3XF7');</script>
 
   </head>
-  <body class="" data-url="/apis/datahub/dicts/adplatform__product/">
+  <body class="" data-url="/apis/datahub/dicts/adplatform__virtual_campaign/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3H3XF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -434,7 +434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/apis/datahub/dicts/adplatform__virtual_campaign/" class="devsite-nav-item dd-item ">
+            <li data-nav-id="/apis/datahub/dicts/adplatform__virtual_campaign/" class="devsite-nav-item dd-item active">
                 <a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__virtual_campaign/" class="devsite-nav-title">
                     <span>Виртуальная кампания (adplatform.virtual_campaign)</span>
                 </a>
@@ -524,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/apis/datahub/dicts/adplatform__product/" class="devsite-nav-item dd-item active">
+            <li data-nav-id="/apis/datahub/dicts/adplatform__product/" class="devsite-nav-item dd-item ">
                 <a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/" class="devsite-nav-title">
                     <span>Продукт (adplatform.product)</span>
                 </a>
@@ -677,7 +677,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/apis/'>APIs</a> > <a href='https://cloud.garpun.com/apis/datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/apis/datahub/dicts/'>Справочники</a> > Продукт (adplatform.product)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/apis/'>APIs</a> > <a href='https://cloud.garpun.com/apis/datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/apis/datahub/dicts/'>Справочники</a> > Виртуальная кампания (adplatform.virtual_campaign)
 
 
 
@@ -695,13 +695,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Продукт (adplatform.product)</h1>
+            <h1>Виртуальная кампания (adplatform.virtual_campaign)</h1>
           
 
 
 
-<p>Entity: adplatform.product</p>
-<p>Description: Продукт. Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное</p>
+<p>Entity: adplatform.virtual_campaign</p>
+<p>Description: Виртуальная кампания. Создается Garpun Generator или сервисом управления ставками. Является обобщающей сущностью нам реальными рекламными кампаниями в рекламных системах</p>
 <p>Kind: DICT</p>
 <table>
 <thead>
@@ -723,28 +723,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>is_active</td>
-<td>Активный.<br>Выводить в списках</td>
-<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
+<td>lock_params</td>
+<td>Параметры блокировки в Garpun Generator</td>
+<td>Type: JSON<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__client">client_id</a></td>
-<td>Клиент</td>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__account">account_id</a></td>
+<td>Внешний аккаунт</td>
 <td>Type: LONG<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>utm</td>
-<td>UTM.<br>Подстрока для поиска продукта в ссылках объявлений</td>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__algorithm">algorithm_id</a></td>
+<td>Алгоритм</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine">engine</a></td>
+<td>Система</td>
 <td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
+<td>status</td>
+<td>Статус.<br>archive, enable, pause, delete</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>is_automated</td>
+<td>Кампания создана автоматизированным способом с помощью генератора</td>
+<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
 <td>creation_time</td>
-<td>Дата создания</td>
+<td>Добавлена</td>
 <td>Type: DATETIME<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
 <td>modification_time</td>
-<td>Дата изменения</td>
+<td>Обновлена</td>
 <td>Type: DATETIME<br>Semantic role: DIMENSION</td>
 </tr>
 </tbody>

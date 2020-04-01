@@ -64,30 +64,6 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</loc>
-  </url>
-  
-  <url>
     <loc>https://cloud.garpun.com/categories/</loc>
   </url>
   
@@ -96,7 +72,39 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__algorithm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__virtual_campaign/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</loc>
   </url>
   
   <url>
@@ -104,7 +112,7 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/tags/</loc>
+    <loc>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</loc>
   </url>
   
 </urlset>
