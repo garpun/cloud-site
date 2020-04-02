@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Авторизация — Garpun Cloud</title>
+    <title>Кампания (adplatform.campaign) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T3H3XF7');</script>
 
   </head>
-  <body class="" data-url="/authenticate/">
+  <body class="" data-url="/apis/datahub/dicts/adplatform__campaign/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3H3XF7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -146,8 +146,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/authenticate/" class="devsite-nav-item devsite-nav-item-main
-                        parent
-                        active
+                        
+                        
                         
                         ">
                 
@@ -217,7 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -339,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/apis/datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -470,7 +470,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/apis/datahub/dicts/adplatform__campaign/" class="devsite-nav-item dd-item ">
+            <li data-nav-id="/apis/datahub/dicts/adplatform__campaign/" class="devsite-nav-item dd-item active">
                 <a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__campaign/" class="devsite-nav-title">
                     <span>Кампания (adplatform.campaign)</span>
                 </a>
@@ -686,7 +686,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > Авторизация
+
+
+
+
+
+
+
+
+
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/apis/'>APIs</a> > <a href='https://cloud.garpun.com/apis/datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/apis/datahub/dicts/'>Справочники</a> > Кампания (adplatform.campaign)
+
+
+
+
+
+
 
 
 
@@ -698,52 +713,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Авторизация</h1>
+            <h1>Кампания (adplatform.campaign)</h1>
           
 
 
 
-
-
-
-
-	
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/oauth2/">Авторизация через OAuth2</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-	   <article class="post authenticate">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/authenticate/service_account/">Авторизация с помощью сервисного аккаунта</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	
+<p>Entity: adplatform.campaign</p>
+<p>Description: Кампания. Рекламная кампания, в которой непосредственно находится во внешней рекламной системе</p>
+<p>Kind: DICT</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Additional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>ID</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Название</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__virtual_campaign">virtual_campaign_id</a></td>
+<td>Виртуальная кампания</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__product">product_id</a></td>
+<td>Продукт</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Тип из внешней системы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>url_example</td>
+<td>URL одного из объявлений кампании</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION<br>Semantic type: URL</td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>Добавлена</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>modification_time</td>
+<td>Обновлена</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td>Внешний id кампании</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine">engine</a></td>
+<td>Система</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Статус</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>remote_status</td>
+<td>Статус из внешней системы</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>area_id</td>
+<td>Площадка</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__account">account_id</a></td>
+<td>Внешний аккаунт</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/apis/datahub/dicts/adplatform__algorithm">algorithm_id</a></td>
+<td>Алгоритм</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -780,3 +843,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </body>
 </html>
+

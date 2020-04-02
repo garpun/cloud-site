@@ -118,8 +118,9 @@ Description: Виртуальная кампания. Создается Garpun 
 Kind: DICT
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название Type: TEXT
-Semantic role: DIMENSION   lock_params Параметры блокировки в Garpun Generator Type: JSON
-Semantic role: DIMENSION   account_id Внешний аккаунт Type: LONG</description>
+Semantic role: DIMENSION   modification_time Обновлена Type: DATETIME
+Semantic role: DIMENSION   account_id Внешний аккаунт Type: LONG
+Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG</description>
     </item>
     
     <item>
@@ -138,6 +139,22 @@ Semantic role: DIMENSION   engine Система Type: TEXT
 Semantic role: DIMENSION   login Login.
 Внешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT
 Semantic role: DIMENSION   title Название аккаунта Type: TEXT</description>
+    </item>
+    
+    <item>
+      <title>Кампания (adplatform.campaign)</title>
+      <link>https://cloud.garpun.com/apis/datahub/dicts/adplatform__campaign/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/apis/datahub/dicts/adplatform__campaign/</guid>
+      <description>Entity: adplatform.campaign
+Description: Кампания. Рекламная кампания, в которой непосредственно находится во внешней рекламной системе
+Kind: DICT
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Название Type: TEXT
+Semantic role: DIMENSION   virtual_campaign_id Виртуальная кампания Type: LONG
+Semantic role: DIMENSION   product_id Продукт Type: LONG
+Semantic role: DIMENSION   type Тип из внешней системы Type: TEXT</description>
     </item>
     
     <item>

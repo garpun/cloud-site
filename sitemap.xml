@@ -88,6 +88,10 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__campaign/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</loc>
   </url>
   
