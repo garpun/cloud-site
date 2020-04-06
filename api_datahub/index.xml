@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DataHub on Garpun Cloud</title>
+    <link>https://cloud.garpun.com/api_datahub/</link>
+    <description>Recent content in DataHub on Garpun Cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-ru</language>
+    
+	<atom:link href="https://cloud.garpun.com/api_datahub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Обзор</title>
+      <link>https://cloud.garpun.com/api_datahub/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/overview/</guid>
+      <description>Базовый URL: https://datahub-api.garpun.com
+Получение списков справочников, статистических отчетов и контента настроенных потоков данных. Это API будет вам необходимо, если вы являетесь интеграционным партнерем Garpun.
+API спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON. Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных оказывается на новой строке.
+Пример обращения в API Получение данных SQL-like запросом. Используется язык запросов METAQL</description>
+    </item>
+    
+    <item>
+      <title>Meta Query Language (METAQL)</title>
+      <link>https://cloud.garpun.com/api_datahub/metaql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/metaql/</guid>
+      <description>METAQL - Это защищенный SQL для запросов к данным Garpun DataHub. Основан на синтаксисе PostgreSQL синтаксисе.
+Особенности  SELECT * FROM ... не поддерживается Нельзя называть поля или алясы зарезарвированными именами: date Добавлен оператор ILIKE для регистронезависимного сравнения строк Поддерживаются только SELECT запросы JOIN не поддерживаются  Функции Работают функции агрегации:
+ MIN, MAX, SUM, AGV COUNT(*), COUNT(DISTINCT поле) ARRAY_AGG  Функции преобразований:
+ ROUND CONCAT NULLIF COALESCE  Примеры Получене статистики по аккаунтам SELECT stat_date, account_id, SUM(cost) as cost FROM adplatform.</description>
+    </item>
+    
+    <item>
+      <title>Библиотеки</title>
+      <link>https://cloud.garpun.com/api_datahub/libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/libraries/</guid>
+      <description>Если вы программируете на языке Python, то существует python-библиотека
+Вариант вызова через Google Lib Python import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;quot;data&amp;quot;) AUTHORIZED_USER_FILE = os.path.join(DATA_DIR, &amp;quot;./creds.json&amp;quot;) from google.auth.transport.requests import AuthorizedSession from google.oauth2 import service_account as SA from metasdk.utils import pretty_json creds: SA.Credentials = SA.Credentials.from_service_account_file( AUTHORIZED_USER_FILE, scopes=[&amp;quot;datahub&amp;quot;], ) API_URL = &amp;quot;https://datahub-api.garpun.com/v1/metaql/query&amp;quot; def do_query(query: str, shard_key: str = None): session: AuthorizedSession = AuthorizedSession(credentials=creds) resp = session.post(API_URL, json={ &amp;quot;query&amp;quot;: query, &amp;quot;shardKey&amp;quot;: shard_key }) print(&amp;quot;resp = %s&amp;quot; % str(resp)) print(&amp;quot;resp.</description>
+    </item>
+    
+    <item>
+      <title>Лучшие практики</title>
+      <link>https://cloud.garpun.com/api_datahub/best-practies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/best-practies/</guid>
+      <description>Используйте заголовок сжатия данных Http заголовок: Accept-Encoding: gzip.
+Получение тела ответа с использованием GZIP сжатия.
+Обрабатывайте данные потоково В разных библиотках разных языков это настраивается по своему, но суть одна - не надо дожидаться окончания скачивания данных вашим приложением для начала обработки того, что успело прийти.
+Выбирайте только нужные поля Не стоит перечислять все доступные поля, если вы не пользоветесь ими в действительности. Это уменьшает пропускную способность API, что в конечном итоге влияет и на ваше приложение.</description>
+    </item>
+    
+  </channel>
+</rss>

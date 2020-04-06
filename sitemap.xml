@@ -7,11 +7,11 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/accountmanagement/overview/</loc>
+    <loc>https://cloud.garpun.com/api_accountmanagement/overview/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/overview/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/overview/</loc>
   </url>
   
   <url>
@@ -19,11 +19,15 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/metaql/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/reports/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/libraries/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/best-practies/</loc>
   </url>
   
   <url>
@@ -36,7 +40,6 @@
   
   <url>
     <loc>https://cloud.garpun.com/apis/</loc>
-    <lastmod>2018-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
@@ -44,17 +47,38 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/accountmanagement/api/v1beta1/</loc>
+    <loc>https://cloud.garpun.com/apis/errors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_accountmanagement/api/</loc>
     <lastmod>2018-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/accountmanagement/api/v1beta2/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/reports/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_accountmanagement/api/v1beta1/</loc>
     <lastmod>2018-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/accountmanagement/</loc>
+    <loc>https://cloud.garpun.com/api_accountmanagement/api/v1beta2/</loc>
+    <lastmod>2018-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_accountmanagement/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
@@ -68,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/</loc>
   </url>
   
   <url>
@@ -76,47 +100,51 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__algorithm/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/api/v1/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__virtual_campaign/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__algorithm/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__account/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__virtual_campaign/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__campaign/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__account/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client_category/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__client/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__client_category/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_access/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__client/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__product/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/meta__ex_access/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/adplatform__engine/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__product/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/dicts/meta__ex_system/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__engine/</loc>
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/apis/datahub/reports/adplatform__campaign_stats_report/</loc>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/meta__ex_system/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/reports/adplatform__campaign_stats_report/</loc>
   </url>
   
 </urlset>

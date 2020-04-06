@@ -1,0 +1,192 @@
+{
+  "swagger": "2.0",
+  "host": "datahub-api.garpun.com",
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/feeds/feed_data/{feedKey}": {
+      "post": {
+        "operationId": "get_feed_data",
+        "tags": [
+          "Feeds"
+        ],
+        "summary": "Получение данных потока",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json-newline-values",
+          "text/tab-separated-values",
+          "text/csv"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "feedKey",
+            "description": "FeedKey - уникальный ключ потока. Его можно получить на https://feeds.garpun.com а , поток должен отправлять данные в приемник Http Endpoint",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "from",
+            "description": "Дата начала периода выборки данных. Если не указано - период берется из потока.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "to",
+            "description": "Дата конца периода выборки данных, не может быть больше 370 дней отностительно даты начала. Желательно работать в рамках календарного месяца, для ускорения обработки запросов. Если не указано - период берется из потока.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "source_format",
+            "description": "Формат выходных данных2",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TSV",
+              "CSV",
+              "JSON_NEWLINE"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "hint_fields",
+            "description": "Список имен полей через запятую. Для BI систем часто надо возвращать не все огромные данные по пресету, а ограниченный и по возможности доагрегированный набор данных по указанным полям.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid feed settings"
+          },
+          "404": {
+            "description": "Feed not found"
+          }
+        }
+      }
+    },
+    "/feeds/feed_schema/{feedKey}": {
+      "post": {
+        "operationId": "get_feed_schema",
+        "tags": [
+          "Feeds"
+        ],
+        "summary": "Получение списка полей запроса с описанием и типами",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "feedKey",
+            "in": "path",
+            "description": "FeedKey - уникальный ключ потока. Его можно получить на https://feeds.garpun.com , а поток должен отправлять данные в приемник Http Endpoint",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid feed settings"
+          },
+          "404": {
+            "description": "Feed not found"
+          }
+        }
+      }
+    },
+    "/metaql/query": {
+      "post": {
+        "operationId": "metaql_query",
+        "tags": [
+          "METAQL"
+        ],
+        "summary": "Получение данных SQL-like запросама",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json-newline-values"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Получение данных справочников или отчетов",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MetaqlQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid feed settings"
+          },
+          "404": {
+            "description": "Feed not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MetaqlQuery": {
+      "type": "object",
+      "required": [
+        "query"
+      ],
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Запрос на языке запросов METAQL"
+        },
+        "shardKey": {
+          "type": "string",
+          "description": "Обязательной только для шардированных данных. Например для работы с ключевыми словами"
+        }
+      }
+    },
+    "SourceFormat": {
+      "type": "string",
+      "enum": [
+        "TSV",
+        "CSV",
+        "JSON_NEWLINE"
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "SourceFormat": {
+        "type": "string",
+        "enum": [
+          "TSV",
+          "CSV",
+          "JSON_NEWLINE"
+        ]
+      }
+    }
+  }
+}
