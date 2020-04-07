@@ -902,6 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 FROM adplatform.campaign_stats_report
 WHERE stat_date BETWEEN '2020-01-01' AND '2020-01-05'
 GROUP BY stat_date, account_id
+HAVING SUM(cost) &gt; 1
 ORDER BY cost DESC
 </code></pre>
 <h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
