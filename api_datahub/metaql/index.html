@@ -877,6 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>Добавлен оператор ILIKE для регистронезависимного сравнения строк</li>
 <li>Поддерживаются только SELECT запросы</li>
 <li>JOIN не поддерживаются</li>
+<li>Работает ограниченный набор функций, описанных ниже</li>
 </ul>
 <h2 id="функции">Функции</h2>
 <p>Работают функции агрегации:</p>
@@ -901,6 +902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 FROM adplatform.campaign_stats_report
 WHERE stat_date BETWEEN '2020-01-01' AND '2020-01-05'
 GROUP BY stat_date, account_id
+ORDER BY cost DESC
 </code></pre>
 <h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
 <pre><code>SELECT id, name, modification_time

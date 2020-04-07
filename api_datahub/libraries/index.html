@@ -868,8 +868,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
+<h2 id="garpun-datahub-python-library">Garpun DataHub Python Library</h2>
 <p>Если вы программируете на языке Python, то существует <a href="https://github.com/garpun/garpun-datahub-lib-python">python-библиотека</a></p>
+<p>Библиотека работает на основе <a href="https://github.com/googleapis/google-api-python-client">google-api-python-client</a>.
+Это позволяет нам не думать о реализациях авторизации и работе с http, а заниматься бизнес инструментарием.</p>
 <h2 id="вариант-вызова-через-google-lib-python">Вариант вызова через Google Lib Python</h2>
+<p><a href="https://github.com/googleapis/google-api-python-client">GitHub google-api-python-client</a></p>
 <pre><code>import os
 import json
 
@@ -921,6 +925,7 @@ select id, name from adplatform.client
 res = do_query(query)
 </code></pre>
 <h2 id="вариант-вызова-через-google-lib-java">Вариант вызова через Google Lib Java</h2>
+<p><a href="https://github.com/googleapis/google-auth-library-java">GitHub google-auth-library-java</a></p>
 <pre><code>import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
@@ -979,6 +984,7 @@ public class Main {
 <div class="mdl-cell mdl-cell--2-col">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#garpun-datahub-python-library">Garpun DataHub Python Library</a></li>
     <li><a href="#вариант-вызова-через-google-lib-python">Вариант вызова через Google Lib Python</a></li>
     <li><a href="#вариант-вызова-через-google-lib-java">Вариант вызова через Google Lib Java</a></li>
   </ul>
