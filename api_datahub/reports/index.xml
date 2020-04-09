@@ -21,10 +21,12 @@ Description: Статистика по кампаниям
 Kind: REPORT
    Name Description Additional     stat_date Дата Type: DATE
 Semantic role: DIMENSION
-Semantic type: YEAR_MONTH_DAY   campaign_remote_id ID рекламной кампании во внешней системе Type: TEXT
-Semantic role: DIMENSION   campaign_type Тип рекламной кампании Type: TEXT
-Semantic role: DIMENSION   category_id Категория клиента Type: LONG
-Semantic role: DIMENSION   category_name Название категории Type: TEXT</description>
+Semantic type: YEAR_MONTH_DAY   stat_month Месяц.
+Дата начала месяца Type: DATE
+Semantic role: DIMENSION
+Semantic type: YEAR_MONTH   campaign_name Название рекламной кампании Type: TEXT
+Semantic role: DIMENSION   campaign_remote_id ID рекламной кампании во внешней системе Type: TEXT
+Semantic role: DIMENSION   campaign_type Тип рекламной кампании Type: TEXT</description>
     </item>
     
   </channel>
