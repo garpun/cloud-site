@@ -22,6 +22,12 @@ body {
     text-size-adjust: 100%;
 }
 
+.page-content {
+    min-width: 1250px;
+    display: block;
+    overflow: auto;
+}
+
 .devsite-full-site-width, .devsite-toast-fill {
     margin: 0;
     max-width: 1600px;
@@ -92,6 +98,8 @@ body {
     padding: 20px 20px;
     max-width: 310px;
     min-width: 175px;
+    height: 95vh;
+    position: fixed;
 }
 .devsite-nav-item.active > .devsite-nav-title {
     color: #5195fb!important;
