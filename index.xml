@@ -256,10 +256,10 @@ Description: Подключение. Подключения содержат т�
 Kind: DICT
    Name Description Additional     id ID Type: TEXT
 Semantic role: DIMENSION   name Название Type: TEXT
+Semantic role: DIMENSION   status_check_time Последня проверка Type: DATETIME
 Semantic role: DIMENSION   author_user_id Подключил Type: LONG
 Semantic role: DIMENSION   company_id Компания Type: LONG
-Semantic role: DIMENSION   ex_system_id Система подключения Type: TEXT
-Semantic role: DIMENSION   user_status Статус Type: TEXT</description>
+Semantic role: DIMENSION   ex_system_id Система подключения Type: TEXT</description>
     </item>
     
     <item>
