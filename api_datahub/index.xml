@@ -31,7 +31,7 @@ API спроектировано для потоковой обработки д
       <description>METAQL - Это защищенный SQL для запросов к данным Garpun DataHub. Основан на синтаксисе PostgreSQL синтаксисе.
 Особенности  SELECT * FROM ... не поддерживается Нельзя называть поля или алясы зарезарвированными именами: date Добавлен оператор ILIKE для регистронезависимного сравнения строк Поддерживаются только SELECT запросы JOIN не поддерживаются Работает ограниченный набор функций, описанных ниже  Функции Работают функции агрегации:
  MIN, MAX, SUM, AGV COUNT(*), COUNT(DISTINCT поле) ARRAY_AGG  Функции преобразований:
- ROUND CONCAT NULLIF COALESCE  Примеры Получене статистики по аккаунтам SELECT stat_date, account_id, SUM(cost) as cost FROM adplatform.</description>
+ ROUND CONCAT NULLIF COALESCE  Экранирование Одинарная кавычка экранируется одинарной кавычкой.</description>
     </item>
     
     <item>

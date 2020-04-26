@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>v1beta1</title>
-      <link>https://cloud.garpun.com/api_accountmanagement/api/v1beta1/</link>
-      <pubDate>Tue, 24 Apr 2018 18:36:24 +0200</pubDate>
-      
-      <guid>https://cloud.garpun.com/api_accountmanagement/api/v1beta1/</guid>
-      <description>    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v1beta1_accountmanagement.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
-    </item>
-    
-    <item>
       <title>v1beta2</title>
       <link>https://cloud.garpun.com/api_accountmanagement/api/v1beta2/</link>
       <pubDate>Tue, 24 Apr 2018 18:36:24 +0200</pubDate>
