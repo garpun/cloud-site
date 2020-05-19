@@ -832,6 +832,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                             
                         </ul>
+                        <br><br><br><br>
                     </nav>
             
             
@@ -882,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 import json
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), &quot;data&quot;)
-AUTHORIZED_USER_FILE = os.path.join(DATA_DIR, &quot;./creds.json&quot;)
+AUTHORIZED_USER_FILE = os.path.join(DATA_DIR, &quot;./creds.json&quot;) // CHANGE TO YOU PATH
 
 from google.auth.transport.requests import AuthorizedSession
 from google.oauth2 import service_account as SA
@@ -946,7 +947,7 @@ import java.util.Collections;
 public class Main {
 
   public static void main(String[] args) throws Exception {
-    String credFilename = &quot;./creds.json&quot;;
+    String credFilename = &quot;./creds.json&quot;; // CHANGE TO YOU PATH
     GoogleCredentials credentials = GoogleCredentials.fromStream(
         new FileInputStream(credFilename)
     );
@@ -978,6 +979,51 @@ public class Main {
   }
 }
 </code></pre>
+<h2 id="вариант-вызова-через-google-lib-php">Вариант вызова через Google Lib PHP</h2>
+<p>Важно! Используйте библиотеку версии &gt;= 1.9.0</p>
+<p>Работает с использованием <a href="http://docs.guzzlephp.org/en/stable/psr7.html">Guzzle</a></p>
+<p><a href="https://github.com/googleapis/google-auth-library-php">GitHub google-auth-library-php</a></p>
+<pre><code>https://github.com/garpun/examples-php
+
+&lt;?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Google\Auth\Middleware\AuthTokenMiddleware;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+
+$credFileName = &quot;./creds.json&quot;; // CHANGE TO YOU PATH
+$jsonKey = json_decode(file_get_contents($credFileName), true);
+
+$creds = new \Google\Auth\OAuth2([
+    'audience' =&gt; $jsonKey['token_uri'],
+    'issuer' =&gt; $jsonKey['client_email'],
+    'scope' =&gt; ['account-management'],
+    'signingAlgorithm' =&gt; 'RS256',
+    'signingKey' =&gt; $jsonKey['private_key'],
+    'signingKeyId' =&gt; $jsonKey['private_key_id'],
+    'sub' =&gt; null,
+    'tokenCredentialUri' =&gt; $jsonKey['token_uri'],
+]);
+
+$middleware = new AuthTokenMiddleware($creds);
+$stack = HandlerStack::create();
+$stack-&gt;push($middleware);
+
+$client = new Client([
+    'handler' =&gt; $stack,
+    'base_uri' =&gt; 'https://datahub-api.garpun.com',
+    'auth' =&gt; 'google_auth'
+]);
+
+$response = $client-&gt;post('v1/metaql/query', [
+    'json' =&gt; [
+        &quot;query&quot; =&gt; &quot;select id, name from adplatform.client where name is not null&quot;,
+        &quot;shardKey&quot; =&gt; null
+    ]
+]);
+
+print_r((string)$response-&gt;getBody());</code></pre>
 
 
 
@@ -991,6 +1037,7 @@ public class Main {
     <li><a href="#garpun-datahub-python-library">Garpun DataHub Python Library</a></li>
     <li><a href="#вариант-вызова-через-google-lib-python">Вариант вызова через Google Lib Python</a></li>
     <li><a href="#вариант-вызова-через-google-lib-java">Вариант вызова через Google Lib Java</a></li>
+    <li><a href="#вариант-вызова-через-google-lib-php">Вариант вызова через Google Lib PHP</a></li>
   </ul>
 </nav>
 </div>

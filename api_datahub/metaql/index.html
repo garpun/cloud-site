@@ -832,6 +832,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                             
                         </ul>
+                        <br><br><br><br>
                     </nav>
             
             
@@ -898,6 +899,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>NULLIF</li>
 <li>COALESCE</li>
 </ul>
+<h2 id="фильтрация-where">Фильтрация WHERE</h2>
+<p>Работают операторы сравнения:</p>
+<ul>
+<li>=, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+<li>IN, NOT IN</li>
+<li>LIKE, NOT LIKE</li>
+<li>ILIKE, NOT ILIKE</li>
+<li>BETWEEN</li>
+<li>IS NULL, IS NOT NULL</li>
+</ul>
 <h2 id="экранирование">Экранирование</h2>
 <p>Одинарная кавычка экранируется одинарной кавычкой.
 Например, еси вам нужно поискать все кампании, в названии которых есть одинарная кавычка, то вам необходимо выполнить такой запрос:</p>
@@ -905,7 +916,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </code></pre></div><p>Ели нужно поискать клиента по точному совпадению, то принцип будет такой же:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, name <span style="color:#66d9ef">from</span> adplatform.client <span style="color:#66d9ef">where</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Тестовый &#39;&#39; проект&#39;</span>
 </code></pre></div><h2 id="примеры">Примеры</h2>
-<h3 id="получене-статистики-по-аккаунтам">Получене статистики по аккаунтам</h3>
+<h3 id="получение-статистики-по-аккаунтам">Получение статистики по аккаунтам</h3>
 <pre><code>SELECT 
     stat_date,
     account_id,
@@ -933,10 +944,11 @@ WHERE modification_time &gt; '2020-03-31T12:21:46+0300'
   <ul>
     <li><a href="#особенности">Особенности</a></li>
     <li><a href="#функции">Функции</a></li>
+    <li><a href="#фильтрация-where">Фильтрация WHERE</a></li>
     <li><a href="#экранирование">Экранирование</a></li>
     <li><a href="#примеры">Примеры</a>
       <ul>
-        <li><a href="#получене-статистики-по-аккаунтам">Получене статистики по аккаунтам</a></li>
+        <li><a href="#получение-статистики-по-аккаунтам">Получение статистики по аккаунтам</a></li>
         <li><a href="#получение-изменившихся-клиентов">Получение изменившихся клиентов</a></li>
       </ul>
     </li>

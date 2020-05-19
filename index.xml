@@ -66,7 +66,7 @@ API спроектировано для потоковой обработки д
       <description>Garpun DataHub Python Library Если вы программируете на языке Python, то существует python-библиотека
 Библиотека работает на основе google-api-python-client. Это позволяет нам не думать о реализациях авторизации и работе с http, а заниматься бизнес инструментарием.
 Вариант вызова через Google Lib Python GitHub google-api-python-client
-import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;quot;data&amp;quot;) AUTHORIZED_USER_FILE = os.path.join(DATA_DIR, &amp;quot;./creds.json&amp;quot;) from google.auth.transport.requests import AuthorizedSession from google.oauth2 import service_account as SA from metasdk.utils import pretty_json creds: SA.Credentials = SA.</description>
+import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;quot;data&amp;quot;) AUTHORIZED_USER_FILE = os.path.join(DATA_DIR, &amp;quot;./creds.json&amp;quot;) // CHANGE TO YOU PATH from google.auth.transport.requests import AuthorizedSession from google.oauth2 import service_account as SA from metasdk.</description>
     </item>
     
     <item>
