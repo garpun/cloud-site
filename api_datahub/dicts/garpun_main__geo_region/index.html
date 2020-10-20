@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Account Management — Garpun Cloud</title>
+    <title>Георегионы (garpun_main.geo_region) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_accountmanagement/">
+  <body class="" data-url="/api_datahub/dicts/garpun_main__geo_region/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -386,8 +386,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_accountmanagement/" class="devsite-nav-item devsite-nav-item-main
-                        parent
-                        active
+                        
+                        
                         
                         ">
                 
@@ -498,7 +498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -661,7 +661,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -746,8 +746,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/dicts/garpun_main__geo_region/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/api_datahub/dicts/garpun_main__geo_region/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/" class="devsite-nav-title">
                     <span>Георегионы (garpun_main.geo_region)</span>
                 </a>
@@ -982,7 +982,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > Account Management
+
+
+
+
+
+
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/dicts/'>Справочники</a> > Георегионы (garpun_main.geo_region)
+
+
+
+
 
 
 
@@ -994,37 +1004,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Account Management</h1>
+            <h1>Георегионы (garpun_main.geo_region)</h1>
           
 
 
 
-
-
-
-
-	
-
-	
-	   <article class="post api_accountmanagement">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/api_accountmanagement/overview/">Обзор</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	
+<p>Entity: garpun_main.geo_region</p>
+<p>Description: Георегионы. Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator</p>
+<p>Kind: DICT</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Additional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>garpun_code</td>
+<td>Код по Garpun. Используется как первичный ключ</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Название региона</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>google_code</td>
+<td>Регион по версии Google Ads. <a href="https://developers.google.com/adwords/api/docs/appendix/geotargeting">https://developers.google.com/adwords/api/docs/appendix/geotargeting</a></td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>yandex_code</td>
+<td>Регион по версии Yandex Direct. <a href="https://yandex.ru/dev/direct/doc/ref-v5/dictionaries/get.html/">https://yandex.ru/dev/direct/doc/ref-v5/dictionaries/get.html/</a></td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>Дата создания</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>modification_time</td>
+<td>Дата изменения</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1068,3 +1096,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
   </body>
 </html>
+

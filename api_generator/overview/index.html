@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Account Management — Garpun Cloud</title>
+    <title>Обзор — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_accountmanagement/">
+  <body class="" data-url="/api_generator/overview/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -274,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_generator/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -304,8 +304,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_generator/overview/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/api_generator/overview/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_generator/overview/" class="devsite-nav-title">
                     <span>Обзор</span>
                 </a>
@@ -386,8 +386,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_accountmanagement/" class="devsite-nav-item devsite-nav-item-main
-                        parent
-                        active
+                        
+                        
                         
                         ">
                 
@@ -982,7 +982,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > Account Management
+
+
+
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_generator/'>Generator</a> > Обзор
+
+
 
 
 
@@ -994,38 +999,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Account Management</h1>
+            <h1>Обзор</h1>
           
 
 
 
-
-
-
-
-	
-
-	
-	   <article class="post api_accountmanagement">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://cloud.garpun.com/api_accountmanagement/overview/">Обзор</a></h2>
-    </header>
-
-    
-
-
-    
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	
-
+<p>Базовый URL: <em><a href="https://amp.garpun.com/api">https://amp.garpun.com/api</a></em></p>
+<p>Операции с объектами сервиса Generator</p>
+<h2 id="пример-обращения-в-api">Пример обращения в API</h2>
+<p>Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке  Authorization:Bearer
+и запрос в формате JSON после параметра -d</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -i -X POST <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   -H <span style="color:#e6db74">&#34;Authorization:Bearer eyJ...arSQ&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   -H <span style="color:#e6db74">&#34;Content-Type:application/json&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   -d <span style="color:#e6db74">&#39;{ }&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#39;https://amp.garpun.com/api/v2/projects/2249/algorithms/47553/start&#39;</span>
+</code></pre></div>
 
 
 
@@ -1033,7 +1022,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 </div>
 <div class="mdl-cell mdl-cell--2-col">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#пример-обращения-в-api">Пример обращения в API</a></li>
+  </ul>
+</nav>
 </div>
 
 </div>
@@ -1068,3 +1061,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
   </body>
 </html>
+

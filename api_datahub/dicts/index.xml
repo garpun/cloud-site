@@ -62,6 +62,21 @@ Semantic role: DIMENSION   title Название аккаунта Type: TEXT</d
     </item>
     
     <item>
+      <title>Георегионы (garpun_main.geo_region)</title>
+      <link>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</guid>
+      <description>Entity: garpun_main.geo_region
+Description: Георегионы. Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator
+Kind: DICT
+   Name Description Additional     garpun_code Код по Garpun. Используется как первичный ключ Type: TEXT
+Semantic role: DIMENSION   name Название региона Type: TEXT
+Semantic role: DIMENSION   google_code Регион по версии Google Ads. https://developers.google.com/adwords/api/docs/appendix/geotargeting Type: TEXT
+Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct.</description>
+    </item>
+    
+    <item>
       <title>Кампания (adplatform.campaign)</title>
       <link>https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

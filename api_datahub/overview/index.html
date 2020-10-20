@@ -273,6 +273,118 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li data-nav-id="/api_generator/" class="devsite-nav-item devsite-nav-item-main
+                        
+                        
+                        
+                        ">
+                
+
+                
+                  <a href="javascript:void(0)" style="cursor: auto;" class="devsite-nav-title devsite-nav-item-main-title">
+                    <span>Generator</span>
+                  </a>
+                
+
+
+                
+                <ul class="devsite-nav-expandable">
+                    
+                    
+                    
+                    
+                    
+
+
+                    
+                    
+                    
+            
+            
+            
+            
+            
+            <li data-nav-id="/api_generator/overview/" class="devsite-nav-item dd-item "
+                        >
+                <a href="https://cloud.garpun.com/api_generator/overview/" class="devsite-nav-title">
+                    <span>Обзор</span>
+                </a>
+            </li>
+            
+            
+            
+            
+                    
+                    
+                    
+                    
+            
+            
+            
+            
+            
+            <li data-nav-id="/api_generator/v2/" class="devsite-nav-item devsite-nav-item-main
+                        
+                        
+                        
+                        ">
+                
+
+                
+                  <a href="javascript:void(0)" style="cursor: auto;" class="devsite-nav-title devsite-nav-item-main-title">
+                    <span>Версии Api</span>
+                  </a>
+                
+
+
+                
+                <ul class="devsite-nav-expandable">
+                    
+                    
+                    
+
+
+                    
+                    
+                    
+            
+            
+            
+            
+            
+            <li data-nav-id="/api_generator/v2/v2/" class="devsite-nav-item dd-item "
+                        >
+                <a href="https://cloud.garpun.com/api_generator/v2/v2/" class="devsite-nav-title">
+                    <span>v2</span>
+                </a>
+            </li>
+            
+            
+            
+            
+                    
+                    
+                </ul>
+                
+            </li>
+            
+            
+            
+                    
+                    
+                </ul>
+                
+            </li>
+            
+            
+            
+                            
+                              
+            
+            
+            
+            
+            
             <li data-nav-id="/api_accountmanagement/" class="devsite-nav-item devsite-nav-item-main
                         
                         
@@ -634,6 +746,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li data-nav-id="/api_datahub/dicts/garpun_main__geo_region/" class="devsite-nav-item dd-item "
+                        >
+                <a href="https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/" class="devsite-nav-title">
+                    <span>Георегионы (garpun_main.geo_region)</span>
+                </a>
+            </li>
+            
+            
+            
+            
+                    
+                    
+                    
+                    
+            
+            
+            
+            
+            
             <li data-nav-id="/api_datahub/dicts/adplatform__campaign/" class="devsite-nav-item dd-item "
                         >
                 <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/" class="devsite-nav-title">
@@ -877,8 +1008,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Получение списков справочников, статистических отчетов и контента настроенных потоков данных.
 Это API будет вам необходимо, если вы являетесь интеграционным партнером Garpun.</p>
 <p>API спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON.
-Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных
-оказывается на новой строке.</p>
+Вместо этого, есть <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON_NEWLINE</a>, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных
+оказывается на новой строке выходного потока данных.</p>
 <h2 id="пример-обращения-в-api">Пример обращения в API</h2>
 <p>Получение данных SQL-like запросом. Используется язык запросов <a href="https://cloud.garpun.com/api_datahub/metaql/">METAQL</a></p>
 <pre><code>curl --compressed -v -N -X POST -d '{&quot;query&quot;:&quot;select id, name from meta.dynamic_date_range&quot;}'\

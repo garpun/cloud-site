@@ -18,7 +18,14 @@
 	"title": "Обзор",
 	"tags": [],
 	"description": "",
-	"content": "Базовый URL: https://datahub-api.garpun.com\nПолучение списков справочников, статистических отчетов и контента настроенных потоков данных. Это API будет вам необходимо, если вы являетесь интеграционным партнером Garpun.\nAPI спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON. Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных оказывается на новой строке.\nПример обращения в API Получение данных SQL-like запросом. Используется язык запросов METAQL\ncurl --compressed -v -N -X POST -d '{\u0026quot;query\u0026quot;:\u0026quot;select id, name from meta.dynamic_date_range\u0026quot;}'\\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/metaql/query\u0026quot;  Получение данных фида\ncurl --compressed -v -N -X POST \\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/feeds/feed_data/{feed_key}?format=csv\u0026amp;from=2020-01-01\u0026amp;to=2020-01-10\u0026quot;  Получение схемы фида\ncurl --compressed -v -N -X POST \\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/feeds/feed_schema/{feed_key}\u0026quot;  Библиотеки Для аналитиков существует python-библиотека\nА так же посмотрите другие варианты работы с API используя библиотеки от Google\nОписание ошибок Ошибки обрабатываются стандартным образом - подробнее про обработку ошибок\n"
+	"content": "Базовый URL: https://datahub-api.garpun.com\nПолучение списков справочников, статистических отчетов и контента настроенных потоков данных. Это API будет вам необходимо, если вы являетесь интеграционным партнером Garpun.\nAPI спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON. Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных оказывается на новой строке выходного потока данных.\nПример обращения в API Получение данных SQL-like запросом. Используется язык запросов METAQL\ncurl --compressed -v -N -X POST -d '{\u0026quot;query\u0026quot;:\u0026quot;select id, name from meta.dynamic_date_range\u0026quot;}'\\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/metaql/query\u0026quot;  Получение данных фида\ncurl --compressed -v -N -X POST \\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/feeds/feed_data/{feed_key}?format=csv\u0026amp;from=2020-01-01\u0026amp;to=2020-01-10\u0026quot;  Получение схемы фида\ncurl --compressed -v -N -X POST \\ -H \u0026quot;Content-Type:application/json\u0026quot; \\ \u0026quot;https://datahub-api.garpun.com/v1/feeds/feed_schema/{feed_key}\u0026quot;  Библиотеки Для аналитиков существует python-библиотека\nА так же посмотрите другие варианты работы с API используя библиотеки от Google\nОписание ошибок Ошибки обрабатываются стандартным образом - подробнее про обработку ошибок\n"
+},
+{
+	"uri": "https://cloud.garpun.com/api_generator/overview/",
+	"title": "Обзор",
+	"tags": [],
+	"description": "",
+	"content": "Базовый URL: https://amp.garpun.com/api\nОперации с объектами сервиса Generator\nПример обращения в API Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке Authorization:Bearer и запрос в формате JSON после параметра -d\ncurl -i -X POST \\  -H \u0026#34;Authorization:Bearer eyJ...arSQ\u0026#34; \\  -H \u0026#34;Content-Type:application/json\u0026#34; \\  -d \u0026#39;{ }\u0026#39; \\  \u0026#39;https://amp.garpun.com/api/v2/projects/2249/algorithms/47553/start\u0026#39; "
 },
 {
 	"uri": "https://cloud.garpun.com/get_started/",
@@ -91,6 +98,13 @@
 	"content": ""
 },
 {
+	"uri": "https://cloud.garpun.com/api_generator/v2/",
+	"title": "Версии Api",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://cloud.garpun.com/api_datahub/api/",
 	"title": "Версии Api",
 	"tags": [],
@@ -112,11 +126,25 @@
 	"content": ""
 },
 {
+	"uri": "https://cloud.garpun.com/api_generator/",
+	"title": "Generator",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://cloud.garpun.com/api_accountmanagement/api/v1beta2/",
 	"title": "v1beta2",
 	"tags": [],
 	"description": "",
 	"content": "    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: \"../v1beta2_accountmanagement.swagger.json\", // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: '#swagger-ui', deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: \"model\", supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: \"BaseLayout\", }) window.ui = ui }  "
+},
+{
+	"uri": "https://cloud.garpun.com/api_generator/v2/v2/",
+	"title": "v2",
+	"tags": [],
+	"description": "",
+	"content": "    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: \"../v2_generator.swagger.json\", // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: '#swagger-ui', deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: \"model\", supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: \"BaseLayout\", }) window.ui = ui }  "
 },
 {
 	"uri": "https://cloud.garpun.com/api_accountmanagement/",
@@ -179,7 +207,14 @@
 	"title": "Внешний аккаунт (adplatform.account)",
 	"tags": [],
 	"description": "",
-	"content": "Entity: adplatform.account\nDescription: Внешний аккаунт\nKind: DICT\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Полное название аккаунта.\nКонкатенируется по внутренним правилам из полей login и title Type: TEXT\nSemantic role: DIMENSION   engine Система Type: TEXT\nSemantic role: DIMENSION   login Login.\nВнешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT\nSemantic role: DIMENSION   title Название аккаунта Type: TEXT\nSemantic role: DIMENSION   client_id Клиент.\nМожет быть не заполненным, если аккаунт не привязан к конкретному Клиенту Type: LONG\nSemantic role: DIMENSION   area_id Площадка Type: LONG\nSemantic role: DIMENSION   creation_time Дата добавления.\nВремя, когда Garpun первый раз скачал аккаунт из внешней системы Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+	"content": "Entity: adplatform.account\nDescription: Внешний аккаунт\nKind: DICT\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Полное название аккаунта.\nКонкатенируется по внутренним правилам из полей login и title Type: TEXT\nSemantic role: DIMENSION   engine Система Type: TEXT\nSemantic role: DIMENSION   login Login.\nВнешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT\nSemantic role: DIMENSION   title Название аккаунта Type: TEXT\nSemantic role: DIMENSION   client_id Клиент.\nМожет быть не заполненным, если аккаунт не привязан к конкретному Клиенту Type: LONG\nSemantic role: DIMENSION   area_id Площадка.\nДля некоторых аккаунтов прописана явная пренадлежность площадке Type: LONG\nSemantic role: DIMENSION   creation_time Дата добавления.\nВремя, когда Garpun первый раз скачал аккаунт из внешней системы Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
+	"uri": "https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/",
+	"title": "Георегионы (garpun_main.geo_region)",
+	"tags": [],
+	"description": "",
+	"content": "Entity: garpun_main.geo_region\nDescription: Георегионы. Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator\nKind: DICT\n   Name Description Additional     garpun_code Код по Garpun. Используется как первичный ключ Type: TEXT\nSemantic role: DIMENSION   name Название региона Type: TEXT\nSemantic role: DIMENSION   google_code Регион по версии Google Ads. https://developers.google.com/adwords/api/docs/appendix/geotargeting Type: TEXT\nSemantic role: DIMENSION   yandex_code Регион по версии Yandex Direct. https://yandex.ru/dev/direct/doc/ref-v5/dictionaries/get.html/ Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
 },
 {
 	"uri": "https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/",

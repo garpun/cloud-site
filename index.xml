@@ -43,8 +43,20 @@ curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &a
       <guid>https://cloud.garpun.com/api_datahub/overview/</guid>
       <description>Базовый URL: https://datahub-api.garpun.com
 Получение списков справочников, статистических отчетов и контента настроенных потоков данных. Это API будет вам необходимо, если вы являетесь интеграционным партнером Garpun.
-API спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON. Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных оказывается на новой строке.
+API спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON. Вместо этого, есть JSON_NEWLINE, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных оказывается на новой строке выходного потока данных.
 Пример обращения в API Получение данных SQL-like запросом. Используется язык запросов METAQL</description>
+    </item>
+    
+    <item>
+      <title>Обзор</title>
+      <link>https://cloud.garpun.com/api_generator/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_generator/overview/</guid>
+      <description>Базовый URL: https://amp.garpun.com/api
+Операции с объектами сервиса Generator
+Пример обращения в API Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке Authorization:Bearer и запрос в формате JSON после параметра -d
+curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &amp;#34;Content-Type:application/json&amp;#34; \  -d &amp;#39;{ }&amp;#39; \  &amp;#39;https://amp.garpun.com/api/v2/projects/2249/algorithms/47553/start&amp;#39; </description>
     </item>
     
     <item>
@@ -125,6 +137,15 @@ import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;qu
     </item>
     
     <item>
+      <title>v2</title>
+      <link>https://cloud.garpun.com/api_generator/v2/v2/</link>
+      <pubDate>Tue, 24 Apr 2018 18:36:24 +0200</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_generator/v2/v2/</guid>
+      <description>    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v2_generator.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
+    </item>
+    
+    <item>
       <title>v1</title>
       <link>https://cloud.garpun.com/api_datahub/api/v1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -182,6 +203,21 @@ Semantic role: DIMENSION   engine Система Type: TEXT
 Semantic role: DIMENSION   login Login.
 Внешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT
 Semantic role: DIMENSION   title Название аккаунта Type: TEXT</description>
+    </item>
+    
+    <item>
+      <title>Георегионы (garpun_main.geo_region)</title>
+      <link>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</guid>
+      <description>Entity: garpun_main.geo_region
+Description: Георегионы. Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator
+Kind: DICT
+   Name Description Additional     garpun_code Код по Garpun. Используется как первичный ключ Type: TEXT
+Semantic role: DIMENSION   name Название региона Type: TEXT
+Semantic role: DIMENSION   google_code Регион по версии Google Ads. https://developers.google.com/adwords/api/docs/appendix/geotargeting Type: TEXT
+Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct.</description>
     </item>
     
     <item>
