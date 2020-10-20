@@ -98,7 +98,7 @@
 	"content": ""
 },
 {
-	"uri": "https://cloud.garpun.com/api_generator/v2/",
+	"uri": "https://cloud.garpun.com/api_generator/api/",
 	"title": "Версии Api",
 	"tags": [],
 	"description": "",
@@ -140,7 +140,7 @@
 	"content": "    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: \"../v1beta2_accountmanagement.swagger.json\", // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: '#swagger-ui', deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: \"model\", supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: \"BaseLayout\", }) window.ui = ui }  "
 },
 {
-	"uri": "https://cloud.garpun.com/api_generator/v2/v2/",
+	"uri": "https://cloud.garpun.com/api_generator/api/v2/",
 	"title": "v2",
 	"tags": [],
 	"description": "",
