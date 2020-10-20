@@ -98,14 +98,14 @@
 	"content": ""
 },
 {
-	"uri": "https://cloud.garpun.com/api_generator/api/",
+	"uri": "https://cloud.garpun.com/api_datahub/api/",
 	"title": "Версии Api",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://cloud.garpun.com/api_datahub/api/",
+	"uri": "https://cloud.garpun.com/api_generator/api/",
 	"title": "Версии Api",
 	"tags": [],
 	"description": "",
