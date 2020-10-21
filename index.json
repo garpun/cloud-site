@@ -175,6 +175,13 @@
 	"content": ""
 },
 {
+	"uri": "https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/",
+	"title": "generator_tasks_report (garpun_main.generator_tasks_report)",
+	"tags": [],
+	"description": "",
+	"content": "Entity: garpun_main.generator_tasks_report\nDescription: generator_tasks_report\nKind: REPORT\n   Name Description Additional     target_time Дата ожидаемого начала задачи Type: DATETIME\nSemantic role: DIMENSION   task_id Task id Type: LONG\nSemantic role: DIMENSION   stop_time Дата завершения задачи Type: DATETIME\nSemantic role: DIMENSION   algorithm_id Алгоритм Type: LONG\nSemantic role: DIMENSION   engine Система Type: TEXT\nSemantic role: DIMENSION   status Статус задачи Type: TEXT\nSemantic role: DIMENSION   type Тип задачи Type: TEXT\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   result Результат.\nИнформация с результатом выполнения задачи. Зависит от type и engine Type: JSON\nSemantic role: DIMENSION   start_time Дата старта задачи Type: DATETIME\nSemantic role: DIMENSION    "
+},
+{
 	"uri": "https://cloud.garpun.com/tags/",
 	"title": "Tags",
 	"tags": [],

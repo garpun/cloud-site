@@ -11,6 +11,23 @@
     
     
     <item>
+      <title>generator_tasks_report (garpun_main.generator_tasks_report)</title>
+      <link>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</guid>
+      <description>Entity: garpun_main.generator_tasks_report
+Description: generator_tasks_report
+Kind: REPORT
+   Name Description Additional     target_time Дата ожидаемого начала задачи Type: DATETIME
+Semantic role: DIMENSION   task_id Task id Type: LONG
+Semantic role: DIMENSION   stop_time Дата завершения задачи Type: DATETIME
+Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG
+Semantic role: DIMENSION   engine Система Type: TEXT
+Semantic role: DIMENSION   status Статус задачи Type: TEXT</description>
+    </item>
+    
+    <item>
       <title>Статистика по кампаниям (adplatform.campaign_stats_report)</title>
       <link>https://cloud.garpun.com/api_datahub/reports/adplatform__campaign_stats_report/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -110,6 +110,10 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/tags/</loc>
   </url>
   

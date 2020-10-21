@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Клиент (adplatform.client) — Garpun Cloud</title>
+    <title>generator_tasks_report (garpun_main.generator_tasks_report) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_datahub/dicts/adplatform__client/">
+  <body class="" data-url="/api_datahub/reports/garpun_main__generator_tasks_report/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -661,7 +661,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        parent
+                        
                         
                         
                         ">
@@ -803,8 +803,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/dicts/adplatform__client/" class="devsite-nav-item dd-item active"
-                        id="active_menu_item">
+            <li data-nav-id="/api_datahub/dicts/adplatform__client/" class="devsite-nav-item dd-item "
+                        >
                 <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client/" class="devsite-nav-title">
                     <span>Клиент (adplatform.client)</span>
                 </a>
@@ -907,7 +907,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/reports/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -935,8 +935,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-title">
                     <span>generator_tasks_report (garpun_main.generator_tasks_report)</span>
                 </a>
@@ -1007,7 +1007,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/dicts/'>Справочники</a> > Клиент (adplatform.client)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > generator_tasks_report (garpun_main.generator_tasks_report)
 
 
 
@@ -1023,14 +1023,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Клиент (adplatform.client)</h1>
+            <h1>generator_tasks_report (garpun_main.generator_tasks_report)</h1>
           
 
 
 
-<p>Entity: adplatform.client</p>
-<p>Description: Клиент. В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании</p>
-<p>Kind: DICT</p>
+<p>Entity: garpun_main.generator_tasks_report</p>
+<p>Description: generator_tasks_report</p>
+<p>Kind: REPORT</p>
 <table>
 <thead>
 <tr>
@@ -1041,39 +1041,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>ID</td>
+<td>target_time</td>
+<td>Дата ожидаемого начала задачи</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>Task id</td>
 <td>Type: LONG<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>name</td>
-<td>Название клиента</td>
+<td>stop_time</td>
+<td>Дата завершения задачи</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__algorithm">algorithm_id</a></td>
+<td>Алгоритм</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__engine">engine</a></td>
+<td>Система</td>
 <td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>creation_time</td>
-<td>Дата создания</td>
-<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+<td>status</td>
+<td>Статус задачи</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>modification_time</td>
-<td>Дата изменения</td>
-<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
+<td>type</td>
+<td>Тип задачи</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>is_enabled</td>
-<td>Активный</td>
-<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>is_archived</td>
-<td>Архивный</td>
-<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client_category">category_id</a></td>
-<td>Категория клиента</td>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client">client_id</a></td>
+<td>Клиент</td>
 <td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>result</td>
+<td>Результат.<br>Информация с результатом выполнения задачи. Зависит от type и engine</td>
+<td>Type: JSON<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>Дата старта задачи</td>
+<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
 </tr>
 </tbody>
 </table>
