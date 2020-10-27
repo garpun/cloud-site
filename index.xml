@@ -65,7 +65,7 @@ curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/metaql/</guid>
-      <description>METAQL - Это защищенный SQL для запросов к данным Garpun DataHub. Основан на синтаксисе PostgreSQL синтаксисе.
+      <description>METAQL - Это защищенный SQL для запросов к данным Garpun DataHub. Основан на синтаксисе PostgreSQL.
 Особенности  SELECT * FROM ... не поддерживается Нельзя называть поля или алясы зарезарвированными именами: date Добавлен оператор ILIKE для регистронезависимного сравнения строк Поддерживаются только SELECT запросы JOIN не поддерживаются Работает ограниченный набор функций, описанных ниже OR в условиях не поддерживается. Используется AND с отицанием или IN ( &amp;hellip; )  Функции Работают функции агрегации:</description>
     </item>
     
