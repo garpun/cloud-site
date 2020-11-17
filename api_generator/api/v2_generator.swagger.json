@@ -162,28 +162,28 @@
         "projectId": {
           "type": "integer",
           "format": "int64",
-          "title": "Обязательно. ID проекта (клиента). Включен в url запроса",
+          "title": "xxxx",
           "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "Идентификатор алгоритма передается только при редактировании алгоритма",
+          "title": "xxxx",
           "description": "Идентификатор алгоритма передается только при редактировании алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "Обязательно. Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр",
+          "title": "xxxx",
           "description": "Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр"
         },
         "name": {
           "type": "string",
-          "title": "Обязательно. Название алгоритма",
+          "title": "xxxx",
           "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "Обязательно. Ссылка на источник данных",
+          "title": "xxxx",
           "description": "Ссылка на источник данных"
         },
         "geo": {
@@ -191,20 +191,20 @@
           "items": {
             "type": "string"
           },
-          "title": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region",
-          "description": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region"
+          "title": "Array of string",
+          "description": "Коды георегионов\nСм. DataHub справочник [garpun_main.geo_region](/api_datahub/dicts/garpun_main__geo_region/)"
         },
         "engineSettings": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/EngineSettings"
           },
-          "title": "Обязательно. Настройки для внешних систем",
+          "title": "Array of EngineSettings",
           "description": "Настройки для внешних систем"
         },
         "updateSchedule": {
-          "type": "string",
-          "title": "Обязательно. Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown) или точного расписания:\nОбъект, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться  в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}",
+          "type": "object",
+          "title": "xxxx",
           "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown) или точного расписания:\nОбъект, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться  в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}"
         },
         "campaignsNames": {
@@ -212,7 +212,7 @@
           "items": {
             "type": "string"
           },
-          "title": "Массив имен кампаний, которыми заменяются имена в настройках алгоритма.\nИспользуется только при создании алгоритма.\nПример ['Новая кампания', 'Новая кампания 2'] или [1 => 'Новая кампания 2']",
+          "title": "Array of string",
           "description": "Массив имен кампаний, которыми заменяются имена в настройках алгоритма.\nИспользуется только при создании алгоритма.\nПример ['Новая кампания', 'Новая кампания 2'] или [1 => 'Новая кампания 2']"
         }
       },
@@ -231,22 +231,22 @@
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "Идентификатор алгоритма",
+          "title": "xxxx",
           "description": "Идентификатор алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "Тип алгоритма",
+          "title": "xxxx",
           "description": "Тип алгоритма"
         },
         "name": {
           "type": "string",
-          "title": "Название алгоритма",
+          "title": "xxxx",
           "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "ВНИМАНИЕ! В ответе придет sourceURL",
+          "title": "xxxx",
           "description": "ВНИМАНИЕ! В ответе придет sourceURL"
         },
         "geo": {
@@ -254,20 +254,20 @@
           "items": {
             "type": "string"
           },
-          "title": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region",
-          "description": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region"
+          "title": "Array of string",
+          "description": "Коды георегионов\nСм. DataHub справочник [garpun_main.geo_region](/api_datahub/dicts/garpun_main__geo_region/)"
         },
         "engineSettings": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/EngineSettings"
           },
-          "title": "Настройки для внешних систем",
+          "title": "Array of EngineSettings",
           "description": "Настройки для внешних систем"
         },
         "updateSchedule": {
           "type": "string",
-          "title": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)",
+          "title": "xxxx",
           "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)"
         }
       },
@@ -279,13 +279,13 @@
         "projectId": {
           "type": "integer",
           "format": "int64",
-          "title": "Обязательно. ID проекта (клиента). Включен в url запроса",
+          "title": "xxxx",
           "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "Идентификатор алгоритма",
+          "title": "xxxx",
           "description": "Идентификатор алгоритма"
         }
       },
@@ -299,19 +299,19 @@
         "taskId": {
           "type": "integer",
           "format": "int64",
-          "title": "Algorithm TaskStageId",
+          "title": "xxxx",
           "description": "Algorithm TaskStageId"
         },
         "algorithmId": {
           "type": "integer",
           "format": "int64",
-          "title": "Идентификатор алгоритма",
+          "title": "xxxx",
           "description": "Идентификатор алгоритма"
         },
         "dateTarget": {
           "type": "integer",
           "format": "int64",
-          "title": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00",
+          "title": "xxxx",
           "description": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00"
         }
       },
@@ -322,7 +322,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "title": "Обязательно. Название проекта (клиента)",
+          "title": "xxxx",
           "description": "Название проекта (клиента)"
         }
       },
@@ -336,12 +336,12 @@
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "ID проекта (клиента)",
+          "title": "xxxx",
           "description": "ID проекта (клиента)"
         },
         "name": {
           "type": "string",
-          "title": "Название проекта (клиента)",
+          "title": "xxxx",
           "description": "Название проекта (клиента)"
         }
       },
@@ -352,34 +352,34 @@
       "properties": {
         "engine": {
           "type": "string",
-          "title": "Обязательно. Идентификатор внешней системы\nyandex или google",
-          "description": "Идентификатор внешней системы\nyandex или google"
+          "title": "xxxx",
+          "description": "Идентификатор внешней системы\nСм. DataHub справочник [adplatform.engine](/api_datahub/dicts/adplatform__engine/)\nПоддерживаются значения: yandex или google"
         },
         "externalAccountId": {
           "type": "integer",
           "format": "int64",
-          "title": "Обязательно. Идентификатор Аккаунта внешней системы",
+          "title": "xxxx",
           "description": "Идентификатор Аккаунта внешней системы"
         },
         "defaultClickPrice": {
           "type": "number",
           "format": "float",
-          "title": "Ставка по умолчанию",
+          "title": "xxxx",
           "description": "Ставка по умолчанию"
         },
         "minusKeywords": {
           "type": "string",
-          "title": "Список минус-фраз через запятую",
+          "title": "xxxx",
           "description": "Список минус-фраз через запятую"
         },
         "campaignType": {
           "type": "string",
-          "title": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть",
+          "title": "xxxx",
           "description": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть"
         },
         "campaignBidType": {
           "type": "string",
-          "title": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях",
+          "title": "xxxx",
           "description": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях"
         },
         "additionalYandexMetricCounters": {
@@ -387,12 +387,12 @@
           "items": {
             "type": "string"
           },
-          "title": "Только для Яндекс Директ. Индентификаторы счетчиков Яндекс Метрики",
+          "title": "Array of string",
           "description": "Только для Яндекс Директ. Индентификаторы счетчиков Яндекс Метрики"
         },
         "networkSettings": {
           "$ref": "#/definitions/NetworkSettingsParams",
-          "title": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all",
+          "title": "xxxx",
           "description": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all"
         }
       },
@@ -406,29 +406,31 @@
       "properties": {
         "useBlock": {
           "type": "string",
-          "title": "Использовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда",
+          "title": "xxxx",
           "description": "Использовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда"
         },
         "enableParams": {
           "type": "boolean",
           "format": "boolean",
-          "title": "Флаг использования настроек на темаических площадках",
+          "title": "xxxx",
           "description": "Флаг использования настроек на темаических площадках"
         },
         "limitPercent": {
           "type": "integer",
           "format": "int32",
-          "description": "Максимальный процент бюджета, расходуемый на показы в сетях.\nЗначение кратно десяти: 10, 20, ..., 100. Значение по умолчанию — 100."
+          "description": null,
+          "title": "xxxx"
         },
         "bidPercent": {
           "type": "integer",
           "format": "int32",
-          "description": "Ограничение ставки в сетях. Задается в процентах от ставки на поиске.\nЗначение кратно десяти: 10, 20, ..., 100.\nЗначение 100 делает ставку в сетях равной цене на поиске.\nЗначение по умолчанию — 100."
+          "description": null,
+          "title": "xxxx"
         },
         "enableBehavioralTargeting": {
           "type": "boolean",
           "format": "boolean",
-          "title": "Не учитывать предпочтения пользователей",
+          "title": "xxxx",
           "description": "Не учитывать предпочтения пользователей"
         }
       },
@@ -438,11 +440,11 @@
   "tags": [
     {
       "name": "Algorithm",
-      "description": "Генерация рекламных кампаний"
+      "description": "Генерация рекламных кампаний\nПолучить список можно через этот справочник [adplatform.algorithm](/api_datahub/dicts/adplatform__algorithm/)"
     },
     {
       "name": "Project",
-      "description": "Создание проекта (клиента)"
+      "description": "Создание проекта (клиента)\nВ DataHub и остальной части Garpun эта сущость называется Клиент\nПолучить список можно через этот справочник [adplatform.client](/api_datahub/dicts/adplatform__client/)"
     }
   ]
 }
