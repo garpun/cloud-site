@@ -300,7 +300,7 @@
           "type": "integer",
           "format": "int64",
           "title": "xxxx",
-          "description": "Algorithm TaskStageId"
+          "description": "Algorithm TaskStageId\nПолучить список можно через справочник [garpun_main.generator_tasks_report](/api_datahub/dicts/garpun_main__generator_tasks_report/)"
         },
         "algorithmId": {
           "type": "integer",
