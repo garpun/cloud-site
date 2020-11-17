@@ -442,11 +442,11 @@
   "tags": [
     {
       "name": "Algorithm",
-      "description": "Генерация рекламных кампаний\nПолучить список можно через этот справочник [adplatform.algorithm](/api_datahub/dicts/adplatform__algorithm/)"
+      "description": "Генерация рекламных кампаний\nПолучить список можно через справочник [adplatform.algorithm](/api_datahub/dicts/adplatform__algorithm/)"
     },
     {
       "name": "Project",
-      "description": "Создание проекта (клиента)\nВ DataHub и остальной части Garpun эта сущость называется Клиент\nПолучить список можно через этот справочник [adplatform.client](/api_datahub/dicts/adplatform__client/)"
+      "description": "Создание проекта (клиента)\nВ DataHub и остальной части Garpun эта сущость называется Клиент\nПолучить список можно через справочник [adplatform.client](/api_datahub/dicts/adplatform__client/)"
     }
   ]
 }
