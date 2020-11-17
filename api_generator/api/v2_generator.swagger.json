@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "rwonec.proto"
+    "title": "generator.proto"
   },
   "schemes": null,
   "consumes": null,
@@ -9,14 +9,14 @@
   "paths": {
     "/v2/projects": {
       "post": {
-        "summary": "\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)",
-        "description": "\u0423\u043f\u0440\u043e\u0449\u0435\u043d\u043d\u043e\u0435 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430. \u0412 \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u0445 \u0441\u043e\u0437\u0434\u0430\u044e\u0442\u0441\u044f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u044b",
+        "summary": "Добавление проекта (клиента)",
+        "description": "Упрощенное создание проекта. В проектах создаются алгоритмы",
         "operationId": "Create",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/v2CreateProjectResponse"
+              "$ref": "#/definitions/CreateProjectResponse"
             }
           }
         },
@@ -26,7 +26,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2CreateProjectRequest"
+              "$ref": "#/definitions/CreateProjectRequest"
             }
           }
         ],
@@ -37,14 +37,14 @@
     },
     "/v2/projects/{project_id}/algorithms": {
       "post": {
-        "summary": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c",
-        "description": "\u0421\u043e\u0437\u0434\u0430\u0435\u0442 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0432 \u043f\u0440\u043e\u0435\u043a\u0442\u0435 (\u043a\u043b\u0438\u0435\u043d\u0442\u0435), \u043d\u043e \u043d\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442 \u0435\u0433\u043e.\n\u0414\u043b\u044f \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u043c\u0435\u0442\u043e\u0434 Start",
+        "summary": "Добавить алгоритм",
+        "description": "Создает алгоритм в проекте (клиенте), но не запускает его.\nДля запуска используется метод Start",
         "operationId": "Create",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmResponse"
+              "$ref": "#/definitions/AlgorithmResponse"
             }
           }
         },
@@ -61,7 +61,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmParams"
+              "$ref": "#/definitions/AlgorithmParams"
             }
           }
         ],
@@ -72,14 +72,14 @@
     },
     "/v2/projects/{project_id}/algorithms/{id}": {
       "put": {
-        "summary": "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c",
-        "description": "\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0443\u0435\u0442 \u0440\u0430\u043d\u0435\u0435 \u0441\u043e\u0437\u0434\u0430\u043d\u043d\u044b\u0439 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c",
+        "summary": "Редактировать алгоритм",
+        "description": "Редактирует ранее созданный алгоритм",
         "operationId": "Update",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmResponse"
+              "$ref": "#/definitions/AlgorithmResponse"
             }
           }
         },
@@ -103,7 +103,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmParams"
+              "$ref": "#/definitions/AlgorithmParams"
             }
           }
         ],
@@ -114,14 +114,14 @@
     },
     "/v2/projects/{project_id}/algorithms/{id}/start": {
       "post": {
-        "summary": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u044c \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044e \u0440\u0435\u043a\u043b\u0430\u043c\u044b \u043f\u043e \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0443",
-        "description": "\u0421\u0442\u0430\u0432\u0438\u0442 \u0437\u0430\u0434\u0430\u0447\u0443 \u043d\u0430 \u0437\u0430\u043f\u0443\u0441\u043a \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u043f\u043e \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0443, \u0432 \u043e\u0442\u0432\u0435\u0442\u0435 id \u0437\u0430\u0434\u0430\u0447\u0438",
+        "summary": "Запустить генерацию рекламы по алгоритму",
+        "description": "Ставит задачу на запуск генерации по алгоритму, в ответе id задачи",
         "operationId": "Start",
         "responses": {
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmStartResponse"
+              "$ref": "#/definitions/AlgorithmStartResponse"
             }
           }
         },
@@ -145,7 +145,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v2AlgorithmStartRequest"
+              "$ref": "#/definitions/AlgorithmStartRequest"
             }
           }
         ],
@@ -156,294 +156,293 @@
     }
   },
   "definitions": {
-    "v2AlgorithmParams": {
+    "AlgorithmParams": {
       "type": "object",
       "properties": {
         "projectId": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430). \u0412\u043a\u043b\u044e\u0447\u0435\u043d \u0432 url \u0437\u0430\u043f\u0440\u043e\u0441\u0430",
-          "description": "ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430). \u0412\u043a\u043b\u044e\u0447\u0435\u043d \u0432 url \u0437\u0430\u043f\u0440\u043e\u0441\u0430"
+          "title": "Обязательно. ID проекта (клиента). Включен в url запроса",
+          "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430 \u043f\u0435\u0440\u0435\u0434\u0430\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430 \u043f\u0435\u0440\u0435\u0434\u0430\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Идентификатор алгоритма передается только при редактировании алгоритма",
+          "description": "Идентификатор алгоритма передается только при редактировании алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u0422\u0438\u043f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u0423\u0442\u043e\u0447\u043d\u0438\u0442\u0435 \u0443 \u0432\u0430\u0448\u0435\u0433\u043e \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043c\u0435\u043d\u0435\u0434\u0436\u0435\u0440\u0430 \u0447\u0442\u043e \u0432\u0430\u043c \u043d\u0430\u0434\u043e \u043f\u0435\u0440\u0435\u0434\u0435\u0432\u0430\u0442\u044c \u0432 \u044d\u0442\u043e\u0442 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440",
-          "description": "\u0422\u0438\u043f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u0423\u0442\u043e\u0447\u043d\u0438\u0442\u0435 \u0443 \u0432\u0430\u0448\u0435\u0433\u043e \u0438\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u043e\u0433\u043e \u043c\u0435\u043d\u0435\u0434\u0436\u0435\u0440\u0430 \u0447\u0442\u043e \u0432\u0430\u043c \u043d\u0430\u0434\u043e \u043f\u0435\u0440\u0435\u0434\u0435\u0432\u0430\u0442\u044c \u0432 \u044d\u0442\u043e\u0442 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440"
+          "title": "Обязательно. Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр",
+          "description": "Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр"
         },
         "name": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Обязательно. Название алгоритма",
+          "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0434\u0430\u043d\u043d\u044b\u0445",
-          "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u0434\u0430\u043d\u043d\u044b\u0445"
+          "title": "Обязательно. Ссылка на источник данных",
+          "description": "Ссылка на источник данных"
         },
         "geo": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "\u041a\u043e\u0434\u044b \u0433\u0435\u043e\u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432\n\u0421\u043c. DataHub \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a garpun_main.geo_region",
-          "description": "\u041a\u043e\u0434\u044b \u0433\u0435\u043e\u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432\n\u0421\u043c. DataHub \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a garpun_main.geo_region"
+          "title": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region",
+          "description": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region"
         },
         "engineSettings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2EngineSettings"
+            "$ref": "#/definitions/EngineSettings"
           },
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0434\u043b\u044f \u0432\u043d\u0435\u0448\u043d\u0438\u0445 \u0441\u0438\u0441\u0442\u0435\u043c",
-          "description": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0434\u043b\u044f \u0432\u043d\u0435\u0448\u043d\u0438\u0445 \u0441\u0438\u0441\u0442\u0435\u043c"
+          "title": "Обязательно. Настройки для внешних систем",
+          "description": "Настройки для внешних систем"
         },
         "updateSchedule": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439\n\u0412 \u0432\u0438\u0434\u0435 \u0441\u0442\u0440\u043e\u043a\u0438 (daily, weekly, never, unknown) \u0438\u043b\u0438 \u0442\u043e\u0447\u043d\u043e\u0433\u043e \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f:\n\u041e\u0431\u044a\u0435\u043a\u0442, \u043a\u043b\u044e\u0447\u0430\u043c\u0438 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0447\u0430\u0441\u044b \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0438 - \u0434\u043d\u0438 \u043d\u0435\u0434\u0435\u043b\u0438, \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432 \u044d\u0442\u0438 \u0447\u0430\u0441\u044b \u0431\u0443\u0434\u0435\u0442 \u0437\u0430\u043f\u0443\u0449\u0435\u043d\u043e \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435. (0 - \u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0438\u0435, 1- \u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a \u0438 \u0442.\u0434. \u0434\u043e 6 - \u0441\u0443\u0431\u0431\u043e\u0442\u0430)\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0435\u0441\u043b\u0438 \u043f\u0435\u0440\u0435\u0434\u0430\u0442\u044c \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0443, \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u043d\u0443\u044e \u043d\u0438\u0436\u0435, \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0431\u0443\u0434\u0435\u0442 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0442\u044c\u0441\u044f  \u0432 00-00 \u043f\u043e \u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a\u0430\u043c\u0438, \u0441\u0440\u0435\u0434\u0430\u043c \u0438 \u043f\u044f\u0442\u043d\u0438\u0446\u0430\u043c, \u0438 \u0432 13-00 \u043f\u043e \u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0438\u044f\u043c, \u0441\u0440\u0435\u0434\u0430\u043c \u0438 \u0441\u0443\u0431\u0431\u043e\u0442\u0430\u043c.\n{\n   0: [1, 3, 5],\n   13: [0, 3, 6]\n}",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439\n\u0412 \u0432\u0438\u0434\u0435 \u0441\u0442\u0440\u043e\u043a\u0438 (daily, weekly, never, unknown) \u0438\u043b\u0438 \u0442\u043e\u0447\u043d\u043e\u0433\u043e \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f:\n\u041e\u0431\u044a\u0435\u043a\u0442, \u043a\u043b\u044e\u0447\u0430\u043c\u0438 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0447\u0430\u0441\u044b \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0438 - \u0434\u043d\u0438 \u043d\u0435\u0434\u0435\u043b\u0438, \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432 \u044d\u0442\u0438 \u0447\u0430\u0441\u044b \u0431\u0443\u0434\u0435\u0442 \u0437\u0430\u043f\u0443\u0449\u0435\u043d\u043e \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435. (0 - \u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0438\u0435, 1- \u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a \u0438 \u0442.\u0434. \u0434\u043e 6 - \u0441\u0443\u0431\u0431\u043e\u0442\u0430)\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0435\u0441\u043b\u0438 \u043f\u0435\u0440\u0435\u0434\u0430\u0442\u044c \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0443, \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u043d\u0443\u044e \u043d\u0438\u0436\u0435, \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0431\u0443\u0434\u0435\u0442 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0442\u044c\u0441\u044f  \u0432 00-00 \u043f\u043e \u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a\u0430\u043c\u0438, \u0441\u0440\u0435\u0434\u0430\u043c \u0438 \u043f\u044f\u0442\u043d\u0438\u0446\u0430\u043c, \u0438 \u0432 13-00 \u043f\u043e \u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0438\u044f\u043c, \u0441\u0440\u0435\u0434\u0430\u043c \u0438 \u0441\u0443\u0431\u0431\u043e\u0442\u0430\u043c.\n{\n   0: [1, 3, 5],\n   13: [0, 3, 6]\n}"
+          "title": "Обязательно. Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown) или точного расписания:\nОбъект, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться  в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}",
+          "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown) или точного расписания:\nОбъект, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться  в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}"
         },
         "campaignsNames": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "\u041c\u0430\u0441\u0441\u0438\u0432 \u0438\u043c\u0435\u043d \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0439, \u043a\u043e\u0442\u043e\u0440\u044b\u043c\u0438 \u0437\u0430\u043c\u0435\u043d\u044f\u044e\u0442\u0441\u044f \u0438\u043c\u0435\u043d\u0430 \u0432 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0438 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u041f\u0440\u0438\u043c\u0435\u0440 ['\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f', '\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f 2'] \u0438\u043b\u0438 [1 => '\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f 2']",
-          "description": "\u041c\u0430\u0441\u0441\u0438\u0432 \u0438\u043c\u0435\u043d \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0439, \u043a\u043e\u0442\u043e\u0440\u044b\u043c\u0438 \u0437\u0430\u043c\u0435\u043d\u044f\u044e\u0442\u0441\u044f \u0438\u043c\u0435\u043d\u0430 \u0432 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430\u0445 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0438 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430.\n\u041f\u0440\u0438\u043c\u0435\u0440 ['\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f', '\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f 2'] \u0438\u043b\u0438 [1 => '\u041d\u043e\u0432\u0430\u044f \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u044f 2']"
+          "title": "Массив имен кампаний, которыми заменяются имена в настройках алгоритма.\nИспользуется только при создании алгоритма.\nПример ['Новая кампания', 'Новая кампания 2'] или [1 => 'Новая кампания 2']",
+          "description": "Массив имен кампаний, которыми заменяются имена в настройках алгоритма.\nИспользуется только при создании алгоритма.\nПример ['Новая кампания', 'Новая кампания 2'] или [1 => 'Новая кампания 2']"
         }
       },
       "required": [
-        "project_id",
+        "projectId",
         "type",
         "name",
-        "source_url",
-        "engine_settings",
-        "update_schedule"
+        "sourceUrl",
+        "engineSettings",
+        "updateSchedule"
       ]
     },
-    "v2AlgorithmResponse": {
+    "AlgorithmResponse": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Идентификатор алгоритма",
+          "description": "Идентификатор алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "\u0422\u0438\u043f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u0422\u0438\u043f \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Тип алгоритма",
+          "description": "Тип алгоритма"
         },
         "name": {
           "type": "string",
-          "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Название алгоритма",
+          "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "\u0412\u041d\u0418\u041c\u0410\u041d\u0418\u0415! \u0412 \u043e\u0442\u0432\u0435\u0442\u0435 \u043f\u0440\u0438\u0434\u0435\u0442 sourceURL",
-          "description": "\u0412\u041d\u0418\u041c\u0410\u041d\u0418\u0415! \u0412 \u043e\u0442\u0432\u0435\u0442\u0435 \u043f\u0440\u0438\u0434\u0435\u0442 sourceURL"
+          "title": "ВНИМАНИЕ! В ответе придет sourceURL",
+          "description": "ВНИМАНИЕ! В ответе придет sourceURL"
         },
         "geo": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "\u041a\u043e\u0434\u044b \u0433\u0435\u043e\u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432\n\u0421\u043c. DataHub \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a garpun_main.geo_region",
-          "description": "\u041a\u043e\u0434\u044b \u0433\u0435\u043e\u0440\u0435\u0433\u0438\u043e\u043d\u043e\u0432\n\u0421\u043c. DataHub \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a garpun_main.geo_region"
+          "title": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region",
+          "description": "Коды георегионов\nСм. DataHub справочник garpun_main.geo_region"
         },
         "engineSettings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v2EngineSettings"
+            "$ref": "#/definitions/EngineSettings"
           },
-          "title": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0434\u043b\u044f \u0432\u043d\u0435\u0448\u043d\u0438\u0445 \u0441\u0438\u0441\u0442\u0435\u043c",
-          "description": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0434\u043b\u044f \u0432\u043d\u0435\u0448\u043d\u0438\u0445 \u0441\u0438\u0441\u0442\u0435\u043c"
+          "title": "Настройки для внешних систем",
+          "description": "Настройки для внешних систем"
         },
         "updateSchedule": {
           "type": "string",
-          "title": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439\n\u0412 \u0432\u0438\u0434\u0435 \u0441\u0442\u0440\u043e\u043a\u0438 (daily, weekly, never, unknown)",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0439\n\u0412 \u0432\u0438\u0434\u0435 \u0441\u0442\u0440\u043e\u043a\u0438 (daily, weekly, never, unknown)"
+          "title": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)",
+          "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)"
         }
       },
       "required": []
     },
-    "v2AlgorithmStartRequest": {
+    "AlgorithmStartRequest": {
       "type": "object",
       "properties": {
         "projectId": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430). \u0412\u043a\u043b\u044e\u0447\u0435\u043d \u0432 url \u0437\u0430\u043f\u0440\u043e\u0441\u0430",
-          "description": "ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430). \u0412\u043a\u043b\u044e\u0447\u0435\u043d \u0432 url \u0437\u0430\u043f\u0440\u043e\u0441\u0430"
+          "title": "Обязательно. ID проекта (клиента). Включен в url запроса",
+          "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Идентификатор алгоритма",
+          "description": "Идентификатор алгоритма"
         }
       },
       "required": [
-        "project_id"
+        "projectId"
       ]
     },
-    "v2AlgorithmStartResponse": {
+    "AlgorithmStartResponse": {
       "type": "object",
       "properties": {
         "taskId": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
           "title": "Algorithm TaskStageId",
           "description": "Algorithm TaskStageId"
         },
         "algorithmId": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430"
+          "title": "Идентификатор алгоритма",
+          "description": "Идентификатор алгоритма"
         },
         "dateTarget": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u0414\u0430\u0442\u0430 \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 YYYY-MM-DD hh:mm:ss\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440: 2020-10-21 09:00:00",
-          "description": "\u0414\u0430\u0442\u0430 \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 YYYY-MM-DD hh:mm:ss\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440: 2020-10-21 09:00:00"
+          "title": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00",
+          "description": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00"
         }
       },
       "required": []
     },
-    "v2CreateProjectRequest": {
+    "CreateProjectRequest": {
       "type": "object",
       "properties": {
         "name": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)",
-          "description": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)"
+          "title": "Обязательно. Название проекта (клиента)",
+          "description": "Название проекта (клиента)"
         }
       },
       "required": [
         "name"
       ]
     },
-    "v2CreateProjectResponse": {
+    "CreateProjectResponse": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)",
-          "description": "ID \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)"
+          "title": "ID проекта (клиента)",
+          "description": "ID проекта (клиента)"
         },
         "name": {
           "type": "string",
-          "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)",
-          "description": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)"
+          "title": "Название проекта (клиента)",
+          "description": "Название проекта (клиента)"
         }
       },
       "required": []
     },
-    "v2EngineSettings": {
+    "EngineSettings": {
       "type": "object",
       "properties": {
         "engine": {
           "type": "string",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0432\u043d\u0435\u0448\u043d\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0432\u043d\u0435\u0448\u043d\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b"
+          "title": "Обязательно. Идентификатор внешней системы\nyandex или google",
+          "description": "Идентификатор внешней системы\nyandex или google"
         },
         "externalAccountId": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
-          "title": "\u041e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e. \u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0410\u043a\u043a\u0430\u0443\u043d\u0442\u0430 \u0432\u043d\u0435\u0448\u043d\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b",
-          "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0410\u043a\u043a\u0430\u0443\u043d\u0442\u0430 \u0432\u043d\u0435\u0448\u043d\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b"
+          "title": "Обязательно. Идентификатор Аккаунта внешней системы",
+          "description": "Идентификатор Аккаунта внешней системы"
         },
         "defaultClickPrice": {
           "type": "number",
           "format": "float",
-          "title": "\u0421\u0442\u0430\u0432\u043a\u0430 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e",
-          "description": "\u0421\u0442\u0430\u0432\u043a\u0430 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e"
+          "title": "Ставка по умолчанию",
+          "description": "Ставка по умолчанию"
         },
         "minusKeywords": {
           "type": "string",
-          "title": "\u0421\u043f\u0438\u0441\u043e\u043a \u043c\u0438\u043d\u0443\u0441-\u0444\u0440\u0430\u0437 \u0447\u0435\u0440\u0435\u0437 \u0437\u0430\u043f\u044f\u0442\u0443\u044e",
-          "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043c\u0438\u043d\u0443\u0441-\u0444\u0440\u0430\u0437 \u0447\u0435\u0440\u0435\u0437 \u0437\u0430\u043f\u044f\u0442\u0443\u044e"
+          "title": "Список минус-фраз через запятую",
+          "description": "Список минус-фраз через запятую"
         },
         "campaignType": {
           "type": "string",
-          "title": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f Google AdWords\nsearchNetwork - \u0422\u043e\u043b\u044c\u043a\u043e \u043f\u043e\u0438\u0441\u043a\u043e\u0432\u0430\u044f \u0441\u0435\u0442\u044c\nsearchNetworkWithDisplaySelect - \u041f\u043e\u0438\u0441\u043a\u043e\u0432\u0430\u044f \u0441\u0435\u0442\u044c \u0438 \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u043d\u043e-\u043c\u0435\u0434\u0438\u0439\u043d\u0430\u044f \u0441\u0435\u0442\u044c",
-          "description": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f Google AdWords\nsearchNetwork - \u0422\u043e\u043b\u044c\u043a\u043e \u043f\u043e\u0438\u0441\u043a\u043e\u0432\u0430\u044f \u0441\u0435\u0442\u044c\nsearchNetworkWithDisplaySelect - \u041f\u043e\u0438\u0441\u043a\u043e\u0432\u0430\u044f \u0441\u0435\u0442\u044c \u0438 \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u043d\u043e-\u043c\u0435\u0434\u0438\u0439\u043d\u0430\u044f \u0441\u0435\u0442\u044c"
+          "title": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть",
+          "description": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть"
         },
         "campaignBidType": {
           "type": "string",
-          "title": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0414\u0438\u0440\u0435\u043a\u0442\nall - \u0412\u0441\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438\nsearch - \u0422\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u043f\u043e\u0438\u0441\u043a\u0435\nnetwork - \u0422\u043e\u043b\u044c\u043a\u043e \u0432 \u0441\u0435\u0442\u044f\u0445",
-          "description": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0414\u0438\u0440\u0435\u043a\u0442\nall - \u0412\u0441\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438\nsearch - \u0422\u043e\u043b\u044c\u043a\u043e \u043d\u0430 \u043f\u043e\u0438\u0441\u043a\u0435\nnetwork - \u0422\u043e\u043b\u044c\u043a\u043e \u0432 \u0441\u0435\u0442\u044f\u0445"
+          "title": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях",
+          "description": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях"
         },
         "additionalYandexMetricCounters": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0414\u0438\u0440\u0435\u043a\u0442. \u0418\u043d\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u044b \u0441\u0447\u0435\u0442\u0447\u0438\u043a\u043e\u0432 \u042f\u043d\u0434\u0435\u043a\u0441 \u041c\u0435\u0442\u0440\u0438\u043a\u0438",
-          "description": "\u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0414\u0438\u0440\u0435\u043a\u0442. \u0418\u043d\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u044b \u0441\u0447\u0435\u0442\u0447\u0438\u043a\u043e\u0432 \u042f\u043d\u0434\u0435\u043a\u0441 \u041c\u0435\u0442\u0440\u0438\u043a\u0438"
+          "title": "Только для Яндекс Директ. Индентификаторы счетчиков Яндекс Метрики",
+          "description": "Только для Яндекс Директ. Индентификаторы счетчиков Яндекс Метрики"
         },
         "networkSettings": {
-          "$ref": "#/definitions/v2NetworkSettingsParams",
-          "title": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0432 \u0441\u0435\u0442\u044f\u0445. \u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0434\u0438\u0440\u0435\u043a\u0442 \u0438 \u0435\u0441\u043b\u0438 campaignBidType = all",
-          "description": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0432 \u0441\u0435\u0442\u044f\u0445. \u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u042f\u043d\u0434\u0435\u043a\u0441 \u0434\u0438\u0440\u0435\u043a\u0442 \u0438 \u0435\u0441\u043b\u0438 campaignBidType = all"
+          "$ref": "#/definitions/NetworkSettingsParams",
+          "title": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all",
+          "description": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all"
         }
       },
       "required": [
         "engine",
-        "external_account_id"
+        "externalAccountId"
       ]
     },
-    "v2NetworkSettingsParams": {
+    "NetworkSettingsParams": {
       "type": "object",
       "properties": {
         "useBlock": {
           "type": "string",
-          "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0431\u043b\u043e\u043a\u0430:\nalways - \u0412\u0441\u0435\u0433\u0434\u0430\nonlyNewCampaign - \u0422\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0438 \u0420\u041a\nnever - \u041d\u0438\u043a\u043e\u0433\u0434\u0430",
-          "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0431\u043b\u043e\u043a\u0430:\nalways - \u0412\u0441\u0435\u0433\u0434\u0430\nonlyNewCampaign - \u0422\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u0438 \u0420\u041a\nnever - \u041d\u0438\u043a\u043e\u0433\u0434\u0430"
+          "title": "Использовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда",
+          "description": "Использовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда"
         },
         "enableParams": {
           "type": "boolean",
           "format": "boolean",
-          "title": "\u0424\u043b\u0430\u0433 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430\u0441\u0442\u0440\u043e\u0435\u043a \u043d\u0430 \u0442\u0435\u043c\u0430\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0430\u0445",
-          "description": "\u0424\u043b\u0430\u0433 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430\u0441\u0442\u0440\u043e\u0435\u043a \u043d\u0430 \u0442\u0435\u043c\u0430\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0430\u0445"
+          "title": "Флаг использования настроек на темаических площадках",
+          "description": "Флаг использования настроек на темаических площадках"
         },
         "limitPercent": {
           "type": "integer",
           "format": "int32",
-          "description": "\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u044b\u0439 \u043f\u0440\u043e\u0446\u0435\u043d\u0442 \u0431\u044e\u0434\u0436\u0435\u0442\u0430, \u0440\u0430\u0441\u0445\u043e\u0434\u0443\u0435\u043c\u044b\u0439 \u043d\u0430 \u043f\u043e\u043a\u0430\u0437\u044b \u0432 \u0441\u0435\u0442\u044f\u0445.\n\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043a\u0440\u0430\u0442\u043d\u043e \u0434\u0435\u0441\u044f\u0442\u0438: 10, 20, ..., 100. \u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u2014 100."
+          "description": "Максимальный процент бюджета, расходуемый на показы в сетях.\nЗначение кратно десяти: 10, 20, ..., 100. Значение по умолчанию — 100."
         },
         "bidPercent": {
           "type": "integer",
           "format": "int32",
-          "description": "\u041e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0432\u043a\u0438 \u0432 \u0441\u0435\u0442\u044f\u0445. \u0417\u0430\u0434\u0430\u0435\u0442\u0441\u044f \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445 \u043e\u0442 \u0441\u0442\u0430\u0432\u043a\u0438 \u043d\u0430 \u043f\u043e\u0438\u0441\u043a\u0435.\n\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043a\u0440\u0430\u0442\u043d\u043e \u0434\u0435\u0441\u044f\u0442\u0438: 10, 20, ..., 100.\n\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 100 \u0434\u0435\u043b\u0430\u0435\u0442 \u0441\u0442\u0430\u0432\u043a\u0443 \u0432 \u0441\u0435\u0442\u044f\u0445 \u0440\u0430\u0432\u043d\u043e\u0439 \u0446\u0435\u043d\u0435 \u043d\u0430 \u043f\u043e\u0438\u0441\u043a\u0435.\n\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u2014 100."
+          "description": "Ограничение ставки в сетях. Задается в процентах от ставки на поиске.\nЗначение кратно десяти: 10, 20, ..., 100.\nЗначение 100 делает ставку в сетях равной цене на поиске.\nЗначение по умолчанию — 100."
         },
         "enableBehavioralTargeting": {
           "type": "boolean",
           "format": "boolean",
-          "title": "\u041d\u0435 \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0435\u043d\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439",
-          "description": "\u041d\u0435 \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u0442\u044c \u043f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0435\u043d\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439"
+          "title": "Не учитывать предпочтения пользователей",
+          "description": "Не учитывать предпочтения пользователей"
         }
       },
       "required": []
     }
   },
-  "host": "rwonec.apis.devision.io",
   "tags": [
     {
       "name": "Algorithm",
-      "description": "\u0413\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f \u0440\u0435\u043a\u043b\u0430\u043c\u043d\u044b\u0445 \u043a\u0430\u043c\u043f\u0430\u043d\u0438\u0439"
+      "description": "Генерация рекламных кампаний"
     },
     {
       "name": "Project",
-      "description": "\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 (\u043a\u043b\u0438\u0435\u043d\u0442\u0430)"
+      "description": "Создание проекта (клиента)"
     }
   ]
 }

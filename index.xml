@@ -133,7 +133,8 @@ import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;qu
       <pubDate>Tue, 24 Apr 2018 18:36:24 +0200</pubDate>
       
       <guid>https://cloud.garpun.com/api_accountmanagement/api/v1beta2/</guid>
-      <description>    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v1beta2_accountmanagement.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
+      <description>Базовый URL: https://accountmanagement-api.garpun.com
+    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v1beta2_accountmanagement.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
     </item>
     
     <item>
@@ -142,7 +143,8 @@ import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;qu
       <pubDate>Tue, 24 Apr 2018 18:36:24 +0200</pubDate>
       
       <guid>https://cloud.garpun.com/api_generator/api/v2/</guid>
-      <description>    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v2_generator.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
+      <description>Базовый URL: https://amp.garpun.com/api
+    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v2_generator.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
     </item>
     
     <item>
@@ -152,14 +154,9 @@ import os import json DATA_DIR = os.path.join(os.path.dirname(__file__), &amp;qu
       
       <guid>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</guid>
       <description>Entity: garpun_main.generator_tasks_report
-Description: generator_tasks_report
-Kind: REPORT
-   Name Description Additional     target_time Дата ожидаемого начала задачи Type: DATETIME
-Semantic role: DIMENSION   task_id Task id Type: LONG
-Semantic role: DIMENSION   stop_time Дата завершения задачи Type: DATETIME
-Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG
-Semantic role: DIMENSION   engine Система Type: TEXT
-Semantic role: DIMENSION   status Статус задачи Type: TEXT</description>
+Description: generator_tasks_report. У алгоритма есть 3 стадии:
+ Импорт - когда идет создание/обнволение ВРК и всех рекламных объектов на оснвоании фида Партиционирование - создание задач дляя загрузки РК и формирование РК в соот с лимитами внешних систем. Синхронизация - когда идет создания во внешней системы РК.  Если соблюдать лимиты по шаблонам объявлений, то проблем в генерации нет - ошибок импорта по объявлениям просто не будет.
+Если используются ключевые слова, настроенные через Garpun, то в любом случае будет сгенерирован ключ - как условие показа для объявления.</description>
     </item>
     
     <item>
@@ -168,7 +165,8 @@ Semantic role: DIMENSION   status Статус задачи Type: TEXT</descript
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/api/v1/</guid>
-      <description>    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v1_datahub.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: false, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
+      <description>Базовый URL: https://datahub-api.garpun.com
+    // .swagger-ui .info hgroup.main window.onload = function () { // Build a system const ui = SwaggerUIBundle({ url: &#34;../v1_datahub.swagger.json&#34;, // https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md dom_id: &#39;#swagger-ui&#39;, deepLinking: true, displayOperationId: true, defaultModelsExpandDepth: 0, defaultModelExpandDepth: 100, defaultModelRendering: &#34;model&#34;, supportedSubmitMethods: [], presets: [ SwaggerUIBundle.presets.apis, // SwaggerUIStandalonePreset ], plugins: [ SwaggerUIBundle.plugins.DownloadUrl ], layout: &#34;BaseLayout&#34;, }) window.ui = ui }  </description>
     </item>
     
     <item>
