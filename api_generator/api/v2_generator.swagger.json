@@ -434,7 +434,9 @@
           "description": "Не учитывать предпочтения пользователей"
         }
       },
-      "required": []
+      "required": [
+        "useBlock"
+      ]
     }
   },
   "tags": [
