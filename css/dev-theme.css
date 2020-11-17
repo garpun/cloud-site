@@ -235,3 +235,27 @@ body {
 .hljs-subst {
     /*color: red;*/
 }
+
+.swagger-ui section.models {
+    display: none!important;
+}
+
+.swagger-ui .model {
+    font-family: 'Open Sans', sans-serif!important;
+}
+
+/*.table-container [data-param-in="path"]{*/
+/*    display: none!important;*/
+/*}*/
+
+.swagger-ui pre {
+    line-height: 2;
+}
+
+.table-container .body-param__example {
+    background: #333!important;
+}
+
+.swagger-ui .code, .swagger-ui code {
+    color: #e6e6e6;
+}
