@@ -272,3 +272,7 @@ body {
     color: #000 !important;
     background: #ececec !important;
 }
+
+.swagger-ui .opblock-tag small {
+    color: #151619;
+}
