@@ -162,28 +162,28 @@
         "projectId": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "@required ID проекта (клиента). Включен в url запроса",
           "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Идентификатор алгоритма передается только при редактировании алгоритма",
           "description": "Идентификатор алгоритма передается только при редактировании алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр",
           "description": "Тип алгоритма.\nУточните у вашего интеграционного менеджера что вам надо передевать в этот параметр"
         },
         "name": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required Название алгоритма",
           "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required Ссылка на источник данных",
           "description": "Ссылка на источник данных"
         },
         "geo": {
@@ -203,9 +203,9 @@
           "description": "Настройки для внешних систем"
         },
         "updateSchedule": {
-          "type": "object",
-          "title": "xxxx",
-          "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown) или точного расписания:\nОбъект, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться  в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}"
+          "type": "string",
+          "title": "Mixed type",
+          "description": "Идентификатор расписания обновлений\nМожно передавать в двух вариантах:\n- в виде строки (daily, weekly, never, unknown):\n- в виде объекта, ключами которого являются часы обновления алгоритма, значениями - дни недели, в которые в эти часы будет запущено обновление. (0 - воскресение, 1- понедельник и т.д. до 6 - суббота)\nНапример, если передать структуру, показанную ниже, алгоритм будет обновляться в 00-00 по понедельниками, средам и пятницам, и в 13-00 по воскресениям, средам и субботам.\n```\n{\n   \"0\": [1, 3, 5],\n   \"13\": [0, 3, 6]\n}\n```\nВажно! Если вы будете передавать объект, то при его сериализации в json не помещайте его в строку. Пример:\n```\n{\n   ...,\n   \"sourceUrl\": \"URL\",\n   \"geo\": [ \"RU-MOW\" ],\n   \"updateSchedule\": { /* обратите внимание, что объект передается не строкой */\n     \"0\": [1, 3, 5],\n     \"13\": [0, 3, 6]\n   },\n   ...\n}\n```"
         },
         "campaignsNames": {
           "type": "array",
@@ -231,22 +231,22 @@
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Идентификатор алгоритма",
           "description": "Идентификатор алгоритма"
         },
         "type": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Тип алгоритма",
           "description": "Тип алгоритма"
         },
         "name": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Название алгоритма",
           "description": "Название алгоритма"
         },
         "sourceUrl": {
           "type": "string",
-          "title": "xxxx",
+          "title": "ВНИМАНИЕ! В ответе придет sourceURL",
           "description": "ВНИМАНИЕ! В ответе придет sourceURL"
         },
         "geo": {
@@ -267,7 +267,7 @@
         },
         "updateSchedule": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)",
           "description": "Идентификатор расписания обновлений\nВ виде строки (daily, weekly, never, unknown)"
         }
       },
@@ -279,13 +279,13 @@
         "projectId": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "@required ID проекта (клиента). Включен в url запроса",
           "description": "ID проекта (клиента). Включен в url запроса"
         },
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Идентификатор алгоритма",
           "description": "Идентификатор алгоритма"
         }
       },
@@ -299,19 +299,19 @@
         "taskId": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Algorithm TaskStageId\nПолучить список можно через справочник [garpun_main.generator_tasks_report](/api_datahub/dicts/garpun_main__generator_tasks_report/)",
           "description": "Algorithm TaskStageId\nПолучить список можно через справочник [garpun_main.generator_tasks_report](/api_datahub/dicts/garpun_main__generator_tasks_report/)"
         },
         "algorithmId": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Идентификатор алгоритма",
           "description": "Идентификатор алгоритма"
         },
         "dateTarget": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00",
           "description": "Дата в формате YYYY-MM-DD hh:mm:ss\nНапример: 2020-10-21 09:00:00"
         }
       },
@@ -322,7 +322,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required Название проекта (клиента)",
           "description": "Название проекта (клиента)"
         }
       },
@@ -336,12 +336,12 @@
         "id": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "ID проекта (клиента)",
           "description": "ID проекта (клиента)"
         },
         "name": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Название проекта (клиента)",
           "description": "Название проекта (клиента)"
         }
       },
@@ -352,34 +352,34 @@
       "properties": {
         "engine": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required Идентификатор внешней системы\nСм. DataHub справочник [adplatform.engine](/api_datahub/dicts/adplatform__engine/)\nПоддерживаются значения: yandex или google",
           "description": "Идентификатор внешней системы\nСм. DataHub справочник [adplatform.engine](/api_datahub/dicts/adplatform__engine/)\nПоддерживаются значения: yandex или google"
         },
         "externalAccountId": {
           "type": "integer",
           "format": "int64",
-          "title": "xxxx",
+          "title": "@required Идентификатор Аккаунта внешней системы",
           "description": "Идентификатор Аккаунта внешней системы"
         },
         "defaultClickPrice": {
           "type": "number",
           "format": "float",
-          "title": "xxxx",
+          "title": "Ставка по умолчанию",
           "description": "Ставка по умолчанию"
         },
         "minusKeywords": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Список минус-фраз через запятую",
           "description": "Список минус-фраз через запятую"
         },
         "campaignType": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть",
           "description": "Только для Google AdWords\nsearchNetwork - Только поисковая сеть\nsearchNetworkWithDisplaySelect - Поисковая сеть и оптимизированная контекстно-медийная сеть"
         },
         "campaignBidType": {
           "type": "string",
-          "title": "xxxx",
+          "title": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях",
           "description": "Только для Яндекс Директ\nall - Все площадки\nsearch - Только на поиске\nnetwork - Только в сетях"
         },
         "additionalYandexMetricCounters": {
@@ -392,7 +392,7 @@
         },
         "networkSettings": {
           "$ref": "#/definitions/NetworkSettingsParams",
-          "title": "xxxx",
+          "title": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all",
           "description": "Настройки в сетях. Только для Яндекс директ и если campaignBidType = all"
         }
       },
@@ -406,31 +406,29 @@
       "properties": {
         "useBlock": {
           "type": "string",
-          "title": "xxxx",
+          "title": "@required\nИспользовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда",
           "description": "Использовать настройки блока:\nalways - Всегда\nonlyNewCampaign - Только при создании РК\nnever - Никогда"
         },
         "enableParams": {
           "type": "boolean",
           "format": "boolean",
-          "title": "xxxx",
+          "title": "Флаг использования настроек на темаических площадках",
           "description": "Флаг использования настроек на темаических площадках"
         },
         "limitPercent": {
           "type": "integer",
           "format": "int32",
-          "description": null,
-          "title": "xxxx"
+          "description": null
         },
         "bidPercent": {
           "type": "integer",
           "format": "int32",
-          "description": null,
-          "title": "xxxx"
+          "description": null
         },
         "enableBehavioralTargeting": {
           "type": "boolean",
           "format": "boolean",
-          "title": "xxxx",
+          "title": "Не учитывать предпочтения пользователей",
           "description": "Не учитывать предпочтения пользователей"
         }
       },

@@ -267,3 +267,8 @@ body {
 .swagger-ui .markdown p, .swagger-ui .markdown pre, .swagger-ui .renderedMarkdown p, .swagger-ui .renderedMarkdown pre {
     margin: 0.3em auto !important;
 }
+
+.swagger-ui .markdown code, .swagger-ui .renderedMarkdown code {
+    color: #000 !important;
+    background: #ececec !important;
+}
