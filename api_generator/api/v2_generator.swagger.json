@@ -38,7 +38,7 @@
     "/v2/projects/{project_id}/algorithms": {
       "post": {
         "summary": "Добавить алгоритм",
-        "description": "Создает алгоритм в проекте (клиенте), но не запускает его.\nДля запуска используется метод Start",
+        "description": "Создает алгоритм в проекте (клиенте), но не запускает его.\nДля запуска используется метод Start\n```\n{\n   \"type\": \"{УТОЧНИТЬ_У_ВАШЕГО_МЕНЕДЖЕРА}\",\n   \"name\": \"My best algorithm\",\n   \"sourceUrl\": \"https://example.com/my.xml\",\n   \"geo\": [\n       \"RU-MOW\"\n   ],\n   \"engineSettings\": [\n       {\n           \"engine\": \"yandex\",\n           \"externalAccountId\": 7777,\n           \"defaultClickPrice\": 1,\n       },\n       {\n           \"engine\": \"google\",\n           \"externalAccountId\": 99999,\n           \"defaultClickPrice\": 1,\n       }\n   ],\n   \"updateSchedule\": {\n       \"0\": [1, 3, 5],\n       \"13\": [0, 3, 6]\n   }\n}\n```",
         "operationId": "Create",
         "responses": {
           "200": {
@@ -115,7 +115,7 @@
     "/v2/projects/{project_id}/algorithms/{id}/start": {
       "post": {
         "summary": "Запустить генерацию рекламы по алгоритму",
-        "description": "Ставит задачу на запуск генерации по алгоритму, в ответе id задачи",
+        "description": "Ставит задачу на запуск генерации по алгоритму в очередь на ближайшее время\nЗадача ставится только если по алгоритму нет ожидающих или активных задач",
         "operationId": "Start",
         "responses": {
           "200": {
@@ -358,8 +358,8 @@
         "externalAccountId": {
           "type": "integer",
           "format": "int64",
-          "title": "@required Идентификатор Аккаунта внешней системы",
-          "description": "Идентификатор Аккаунта внешней системы"
+          "title": "@required Идентификатор аккаунта внешней системы\nПередается поле id из справочника [adplatform.account](/api_datahub/dicts/adplatform__account/)",
+          "description": "Идентификатор аккаунта внешней системы\nПередается поле id из справочника [adplatform.account](/api_datahub/dicts/adplatform__account/)"
         },
         "defaultClickPrice": {
           "type": "number",
