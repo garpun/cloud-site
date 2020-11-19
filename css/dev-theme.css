@@ -269,8 +269,10 @@ body {
 }
 
 .swagger-ui .markdown code, .swagger-ui .renderedMarkdown code {
-    color: #000 !important;
+    color: #313131 !important;
     background: #ececec !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
 }
 
 .swagger-ui .opblock-tag small {
