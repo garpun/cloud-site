@@ -2,11 +2,45 @@
   "swagger": "2.0",
   "host": "datahub-api.garpun.com",
   "basePath": "/v1",
-  "schemes": [
-    "https"
-  ],
   "paths": {
-    "/feeds/feed_data/{feedKey}": {
+    "/v1/metaql/query": {
+      "post": {
+        "operationId": "metaql_query",
+        "tags": [
+          "METAQL"
+        ],
+        "summary": "Получение данных SQL-like запросами",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json-newline-values"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Получение данных справочников или отчетов",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MetaqlQuery"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid feed settings"
+          },
+          "404": {
+            "description": "Feed not found"
+          }
+        }
+      }
+  },
+    "/v1/feeds/feed_data/{feedKey}": {
       "post": {
         "operationId": "get_feed_data",
         "tags": [
@@ -77,7 +111,7 @@
         }
       }
     },
-    "/feeds/feed_schema/{feedKey}": {
+    "/v1/feeds/feed_schema/{feedKey}": {
       "post": {
         "operationId": "get_feed_schema",
         "tags": [
@@ -103,43 +137,6 @@
         "responses": {
           "200": {
             "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid feed settings"
-          },
-          "404": {
-            "description": "Feed not found"
-          }
-        }
-      }
-    },
-    "/metaql/query": {
-      "post": {
-        "operationId": "metaql_query",
-        "tags": [
-          "METAQL"
-        ],
-        "summary": "Получение данных SQL-like запросама",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json-newline-values"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Получение данных справочников или отчетов",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/MetaqlQuery"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation"
           },
           "400": {
             "description": "Invalid feed settings"

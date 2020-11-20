@@ -16,15 +16,27 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__algorithm/</guid>
-      <description>Entity: adplatform.algorithm
-Description: Алгоритм. Объект сервиса Garpun Generator. Является группой настроек генерации рекламных кампаний
-Kind: DICT
+      <description>Объект сервиса Garpun Generator. Является группой настроек генерации рекламных кампаний
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название алгоритма Type: TEXT
 Semantic role: DIMENSION   client_id Клиент Type: LONG
 Semantic role: DIMENSION   state Состояние алгоритма.
 active, draft. Type: TEXT
-Semantic role: DIMENSION   has_any_timetable Имеет настроенное расписание Type: BOOLEAN</description>
+Semantic role: DIMENSION   has_any_timetable Имеет настроенное расписание Type: BOOLEAN
+Semantic role: DIMENSION   is_archived Архивный Type: BOOLEAN</description>
+    </item>
+    
+    <item>
+      <title>Виртуальная группа объявлений (garpun_storage.virtual_ad_group)</title>
+      <link>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group/</guid>
+      <description>Создается Garpun Generator. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - ad_group
+Пример запроса:
+SELECT id, virtual_campaign_id, name, creation_time, modification_time FROM garpun_storage.virtual_ad_group    Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Название виртуальной группы объявлений Type: TEXT
+Semantic role: DIMENSION   virtual_campaign_id Виртуальная кампания Type: LONG</description>
     </item>
     
     <item>
@@ -33,14 +45,13 @@ Semantic role: DIMENSION   has_any_timetable Имеет настроенное �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__virtual_campaign/</guid>
-      <description>Entity: adplatform.virtual_campaign
-Description: Виртуальная кампания. Создается Garpun Generator или сервисом управления ставками. Является обобщающей сущностью нам реальными рекламными кампаниями в рекламных системах
-Kind: DICT
+      <description>Создается Garpun Generator или сервисом управления ставками. Является обобщающей сущностью нам реальными рекламными кампаниями в рекламных системах
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название Type: TEXT
 Semantic role: DIMENSION   modification_time Обновлена Type: DATETIME
 Semantic role: DIMENSION   account_id Внешний аккаунт Type: LONG
-Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG</description>
+Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG
+Semantic role: DIMENSION   engine Система Type: TEXT</description>
     </item>
     
     <item>
@@ -49,10 +60,7 @@ Semantic role: DIMENSION   algorithm_id Алгоритм Type: LONG</description
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__account/</guid>
-      <description>Entity: adplatform.account
-Description: Внешний аккаунт
-Kind: DICT
-   Name Description Additional     id ID Type: LONG
+      <description>Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Полное название аккаунта.
 Конкатенируется по внутренним правилам из полей login и title Type: TEXT
 Semantic role: DIMENSION   engine Система Type: TEXT
@@ -67,13 +75,24 @@ Semantic role: DIMENSION   title Название аккаунта Type: TEXT</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</guid>
-      <description>Entity: garpun_main.geo_region
-Description: Георегионы. Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator
-Kind: DICT
+      <description>Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator
    Name Description Additional     garpun_code Код по Garpun. Используется как первичный ключ Type: TEXT
 Semantic role: DIMENSION   name Название региона Type: TEXT
 Semantic role: DIMENSION   google_code Регион по версии Google Ads. https://developers.google.com/adwords/api/docs/appendix/geotargeting Type: TEXT
-Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct.</description>
+Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct. https://yandex.</description>
+    </item>
+    
+    <item>
+      <title>Группа объявлений (garpun_storage.ad_group)</title>
+      <link>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/</guid>
+      <description>Создается Garpun Generator в момент Партицирования рекламных объектов. Загружается в рекламную систему. Содержит в себе объявления и ключевые фразы.
+Пример запроса:
+SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time FROM garpun_storage.ad_group WHERE modification_time &amp;gt; &#39;2020-10-02&#39;    Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   virtual_ad_group_id Виртуальная группа объявлений Type: LONG
+Semantic role: DIMENSION   remote_id Внешний id группы объявлений. Заполняется после загрузки группы объявлений в рекламную систему Type: LONG</description>
     </item>
     
     <item>
@@ -82,14 +101,13 @@ Semantic role: DIMENSION   yandex_code Регион по версии Yandex Dir
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/</guid>
-      <description>Entity: adplatform.campaign
-Description: Кампания. Рекламная кампания, в которой непосредственно находится во внешней рекламной системе
-Kind: DICT
+      <description>Рекламная кампания, в которой непосредственно находится во внешней рекламной системе
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название Type: TEXT
 Semantic role: DIMENSION   virtual_campaign_id Виртуальная кампания Type: LONG
 Semantic role: DIMENSION   product_id Продукт Type: LONG
-Semantic role: DIMENSION   type Тип из внешней системы Type: TEXT</description>
+Semantic role: DIMENSION   type Тип из внешней системы Type: TEXT
+Semantic role: DIMENSION   url_example URL одного из объявлений кампании Type: TEXT</description>
     </item>
     
     <item>
@@ -98,10 +116,7 @@ Semantic role: DIMENSION   type Тип из внешней системы Type: 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__client_category/</guid>
-      <description>Entity: adplatform.client_category
-Description: Категория клиента
-Kind: DICT
-   Name Description Additional     id ID Type: TEXT
+      <description>   Name Description Additional     id ID Type: TEXT
 Semantic role: DIMENSION   name Название категории Type: TEXT
 Semantic role: DIMENSION   is_active Активная Type: BOOLEAN
 Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
@@ -115,9 +130,7 @@ Semantic role: DIMENSION    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__client/</guid>
-      <description>Entity: adplatform.client
-Description: Клиент. В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании
-Kind: DICT
+      <description>В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название клиента Type: TEXT
 Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
@@ -132,9 +145,7 @@ Semantic role: DIMENSION   is_archived Архивный Type: BOOLEAN</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/meta__ex_access/</guid>
-      <description>Entity: meta.ex_access
-Description: Подключение. Подключения содержат токены доступа в внешним системам. Например к Yandex.Direct и пр.
-Kind: DICT
+      <description>Подключения содержат токены доступа в внешним системам. Например к Yandex.Direct и пр.
    Name Description Additional     id ID Type: TEXT
 Semantic role: DIMENSION   name Название Type: TEXT
 Semantic role: DIMENSION   status_check_time Последня проверка Type: DATETIME
@@ -149,14 +160,13 @@ Semantic role: DIMENSION   ex_system_id Система подключения Ty
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__product/</guid>
-      <description>Entity: adplatform.product
-Description: Продукт. Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное
-Kind: DICT
+      <description>Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название Type: TEXT
 Semantic role: DIMENSION   is_active Активный.
 Выводить в списках Type: BOOLEAN
-Semantic role: DIMENSION   client_id Клиент Type: LONG</description>
+Semantic role: DIMENSION   client_id Клиент Type: LONG
+Semantic role: DIMENSION   utm UTM.</description>
     </item>
     
     <item>
@@ -165,9 +175,7 @@ Semantic role: DIMENSION   client_id Клиент Type: LONG</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__engine/</guid>
-      <description>Entity: adplatform.engine
-Description: Система. Используется в рекламной статистике. От ex_system отличается тем, что может агрегировать статистику из разных ex_system. Например facebook и facebook_leads
-Kind: DICT
+      <description>Используется в рекламной статистике. От ex_system отличается тем, что может агрегировать статистику из разных ex_system. Например facebook и facebook_leads
    Name Description Additional     engine ID Type: TEXT
 Semantic role: DIMENSION   name Название системы Type: TEXT
 Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
@@ -181,14 +189,13 @@ Semantic role: DIMENSION    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/meta__ex_system/</guid>
-      <description>Entity: meta.ex_system
-Description: Система подключения. Системы, для которых хранятся токены для доступа в API
-Kind: DICT
+      <description>Системы, для которых хранятся токены для доступа в API
    Name Description Additional     id ID Type: TEXT
 Semantic role: DIMENSION   name Название внешней системы Type: TEXT
 Semantic role: DIMENSION   is_allowed Может ли использоваться Type: BOOLEAN
 Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME
-Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME</description>
+Semantic role: DIMENSION   modification_time Дата изменения Type: DATETIME
+Semantic role: DIMENSION    </description>
     </item>
     
   </channel>

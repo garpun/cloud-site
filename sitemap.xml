@@ -110,10 +110,6 @@
   </url>
   
   <url>
-    <loc>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</loc>
-  </url>
-  
-  <url>
     <loc>https://cloud.garpun.com/tags/</loc>
   </url>
   
@@ -126,6 +122,10 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__virtual_campaign/</loc>
   </url>
   
@@ -135,6 +135,14 @@
   
   <url>
     <loc>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/</loc>
   </url>
   
   <url>

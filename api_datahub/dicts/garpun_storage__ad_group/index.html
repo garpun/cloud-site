@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Задачи по алгоритмам (garpun_main.generator_tasks_report) — Garpun Cloud</title>
+    <title>Группа объявлений (garpun_storage.ad_group) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_datahub/reports/garpun_main__generator_tasks_report/">
+  <body class="" data-url="/api_datahub/dicts/garpun_storage__ad_group/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -661,7 +661,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -784,8 +784,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/dicts/garpun_storage__ad_group/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/api_datahub/dicts/garpun_storage__ad_group/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/" class="devsite-nav-title">
                     <span>Группа объявлений (garpun_storage.ad_group)</span>
                 </a>
@@ -945,7 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/reports/" class="devsite-nav-item devsite-nav-item-main
-                        parent
+                        
                         
                         
                         ">
@@ -973,8 +973,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-item dd-item active"
-                        id="active_menu_item">
+            <li data-nav-id="/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-item dd-item "
+                        >
                 <a href="https://cloud.garpun.com/api_datahub/reports/garpun_main__generator_tasks_report/" class="devsite-nav-title">
                     <span>Задачи по алгоритмам (garpun_main.generator_tasks_report)</span>
                 </a>
@@ -1047,7 +1047,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Задачи по алгоритмам (garpun_main.generator_tasks_report)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/dicts/'>Справочники</a> > Группа объявлений (garpun_storage.ad_group)
 
 
 
@@ -1063,29 +1063,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Задачи по алгоритмам (garpun_main.generator_tasks_report)</h1>
+            <h1>Группа объявлений (garpun_storage.ad_group)</h1>
           
 
 
 
-<p>У алгоритма есть 3 стадии:</p>
-<ol>
-<li>Импорт - когда идет создание или обновление рекламных данных на основании фида</li>
-<li>Партиционирование - создание задач для загрузки РК и формирование РК в соот с лимитами внешних систем.</li>
-<li>Синхронизация - когда идет создания во внешней системы РК.</li>
-</ol>
-<p>Если соблюдать лимиты по шаблонам объявлений, то проблем в генерации нет - ошибок импорта по объявлениям просто не будет.</p>
-<p>Если используются ключевые слова, настроенные через Garpun, то в любом случае будет сгенерирован ключ - как условие показа для объявления. Поэтому часть импорта будет без ошибок, если вы соблюдаете лимиты по объявлениям и используете текущий механизм формирования ключей. Исключение проф. область которая появилась и мы ничего о ней не знаем, но на этом этапе были ошибки и мы их разбирали - потому информация об ошибка на данном этапе при разборе Вам нужна, что и сделано вы будет иметь возможнос получить инфу по не сгенерированным объектам. по данным из хеша определите что это за объявление у вас в системе.</p>
-<p>Синхронизация, в данном случае будете получать ошибки по алгоритму, в контектсе ошибки будет информация из внешней системы. по расширенной инфе можно сопоставить с рекламным объектом.</p>
-<p>Каждый апдейт происходит у нас с генерации. Мы смотрим, что нужно обновить и также если в файле клиента придут новые РК мы их сформируем. Проверим нужно ли обновить текущие рекламные кампании.
-Пример запроса:</p>
-<pre><code>SELECT
-    task_id, result, type, status, engine, algorithm_id,
-    target_time, start_time, stop_time, client_id
-FROM garpun_main.generator_tasks_report
-WHERE  target_time &gt; '2020-10-01'
-AND algorithm_id != 19126
-LIMIT 10
+<p>Создается Garpun Generator в момент Партицирования рекламных объектов. Загружается в рекламную систему. Содержит в себе объявления и ключевые фразы.</p>
+<p>Пример запроса:</p>
+<pre><code>SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time
+FROM garpun_storage.ad_group
+WHERE modification_time &gt; '2020-10-02'
 </code></pre><table>
 <thead>
 <tr>
@@ -1096,53 +1083,28 @@ LIMIT 10
 </thead>
 <tbody>
 <tr>
-<td>target_time</td>
-<td>Дата ожидаемого начала задачи</td>
+<td>id</td>
+<td>ID</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group">virtual_ad_group_id</a></td>
+<td>Виртуальная группа объявлений</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td>Внешний id группы объявлений. Заполняется после загрузки группы объявлений в рекламную систему</td>
+<td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>Добавлена</td>
 <td>Type: DATETIME<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>task_id</td>
-<td>Task id</td>
-<td>Type: LONG<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>stop_time</td>
-<td>Дата завершения задачи</td>
-<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__algorithm">algorithm_id</a></td>
-<td>Алгоритм</td>
-<td>Type: LONG<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__engine">engine</a></td>
-<td>Система</td>
-<td>Type: TEXT<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>status</td>
-<td>Статус задачи</td>
-<td>Type: TEXT<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>type</td>
-<td>Тип задачи</td>
-<td>Type: TEXT<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client">client_id</a></td>
-<td>Клиент</td>
-<td>Type: LONG<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>result</td>
-<td>Результат.<br>Информация с результатом выполнения задачи. Зависит от type и engine</td>
-<td>Type: JSON<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>start_time</td>
-<td>Дата старта задачи</td>
+<td>modification_time</td>
+<td>Обновлена</td>
 <td>Type: DATETIME<br>Semantic role: DIMENSION</td>
 </tr>
 </tbody>
