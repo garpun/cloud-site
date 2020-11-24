@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_datahub/overview/">
+  <body class="" data-url="/authenticate/overview/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -147,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/authenticate/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -175,8 +175,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/authenticate/overview/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/authenticate/overview/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/authenticate/overview/" class="devsite-nav-title">
                     <span>Обзор</span>
                 </a>
@@ -517,7 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/" class="devsite-nav-item devsite-nav-item-main
-                        parent
+                        
                         
                         
                         ">
@@ -547,8 +547,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/overview/" class="devsite-nav-item dd-item active"
-                        id="active_menu_item">
+            <li data-nav-id="/api_datahub/overview/" class="devsite-nav-item dd-item "
+                        >
                 <a href="https://cloud.garpun.com/api_datahub/overview/" class="devsite-nav-title">
                     <span>Обзор</span>
                 </a>
@@ -1063,7 +1063,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > Обзор
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/authenticate/'>Авторизация</a> > Обзор
 
 
 
@@ -1082,37 +1082,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<p>Базовый URL: <em><a href="https://datahub-api.garpun.com">https://datahub-api.garpun.com</a></em></p>
-<p>Получение списков справочников, статистических отчетов и контента настроенных потоков данных.
-Это API будет вам необходимо, если вы являетесь интеграционным партнером Garpun.</p>
-<p>API спроектировано для потоковой обработки данных и поэтому не возвращает классический JSON.
-Вместо этого, есть <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON_NEWLINE</a>, по сути это - json объекты, разделенные переносом строки так, что каждая строка данных
-оказывается на новой строке выходного потока данных.</p>
-<h2 id="пример-обращения-в-api">Пример обращения в API</h2>
-<h3 id="для-синхронизации-данных-со-своей-бд">Для синхронизации данных со своей БД</h3>
-<p>Получение данных SQL-like запросом. Используется язык запросов <a href="https://cloud.garpun.com/api_datahub/metaql/">METAQL</a>.</p>
-<p>Используйте этот метод для синхронизации данных.</p>
-<pre><code>curl --compressed -v -N -X POST -d '{&quot;query&quot;:&quot;select id, name from meta.dynamic_date_range&quot;}'\
-   -H &quot;Content-Type:application/json&quot; \
-   &quot;https://datahub-api.garpun.com/v1/metaql/query&quot;
+<h2 id="варианты-авторизации">Варианты авторизации</h2>
+<p>Для авторизации пользователей через Garpun Account в браузере используйте <a href="https://cloud.garpun.com/authenticate/oauth2">oauth2</a>.
+Обычно oauth2 используется для реализации &ldquo;Вход через Garpun&rdquo;.
+Минусы этого варианта при работе сервер-сервер в том, что при блокировке пользователя Garpun перестают работать refresh_token-ы,
+которые выпустил этот пользователь и надо опять проходить достаточно сложную процедуру получения refresh_token для другого пользователя.
+Также все логи взаимодействия с Garpun API будут записаны из под этого пользователя.</p>
+<p>Гораздо более удобный вариант для авторизации Сервер → Сервер - <a href="https://cloud.garpun.com/authenticate/service_account">использование сервисного аккаунта</a></p>
+<h2 id="передача-access_token-в-api">Передача access_token в api</h2>
+<p>Garpun выдает access_token в обмен на refresh токен, который получается при oauth2 авторизации или на jwt_assertion, который вы сможете сгенерировать с помощью ключа сервисного аккаунта.</p>
+<h3 id="используете-готовые-библиотеки-от-google">Используете готовые библиотеки от Google</h3>
+<p>Если вы используете сервисный аккаунт Garpun, то вы можете просто использовать библиотки от Google, чтобы работать с Garpun API. Примеры есть на странице про <a href="https://cloud.garpun.com/authenticate/service_account">сервисный аккаунт</a>.</p>
+<h3 id="authorization-header-предпочтительно">Authorization Header (предпочтительно)</h3>
+<p>Более безопасный вариант, так как авторизационные данные не сохраняются в логах прокси серверов, а отличае, а от передачи токена как параметр url.</p>
+<pre><code>Authorization: Bearer {access_token}
+</code></pre><h3 id="параметр-url-не-рекомендуется">Параметр URL (не рекомендуется)</h3>
+<p>Вызов url api делается с передачей GET параметра запроса <code>access_token</code>.
+Не рекомедуется, так как это гораздо менее безопсный вариант авторизации, чем передача через заголовок http запроса.</p>
+<pre><code>https://......./?access_token={access_token}
 </code></pre>
-<h3 id="для-интеграции-с-garpun-feeds">Для интеграции с Garpun Feeds</h3>
-<p>Получение данных фида</p>
-<pre><code>curl --compressed -v -N -X POST \
-   -H &quot;Content-Type:application/json&quot; \
-   &quot;https://datahub-api.garpun.com/v1/feeds/feed_data/{feed_key}?format=csv&amp;from=2020-01-01&amp;to=2020-01-10&quot;
-</code></pre>
-<p>Получение схемы фида</p>
-<pre><code>curl --compressed -v -N -X POST \
-   -H &quot;Content-Type:application/json&quot; \
-   &quot;https://datahub-api.garpun.com/v1/feeds/feed_schema/{feed_key}&quot;
-</code></pre>
-<h2 id="библиотеки">Библиотеки</h2>
-<p>Для аналитиков существует <a href="https://github.com/garpun/garpun-datahub-lib-python">python-библиотека</a></p>
-<p>А так же посмотрите другие варианты работы с API используя <a href="https://cloud.garpun.com/api_datahub/libraries/">библиотеки от Google</a></p>
-<h2 id="описание-ошибок">Описание ошибок</h2>
-<p>Ошибки обрабатываются стандартным образом - <a href="https://cloud.garpun.com/apis/errors/">подробнее про обработку ошибок</a></p>
-
 
 
 
@@ -1122,14 +1110,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mdl-cell mdl-cell--2-col">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#пример-обращения-в-api">Пример обращения в API</a>
+    <li><a href="#варианты-авторизации">Варианты авторизации</a></li>
+    <li><a href="#передача-access_token-в-api">Передача access_token в api</a>
       <ul>
-        <li><a href="#для-синхронизации-данных-со-своей-бд">Для синхронизации данных со своей БД</a></li>
-        <li><a href="#для-интеграции-с-garpun-feeds">Для интеграции с Garpun Feeds</a></li>
+        <li><a href="#используете-готовые-библиотеки-от-google">Используете готовые библиотеки от Google</a></li>
+        <li><a href="#authorization-header-предпочтительно">Authorization Header (предпочтительно)</a></li>
+        <li><a href="#параметр-url-не-рекомендуется">Параметр URL (не рекомендуется)</a></li>
       </ul>
     </li>
-    <li><a href="#библиотеки">Библиотеки</a></li>
-    <li><a href="#описание-ошибок">Описание ошибок</a></li>
   </ul>
 </nav>
 </div>
