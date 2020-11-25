@@ -19,8 +19,7 @@
       <guid>https://cloud.garpun.com/api_accountmanagement/overview/</guid>
       <description>Базовый URL: https://accountmanagement-api.garpun.com
 Высокоуровневые операции с аккаунтами внешних систем: Управление бюджетом, создание аккаунтов в Яндекс Директе, Google Ads и пр
-Пример обращения в API Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке Authorization:Bearer и запрос в формате JSON после параметра -d
-curl -i -X POST \  -H &amp;#34;Authorization:Bearer eyJ...arSQ&amp;#34; \  -H &amp;#34;Content-Type:application/json&amp;#34; \  -d &amp;#39;{ &amp;#34;client_id&amp;#34;: &amp;#34;12345&amp;#34;, &amp;#34;balance_slice&amp;#34;: &amp;#34;ENGINE&amp;#34; }&amp;#39; \  &amp;#39;https://accountmanagement-api.</description>
+Внимание! Лимит доступный для зачисления изменяется посредством системы медиапланирования. Поэтому для совершения финансовых методов BudgetOrder, вам необходимо сообщить вашему менеджеру id клиента который вы будете использовать при вызове API. Лимит увеличится после согласования медиаплана. Пример обращения в API Для того чтобы отправить запрос необходимо отправить на выбраный вами метод http сообщение содержащие токен в заголовке Authorization:Bearer и запрос в формате JSON после параметра -d</description>
     </item>
     
   </channel>
