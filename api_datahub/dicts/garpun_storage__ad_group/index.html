@@ -1092,7 +1092,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <pre><code>SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time
 FROM garpun_storage.ad_group
 WHERE modification_time &gt; '2020-10-02'
-</code></pre><p>При запросе этих данных обязательно нужно передавать <a href="https://cloud.garpun.com/api_datahub/libraries/">shardKey</a>, в котором нужно указать account_id и нужной вам <a href="api_datahub/dicts/adplatform__virtual_campaign/">Виртуальной кампании</a></p>
+</code></pre><p>При запросе этих данных обязательно нужно передавать поле <a href="https://cloud.garpun.com/api_datahub/overview/">shardKey</a>, в котором нужно указать значение account_id из нужной вам <a href="api_datahub/dicts/adplatform__virtual_campaign/">Виртуальной кампании</a></p>
 <table>
 <thead>
 <tr>

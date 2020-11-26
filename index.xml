@@ -191,7 +191,7 @@ Semantic role: DIMENSION   is_archived Архивный Type: BOOLEAN</descripti
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group/</guid>
       <description>Создается Garpun Generator. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - garpun_storage.ad_group
 Пример запроса:
-SELECT id, virtual_campaign_id, name, creation_time, modification_time FROM garpun_storage.virtual_ad_group При запросе этих данных обязательно нужно передавать shardKey, в котором нужно указать account_id и нужной вам Виртуальной кампании
+SELECT id, virtual_campaign_id, name, creation_time, modification_time FROM garpun_storage.virtual_ad_group При запросе этих данных обязательно нужно передавать поле shardKey, в котором нужно указать значение account_id из нужной вам Виртуальной кампании
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название виртуальной группы объявлений Type: TEXT</description>
     </item>
@@ -247,7 +247,7 @@ Semantic role: DIMENSION   yandex_code Регион по версии Yandex Dir
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/</guid>
       <description>Создается Garpun Generator в момент Партицирования рекламных объектов. Загружается в рекламную систему. Содержит в себе объявления и ключевые фразы.
 Пример запроса:
-SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time FROM garpun_storage.ad_group WHERE modification_time &amp;gt; &#39;2020-10-02&#39; При запросе этих данных обязательно нужно передавать shardKey, в котором нужно указать account_id и нужной вам Виртуальной кампании
+SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time FROM garpun_storage.ad_group WHERE modification_time &amp;gt; &#39;2020-10-02&#39; При запросе этих данных обязательно нужно передавать поле shardKey, в котором нужно указать значение account_id из нужной вам Виртуальной кампании
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   virtual_ad_group_id Виртуальная группа объявлений Type: LONG</description>
     </item>
