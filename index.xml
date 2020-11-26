@@ -328,7 +328,7 @@ Semantic role: DIMENSION   ex_system_id Система подключения Ty
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__product/</guid>
-      <description>Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное
+      <description>Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное. Рекламная кампания может быть привязана к продукту клиента.
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название Type: TEXT
 Semantic role: DIMENSION   is_active Активный.

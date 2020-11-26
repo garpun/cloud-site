@@ -277,7 +277,7 @@
 	"title": "Продукт (adplatform.product)",
 	"tags": [],
 	"description": "",
-	"content": "Рекламная кампания может быть привязана к продукту клиента. Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название Type: TEXT\nSemantic role: DIMENSION   is_active Активный.\nВыводить в списках Type: BOOLEAN\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   utm UTM.\nПодстрока для поиска продукта в ссылках объявлений Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
+	"content": "Продуктом может являться категория интернет-магазина или какой-то крупный сегмент, жилищный комплекс или что-то на столько же крупное. Рекламная кампания может быть привязана к продукту клиента.\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название Type: TEXT\nSemantic role: DIMENSION   is_active Активный.\nВыводить в списках Type: BOOLEAN\nSemantic role: DIMENSION   client_id Клиент Type: LONG\nSemantic role: DIMENSION   utm UTM.\nПодстрока для поиска продукта в ссылках объявлений Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION    "
 },
 {
 	"uri": "https://cloud.garpun.com/api_datahub/dicts/adplatform__engine/",
