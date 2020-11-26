@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.68.1" />
     <meta name="description" content="">
 
 
@@ -1087,11 +1087,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<p>Создается Garpun Generator. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - ad_group</p>
+<p>Создается <a href="https://cloud.garpun.com/api_generator/overview/">Garpun Generator</a>. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - <a href="https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/">garpun_storage.ad_group</a></p>
 <p>Пример запроса:</p>
 <pre><code>SELECT id, virtual_campaign_id, name, creation_time, modification_time
 FROM garpun_storage.virtual_ad_group
-</code></pre><table>
+</code></pre><p>При запросе этих данных обязательно нужно передавать <a href="https://cloud.garpun.com/api_datahub/libraries/">shardKey</a>, в котором нужно указать account_id и нужной вам <a href="api_datahub/dicts/adplatform__virtual_campaign/">Виртуальной кампании</a></p>
+<table>
 <thead>
 <tr>
 <th>Name</th>

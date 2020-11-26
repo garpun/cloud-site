@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.68.1" />
     <meta name="description" content="">
 
 
@@ -1170,7 +1170,8 @@ public class Main {
     HttpRequestFactory requestFactory = transport.createRequestFactory(httpCredsAdapter);
 
     ImmutableMap&lt;String, String&gt; queryBody = ImmutableMap.of(
-        &quot;query&quot;, &quot;select id, name from adplatform.client limit 10&quot;
+        &quot;query&quot;, &quot;select id, name from adplatform.client limit 10&quot;,
+        // &quot;shardKey: &quot;&quot; // Нужно ли вам получать shardKey и как это сделать ищите в документации к методу 
     );
 
     JsonHttpContent postContent = new JsonHttpContent(new JacksonFactory(), queryBody);

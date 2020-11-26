@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.68.1" />
     <meta name="description" content="">
 
 
@@ -1090,13 +1090,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 оказывается на новой строке выходного потока данных.</p>
 <h2 id="пример-обращения-в-api">Пример обращения в API</h2>
 <h3 id="для-синхронизации-данных-со-своей-бд">Для синхронизации данных со своей БД</h3>
-<p>Получение данных SQL-like запросом. Используется язык запросов <a href="https://cloud.garpun.com/api_datahub/metaql/">METAQL</a>.</p>
+<p>Получение данных SQL-like запросом. Используется язык запросов <a href="https://cloud.garpun.com/api_datahub/metaql/">METAQL</a>.
+Данные из этого источника могут возвращаться только в формате <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON_NEWLINE</a>.</p>
 <p>Используйте этот метод для синхронизации данных.</p>
-<pre><code>curl --compressed -v -N -X POST -d '{&quot;query&quot;:&quot;select id, name from meta.dynamic_date_range&quot;}'\
+<pre><code>curl --compressed -v -N -X POST \
+   -d '{&quot;query&quot;:&quot;select id, name from meta.dynamic_date_range&quot;}'\
+   -H &quot;Content-Type:application/json&quot; \
+   &quot;https://datahub-api.garpun.com/v1/metaql/query&quot;
+</code></pre>
+<p>Некоторые данные хранятся специальным образом и для них нужно передавать <strong>shardKey</strong>.
+В документации в конкретным данным будет указано как именно можно получить shardKey.</p>
+<pre><code>curl --compressed -v -N -X POST \
+   -d '{&quot;shardKey&quot;: &quot;42&quot;, &quot;query&quot;:&quot;SELECT id, virtual_ad_group_id, remote_id FROM garpun_storage.ad_group WHERE modification_time &lt; '2020-01-01 00:00:00'&quot;}'\
    -H &quot;Content-Type:application/json&quot; \
    &quot;https://datahub-api.garpun.com/v1/metaql/query&quot;
 </code></pre>
 <h3 id="для-интеграции-с-garpun-feeds">Для интеграции с Garpun Feeds</h3>
+<p>Формат возвращаемых данных можут настраиваться.</p>
 <p>Получение данных фида</p>
 <pre><code>curl --compressed -v -N -X POST \
    -H &quot;Content-Type:application/json&quot; \

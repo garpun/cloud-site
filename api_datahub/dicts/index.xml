@@ -32,11 +32,11 @@ Semantic role: DIMENSION   is_archived Архивный Type: BOOLEAN</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__virtual_ad_group/</guid>
-      <description>Создается Garpun Generator. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - ad_group
+      <description>Создается Garpun Generator. Не имеет remote_id так как непосредственно этот объект не загружается в рекламную систему. В рекламную систему загружается другой объект - garpun_storage.ad_group
 Пример запроса:
-SELECT id, virtual_campaign_id, name, creation_time, modification_time FROM garpun_storage.virtual_ad_group    Name Description Additional     id ID Type: LONG
-Semantic role: DIMENSION   name Название виртуальной группы объявлений Type: TEXT
-Semantic role: DIMENSION   virtual_campaign_id Виртуальная кампания Type: LONG</description>
+SELECT id, virtual_campaign_id, name, creation_time, modification_time FROM garpun_storage.virtual_ad_group При запросе этих данных обязательно нужно передавать shardKey, в котором нужно указать account_id и нужной вам Виртуальной кампании
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   name Название виртуальной группы объявлений Type: TEXT</description>
     </item>
     
     <item>
@@ -60,13 +60,13 @@ Semantic role: DIMENSION   engine Система Type: TEXT</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__account/</guid>
-      <description>Name Description Additional     id ID Type: LONG
+      <description>Аккаунты из систем Яндекс.Директ, Google Ads, Facebook, VK и пр.
+   Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Полное название аккаунта.
 Конкатенируется по внутренним правилам из полей login и title Type: TEXT
 Semantic role: DIMENSION   engine Система Type: TEXT
 Semantic role: DIMENSION   login Login.
-Внешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT
-Semantic role: DIMENSION   title Название аккаунта Type: TEXT</description>
+Внешний глобально уникальный id аккаунта. Уникализируется вместе с полейм engine Type: TEXT</description>
     </item>
     
     <item>
@@ -75,11 +75,11 @@ Semantic role: DIMENSION   title Название аккаунта Type: TEXT</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_main__geo_region/</guid>
-      <description>Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Generator
+      <description>Возвращает список регионов, зарегистрированных в Garpun. Используется в первую очередь для таргетинга в сервисе Garpun Generator
    Name Description Additional     garpun_code Код по Garpun. Используется как первичный ключ Type: TEXT
 Semantic role: DIMENSION   name Название региона Type: TEXT
 Semantic role: DIMENSION   google_code Регион по версии Google Ads. https://developers.google.com/adwords/api/docs/appendix/geotargeting Type: TEXT
-Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct. https://yandex.</description>
+Semantic role: DIMENSION   yandex_code Регион по версии Yandex Direct.</description>
     </item>
     
     <item>
@@ -90,9 +90,9 @@ Semantic role: DIMENSION   yandex_code Регион по версии Yandex Dir
       <guid>https://cloud.garpun.com/api_datahub/dicts/garpun_storage__ad_group/</guid>
       <description>Создается Garpun Generator в момент Партицирования рекламных объектов. Загружается в рекламную систему. Содержит в себе объявления и ключевые фразы.
 Пример запроса:
-SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time FROM garpun_storage.ad_group WHERE modification_time &amp;gt; &#39;2020-10-02&#39;    Name Description Additional     id ID Type: LONG
-Semantic role: DIMENSION   virtual_ad_group_id Виртуальная группа объявлений Type: LONG
-Semantic role: DIMENSION   remote_id Внешний id группы объявлений. Заполняется после загрузки группы объявлений в рекламную систему Type: LONG</description>
+SELECT id, virtual_ad_group_id, remote_id, creation_time, modification_time FROM garpun_storage.ad_group WHERE modification_time &amp;gt; &#39;2020-10-02&#39; При запросе этих данных обязательно нужно передавать shardKey, в котором нужно указать account_id и нужной вам Виртуальной кампании
+   Name Description Additional     id ID Type: LONG
+Semantic role: DIMENSION   virtual_ad_group_id Виртуальная группа объявлений Type: LONG</description>
     </item>
     
     <item>
