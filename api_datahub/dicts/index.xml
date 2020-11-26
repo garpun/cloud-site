@@ -130,7 +130,7 @@ Semantic role: DIMENSION    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cloud.garpun.com/api_datahub/dicts/adplatform__client/</guid>
-      <description>В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании
+      <description>В рамках клиентов создаются Алгоритмы, Виртуальные кампании и реальные рекламные кампании
    Name Description Additional     id ID Type: LONG
 Semantic role: DIMENSION   name Название клиента Type: TEXT
 Semantic role: DIMENSION   creation_time Дата создания Type: DATETIME

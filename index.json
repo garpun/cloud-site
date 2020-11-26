@@ -263,7 +263,7 @@
 	"title": "Клиент (adplatform.client)",
 	"tags": [],
 	"description": "",
-	"content": "В рамках клиентов создаются Алгоритмы, Виртаульные и реальные рекламные кампании\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название клиента Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION   is_enabled Активный Type: BOOLEAN\nSemantic role: DIMENSION   is_archived Архивный Type: BOOLEAN\nSemantic role: DIMENSION   category_id Категория клиента Type: LONG\nSemantic role: DIMENSION    "
+	"content": "В рамках клиентов создаются Алгоритмы, Виртуальные кампании и реальные рекламные кампании\n   Name Description Additional     id ID Type: LONG\nSemantic role: DIMENSION   name Название клиента Type: TEXT\nSemantic role: DIMENSION   creation_time Дата создания Type: DATETIME\nSemantic role: DIMENSION   modification_time Дата изменения Type: DATETIME\nSemantic role: DIMENSION   is_enabled Активный Type: BOOLEAN\nSemantic role: DIMENSION   is_archived Архивный Type: BOOLEAN\nSemantic role: DIMENSION   category_id Категория клиента Type: LONG\nSemantic role: DIMENSION    "
 },
 {
 	"uri": "https://cloud.garpun.com/api_datahub/dicts/meta__ex_access/",
