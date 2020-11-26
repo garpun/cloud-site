@@ -71,6 +71,38 @@
       }
     },
     "/v2/projects/{project_id}/algorithms/{id}": {
+      "get": {
+        "summary": "Информация об алгоритме",
+        "description": "Возвращает настройки алгоритма",
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AlgorithmResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "Algorithm"
+        ]
+      },
       "put": {
         "summary": "Редактировать алгоритм",
         "description": "Редактирует ранее созданный алгоритм",
