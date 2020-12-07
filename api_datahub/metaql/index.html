@@ -1087,17 +1087,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="особенности">Особенности</h2>
 <ul>
 <li><code>SELECT * FROM ...</code> не поддерживается</li>
-<li>Нельзя называть поля или алясы зарезарвированными именами: date</li>
-<li>Добавлен оператор ILIKE для регистронезависимного сравнения строк</li>
+<li>Нельзя называть поля или алиасы зарезервированными именами: date</li>
+<li>Добавлен оператор ILIKE для регистронезависимого сравнения строк</li>
 <li>Поддерживаются только SELECT запросы</li>
 <li>JOIN не поддерживаются</li>
 <li>Работает ограниченный набор функций, описанных ниже</li>
-<li>OR в условиях не поддерживается. Используется AND с отицанием или IN ( &hellip; )</li>
+<li>OR в условиях не поддерживается. Используется AND с отрицанием или IN ( &hellip; )</li>
 </ul>
 <h2 id="функции">Функции</h2>
 <p>Работают функции агрегации:</p>
 <ul>
-<li>MIN, MAX, SUM, AGV</li>
+<li>MIN, MAX, SUM, AVG</li>
 <li>COUNT(*), COUNT(DISTINCT поле)</li>
 <li>ARRAY_AGG</li>
 </ul>
@@ -1108,6 +1108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>NULLIF</li>
 <li>COALESCE</li>
 </ul>
+<h4 id="внимание-при-использовании-функций-всегда-нужно-использовать-уникальный-алиас">Внимание! При использовании функций всегда нужно использовать уникальный алиас!</h4>
 <h2 id="фильтрация-where">Фильтрация WHERE</h2>
 <p>Работают операторы сравнения:</p>
 <ul>
@@ -1118,7 +1119,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>BETWEEN</li>
 <li>IS NULL, IS NOT NULL</li>
 </ul>
-<h2 id="экранирование">Экранирование</h2>
+<h2 id="оператор-group-by">Оператор GROUP BY</h2>
+<p>METAQL поддерживает оператор GROUP BY.
+Как правило, GROUP BY используется вместе с агрегатными функциями (MIN, MAX, SUM, AVG).
+В этом операторе необходимо указать поля, которые не указаны в агрегатной функции.
+Допускается использование алиаса поля или названия поля, но не индекса.</p>
+<p>Например, этот запрос верный:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> stat_date, account_id <span style="color:#66d9ef">as</span> alias_account_id, <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#66d9ef">as</span> sum_cost
+    <span style="color:#66d9ef">FROM</span> adplatform.campaign_stats_report
+    <span style="color:#66d9ef">WHERE</span> stat_date <span style="color:#66d9ef">BETWEEN</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#e6db74">&#39;2020-01-05&#39;</span>
+    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> stat_date, alias_account_id
+</code></pre></div><p>А этот нет:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> stat_date, account_id <span style="color:#66d9ef">as</span> alias_account_id, <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#66d9ef">as</span> sum_cost
+    <span style="color:#66d9ef">FROM</span> adplatform.campaign_stats_report
+    <span style="color:#66d9ef">WHERE</span> stat_date <span style="color:#66d9ef">BETWEEN</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#e6db74">&#39;2020-01-05&#39;</span>
+    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</code></pre></div><h2 id="оператор-having">Оператор HAVING</h2>
+<p>HAVING применяется после группировки для фильтрации по значениям агрегатных функций.
+Так как этот оператор выполняется перед SELECT, в нем нельзя указать алиас поля, индекс поля или название поля, только функцию.</p>
+<p>Например, этот запрос верный:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> stat_date, account_id <span style="color:#66d9ef">as</span> alias_account_id, <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#66d9ef">as</span> sum_cost
+    <span style="color:#66d9ef">FROM</span> adplatform.campaign_stats_report
+    <span style="color:#66d9ef">WHERE</span> stat_date <span style="color:#66d9ef">BETWEEN</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#e6db74">&#39;2020-01-05&#39;</span>
+    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> stat_date, alias_account_id
+    <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>А этот нет:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">SELECT</span> stat_date, account_id <span style="color:#66d9ef">as</span> alias_account_id, <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#66d9ef">as</span> sum_cost
+    <span style="color:#66d9ef">FROM</span> adplatform.campaign_stats_report
+    <span style="color:#66d9ef">WHERE</span> stat_date <span style="color:#66d9ef">BETWEEN</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#e6db74">&#39;2020-01-05&#39;</span>
+    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+    <span style="color:#66d9ef">HAVING</span> sum_cost <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><h2 id="экранирование">Экранирование</h2>
 <p>Одинарная кавычка экранируется одинарной кавычкой.
 Например, еси вам нужно поискать все кампании, в названии которых есть одинарная кавычка, то вам необходимо выполнить такой запрос:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, remote_id, name, engine <span style="color:#66d9ef">from</span> adplatform.campaign <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%&#39;&#39;%&#39;</span>
@@ -1152,8 +1183,14 @@ WHERE modification_time &gt; '2020-03-31T12:21:46+0300'
     <nav id="TableOfContents">
   <ul>
     <li><a href="#особенности">Особенности</a></li>
-    <li><a href="#функции">Функции</a></li>
+    <li><a href="#функции">Функции</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#фильтрация-where">Фильтрация WHERE</a></li>
+    <li><a href="#оператор-group-by">Оператор GROUP BY</a></li>
+    <li><a href="#оператор-having">Оператор HAVING</a></li>
     <li><a href="#экранирование">Экранирование</a></li>
     <li><a href="#примеры">Примеры</a>
       <ul>
