@@ -1155,7 +1155,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, remote_id, name, engine <span style="color:#66d9ef">from</span> adplatform.campaign <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%&#39;&#39;%&#39;</span>
 </code></pre></div><p>Если нужно поискать клиента по точному совпадению, то принцип будет такой же:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, name <span style="color:#66d9ef">from</span> adplatform.client <span style="color:#66d9ef">where</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Тестовый &#39;&#39; проект&#39;</span>
-</code></pre></div><h2 id="примеры">Примеры</h2>
+</code></pre></div><h2 id="типы-данных">Типы данных</h2>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>Дата по часовому поясу сервера. Например: <code>2020-02-01</code></td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>Дата и время. Например: <code>2020-07-27T10:14:44+0300</code></td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>Текстовое поле без существенных ограничений длины</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>32х битное целое число. Диапазон от -2,147,483,648 до +2,147,483,647</td>
+</tr>
+<tr>
+<td>LONG</td>
+<td>64х битное целое число. Диапазон от -9,223,372,036,854,775,808 до +9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>DECIMAL</td>
+<td>Число с запятой. Например <code>212.1626184</code></td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>Булев тип <code>true</code> или <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="примеры">Примеры</h2>
 <h3 id="получение-статистики-по-аккаунтам">Получение статистики по аккаунтам</h3>
 <p>При использовании функций обязаельно указывайте альяс для будущей колонки, например в данном случае <code>SUM(cost) as cost</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> 
@@ -1197,6 +1236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="#оператор-group-by">Оператор GROUP BY</a></li>
     <li><a href="#оператор-having">Оператор HAVING</a></li>
     <li><a href="#экранирование">Экранирование</a></li>
+    <li><a href="#типы-данных">Типы данных</a></li>
     <li><a href="#примеры">Примеры</a>
       <ul>
         <li><a href="#получение-статистики-по-аккаунтам">Получение статистики по аккаунтам</a></li>
