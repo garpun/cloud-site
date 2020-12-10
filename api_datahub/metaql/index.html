@@ -1108,7 +1108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>NULLIF</li>
 <li>COALESCE</li>
 </ul>
-<h4 id="внимание-при-использовании-функций-всегда-нужно-использовать-уникальный-алиас">Внимание! При использовании функций всегда нужно использовать уникальный алиас!</h4>
+<p><strong>Внимание! При использовании функций всегда нужно использовать уникальный алиас!</strong></p>
 <h2 id="фильтрация-where">Фильтрация WHERE</h2>
 <p>Работают операторы сравнения:</p>
 <ul>
@@ -1157,22 +1157,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id, name <span style="color:#66d9ef">from</span> adplatform.client <span style="color:#66d9ef">where</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Тестовый &#39;&#39; проект&#39;</span>
 </code></pre></div><h2 id="примеры">Примеры</h2>
 <h3 id="получение-статистики-по-аккаунтам">Получение статистики по аккаунтам</h3>
-<pre><code>SELECT 
+<p>При использовании функций обязаельно указывайте альяс для будущей колонки, например в данном случае <code>SUM(cost) as cost</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> 
     stat_date,
     account_id,
-    SUM(cost) as cost
-FROM adplatform.campaign_stats_report
-WHERE stat_date BETWEEN '2020-01-01' AND '2020-01-05'
-GROUP BY stat_date, account_id
-HAVING SUM(cost) &gt; 1
-ORDER BY cost DESC
-</code></pre>
-<h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
-<pre><code>SELECT id, name, modification_time
-FROM adplatform.client
-WHERE modification_time &gt; '2020-03-31T12:21:46+0300'
-</code></pre>
-
+    <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#66d9ef">as</span> cost
+<span style="color:#66d9ef">FROM</span> adplatform.campaign_stats_report
+<span style="color:#66d9ef">WHERE</span> stat_date <span style="color:#66d9ef">BETWEEN</span> <span style="color:#e6db74">&#39;2020-01-01&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#e6db74">&#39;2020-01-05&#39;</span>
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> stat_date, account_id
+<span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">SUM</span>(cost) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> cost <span style="color:#66d9ef">DESC</span>
+</code></pre></div><p>В ответ придет stream данных, где построчно будут переданы json объекты.
+Конкретно в этом случае ответ будет примерно такой:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">1111,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.54,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-02&#39;</span>}
+{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">2222,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.22,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-03&#39;</span>}
+{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">3333,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.208,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-04&#39;</span>}
+{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">444,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.16,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-01&#39;</span>}
+{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">6666,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">135.204,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-02&#39;</span>}
+</code></pre></div><h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> id, name, modification_time
+<span style="color:#66d9ef">FROM</span> adplatform.client
+<span style="color:#66d9ef">WHERE</span> modification_time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-03-31T12:21:46+0300&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#960050;background-color:#1e0010">&#39;name&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Клиент</span> <span style="color:#960050;background-color:#1e0010">1&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;id&#39;:</span> <span style="color:#960050;background-color:#1e0010">42,</span> <span style="color:#960050;background-color:#1e0010">&#39;modification_time&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-05-07T14:14:08+0300&#39;</span>}
+{<span style="color:#960050;background-color:#1e0010">&#39;name&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Клиент</span> <span style="color:#960050;background-color:#1e0010">2&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;id&#39;:</span> <span style="color:#960050;background-color:#1e0010">43,</span> <span style="color:#960050;background-color:#1e0010">&#39;modification_time&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-05-07T15:39:47+0300&#39;</span>}
+</code></pre></div>
 
 
 
@@ -1183,11 +1191,7 @@ WHERE modification_time &gt; '2020-03-31T12:21:46+0300'
     <nav id="TableOfContents">
   <ul>
     <li><a href="#особенности">Особенности</a></li>
-    <li><a href="#функции">Функции</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#функции">Функции</a></li>
     <li><a href="#фильтрация-where">Фильтрация WHERE</a></li>
     <li><a href="#оператор-group-by">Оператор GROUP BY</a></li>
     <li><a href="#оператор-having">Оператор HAVING</a></li>
