@@ -1169,18 +1169,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> cost <span style="color:#66d9ef">DESC</span>
 </code></pre></div><p>В ответ придет stream данных, где построчно будут переданы json объекты.
 Конкретно в этом случае ответ будет примерно такой:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">1111,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.54,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-02&#39;</span>}
-{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">2222,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.22,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-03&#39;</span>}
-{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">3333,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.208,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-04&#39;</span>}
-{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">444,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">137.16,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-01&#39;</span>}
-{<span style="color:#960050;background-color:#1e0010">&#39;account_id&#39;:</span> <span style="color:#960050;background-color:#1e0010">6666,</span> <span style="color:#960050;background-color:#1e0010">&#39;cost&#39;:</span> <span style="color:#960050;background-color:#1e0010">135.204,</span> <span style="color:#960050;background-color:#1e0010">&#39;stat_date&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-01-02&#39;</span>}
-</code></pre></div><h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
+<pre><code>{'account_id': 1111, 'cost': 137.54, 'stat_date': '2020-01-02'}
+{'account_id': 2222, 'cost': 137.22, 'stat_date': '2020-01-03'}
+{'account_id': 3333, 'cost': 137.208, 'stat_date': '2020-01-04'}
+{'account_id': 444, 'cost': 137.16, 'stat_date': '2020-01-01'}
+{'account_id': 6666, 'cost': 135.204, 'stat_date': '2020-01-02'}
+</code></pre><h3 id="получение-изменившихся-клиентов">Получение изменившихся клиентов</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> id, name, modification_time
 <span style="color:#66d9ef">FROM</span> adplatform.client
 <span style="color:#66d9ef">WHERE</span> modification_time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-03-31T12:21:46+0300&#39;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#960050;background-color:#1e0010">&#39;name&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Клиент</span> <span style="color:#960050;background-color:#1e0010">1&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;id&#39;:</span> <span style="color:#960050;background-color:#1e0010">42,</span> <span style="color:#960050;background-color:#1e0010">&#39;modification_time&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-05-07T14:14:08+0300&#39;</span>}
-{<span style="color:#960050;background-color:#1e0010">&#39;name&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;Клиент</span> <span style="color:#960050;background-color:#1e0010">2&#39;,</span> <span style="color:#960050;background-color:#1e0010">&#39;id&#39;:</span> <span style="color:#960050;background-color:#1e0010">43,</span> <span style="color:#960050;background-color:#1e0010">&#39;modification_time&#39;:</span> <span style="color:#960050;background-color:#1e0010">&#39;2020-05-07T15:39:47+0300&#39;</span>}
-</code></pre></div>
+</code></pre></div><pre><code>{'name': 'Клиент 1', 'id': 42, 'modification_time': '2020-05-07T14:14:08+0300'}
+{'name': 'Клиент 2', 'id': 43, 'modification_time': '2020-05-07T15:39:47+0300'}
+</code></pre>
 
 
 
