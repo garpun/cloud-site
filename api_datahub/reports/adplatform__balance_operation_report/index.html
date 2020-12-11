@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Клиент (adplatform.client) — Garpun Cloud</title>
+    <title>Фин операции во внешней системе (adplatform.balance_operation_report) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_datahub/dicts/adplatform__client/">
+  <body class="" data-url="/api_datahub/reports/adplatform__balance_operation_report/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -680,7 +680,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/dicts/" class="devsite-nav-item devsite-nav-item-main
-                        parent
+                        
                         
                         
                         ">
@@ -860,8 +860,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/dicts/adplatform__client/" class="devsite-nav-item dd-item active"
-                        id="active_menu_item">
+            <li data-nav-id="/api_datahub/dicts/adplatform__client/" class="devsite-nav-item dd-item "
+                        >
                 <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client/" class="devsite-nav-title">
                     <span>Клиент (adplatform.client)</span>
                 </a>
@@ -964,7 +964,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li data-nav-id="/api_datahub/reports/" class="devsite-nav-item devsite-nav-item-main
-                        
+                        parent
                         
                         
                         ">
@@ -1030,8 +1030,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-item dd-item "
-                        >
+            <li data-nav-id="/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-item dd-item active"
+                        id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-title">
                     <span>Фин операции во внешней системе (adplatform.balance_operation_report)</span>
                 </a>
@@ -1085,7 +1085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/dicts/'>Справочники</a> > Клиент (adplatform.client)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Фин операции во внешней системе (adplatform.balance_operation_report)
 
 
 
@@ -1101,13 +1101,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Клиент (adplatform.client)</h1>
+            <h1>Фин операции во внешней системе (adplatform.balance_operation_report)</h1>
           
 
 
 
-<p>В рамках клиентов создаются <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__algorithm/">Алгоритмы</a>, <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__virtual_campaign/">Виртуальные кампании</a> и <a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/">реальные рекламные кампании</a></p>
-<table>
+<p>Этот отчет предоставляет данные о финансовых операциях производимых через <a href="https://cloud.garpun.com/api_accountmanagement/overview/">BudgetOrder</a>
+В целях оптимизации количества обрабатываемых данных, поэтому поле <strong>operation_date</strong> обязательно указывается в блоке WHERE
+Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.
+Поле статус может принимать четыре значения - &lsquo;PREPARED&rsquo;, &lsquo;IN PROCESS&rsquo;, &lsquo;DONE&rsquo;, &lsquo;ERROR&rsquo;</p>
+<ul>
+<li>PREPARED - операция подготовлена к выполнению, но не обрабатывалось - IN PROCESS - операция выполняется - DONE - операция выполнена успешно - ERROR - операция закончена неуспешно
+При расчёте доступного лимита для зачислений учитываются все статусы кроме ERROR
+Примеры запросов</li>
+</ul>
+<ol>
+<li>Получить лимит доступный вам для зачислений</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(credit_amount)<span style="color:#f92672">-</span><span style="color:#66d9ef">SUM</span>(debt_amount) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">limit</span> <span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
+<span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
+  <span style="color:#66d9ef">AND</span> status <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;ERROR&#39;</span>
+
+</code></pre></div><ol start="2">
+<li>Получить список операций и их статус</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> operation_id, account_login, status, debt_amount, credit_amount <span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
+<span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
+</code></pre></div><table>
 <thead>
 <tr>
 <th>Name</th>
@@ -1117,39 +1137,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>ID</td>
+<td>operation_date</td>
+<td>Дата в формате yyyy-mm-dd</td>
+<td>Type: DATE<br>Semantic role: DIMENSION<br>Semantic type: YEAR_MONTH_DAY</td>
+</tr>
+<tr>
+<td>operation_month</td>
+<td>Месяц.<br>Дата начала месяца</td>
+<td>Type: DATE<br>Semantic role: DIMENSION<br>Semantic type: YEAR_MONTH</td>
+</tr>
+<tr>
+<td>operation_id</td>
+<td>Уникальный id операции</td>
+<td>Type: UUID<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Статус операции</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__engine">engine</a></td>
+<td>Система</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client">client_id</a></td>
+<td>Клиент</td>
 <td>Type: LONG<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>name</td>
+<td>client_name</td>
 <td>Название клиента</td>
 <td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
-<td>creation_time</td>
-<td>Дата создания</td>
-<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>modification_time</td>
-<td>Дата изменения</td>
-<td>Type: DATETIME<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>is_enabled</td>
-<td>Активный</td>
-<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td>is_archived</td>
-<td>Архивный</td>
-<td>Type: BOOLEAN<br>Semantic role: DIMENSION</td>
-</tr>
-<tr>
-<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__client_category">category_id</a></td>
-<td>Категория клиента</td>
+<td><a href="https://cloud.garpun.com/api_datahub/dicts/adplatform__account">account_id</a></td>
+<td>Аккаунт ID</td>
 <td>Type: LONG<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>account_name</td>
+<td>Название аккаунта</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>account_login</td>
+<td>Логин аккаунта</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>Валюта</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
+</tr>
+<tr>
+<td>debt_amount</td>
+<td>Операция списания с лимита в валюте аккаунта</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
+</tr>
+<tr>
+<td>credit_amount</td>
+<td>Операция увеличения лимита в валюте аккаунта</td>
+<td>Type: DECIMAL<br>Semantic role: METRIC</td>
 </tr>
 </tbody>
 </table>
