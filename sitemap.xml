@@ -150,6 +150,10 @@
   </url>
   
   <url>
+    <loc>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</loc>
+  </url>
+  
+  <url>
     <loc>https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/</loc>
   </url>
   
@@ -179,10 +183,6 @@
   
   <url>
     <loc>https://cloud.garpun.com/api_datahub/reports/adplatform__campaign_stats_report/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</loc>
   </url>
   
 </urlset>

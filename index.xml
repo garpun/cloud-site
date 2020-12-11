@@ -264,6 +264,19 @@ Semantic role: DIMENSION   virtual_ad_group_id Виртуальная групп
     </item>
     
     <item>
+      <title>Информация о зачислениях и списаниях на аккаунт внешней системы. (adplatform.balance_operation_report)</title>
+      <link>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</guid>
+      <description>Этот отчет предоставляет данные о финансовых операциях производимых через BudgetOrder
+В целях оптимизации количества обрабатываемых данных, поэтому поле operation_date обязательно указывается в блоке WHERE
+Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.
+Поле статус может принимать четыре значения - &amp;lsquo;PREPARED&amp;rsquo;, &amp;lsquo;IN PROCESS&amp;rsquo;, &amp;lsquo;DONE&amp;rsquo;, &amp;lsquo;ERROR&amp;rsquo;
+ PREPARED - операция подготовлена к выполнению, но не обрабатывалось IN PROCESS - операция выполняется DONE - операция выполнена успешно ERROR - операция закончена неуспешно  При расчёте доступного лимита для зачислений учитываются все статусы кроме ERROR Примеры запросов</description>
+    </item>
+    
+    <item>
       <title>Кампания (adplatform.campaign)</title>
       <link>https://cloud.garpun.com/api_datahub/dicts/adplatform__campaign/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -381,19 +394,6 @@ Semantic type: YEAR_MONTH   campaign_name Название рекламной к
 Semantic role: DIMENSION   campaign_remote_id ID рекламной кампании во внешней системе Type: TEXT
 Semantic role: DIMENSION   campaign_type Тип рекламной кампании Type: TEXT
 Semantic role: DIMENSION   category_id Категория клиента Type: LONG</description>
-    </item>
-    
-    <item>
-      <title>Фин. операции во внешней системе (adplatform.balance_operation_report)</title>
-      <link>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/</guid>
-      <description>Этот отчет предоставляет данные о финансовых операциях производимых через BudgetOrder
-В целях оптимизации количества обрабатываемых данных, поэтому поле operation_date обязательно указывается в блоке WHERE
-Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.
-Поле статус может принимать четыре значения - &amp;lsquo;PREPARED&amp;rsquo;, &amp;lsquo;IN PROCESS&amp;rsquo;, &amp;lsquo;DONE&amp;rsquo;, &amp;lsquo;ERROR&amp;rsquo;
- PREPARED - операция подготовлена к выполнению, но не обрабатывалось IN PROCESS - операция выполняется DONE - операция выполнена успешно ERROR - операция закончена неуспешно  При расчёте доступного лимита для зачислений учитываются все статусы кроме ERROR Примеры запросов</description>
     </item>
     
   </channel>
