@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Фин операции во внешней системе (adplatform.balance_operation_report) — Garpun Cloud</title>
+    <title>Фин. операции во внешней системе (adplatform.balance_operation_report) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -1033,7 +1033,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li data-nav-id="/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-item dd-item active"
                         id="active_menu_item">
                 <a href="https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-title">
-                    <span>Фин операции во внешней системе (adplatform.balance_operation_report)</span>
+                    <span>Фин. операции во внешней системе (adplatform.balance_operation_report)</span>
                 </a>
             </li>
             
@@ -1085,7 +1085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Фин операции во внешней системе (adplatform.balance_operation_report)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Фин. операции во внешней системе (adplatform.balance_operation_report)
 
 
 
@@ -1101,31 +1101,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Фин операции во внешней системе (adplatform.balance_operation_report)</h1>
+            <h1>Фин. операции во внешней системе (adplatform.balance_operation_report)</h1>
           
 
 
 
-<p>Этот отчет предоставляет данные о финансовых операциях производимых через <a href="https://cloud.garpun.com/api_accountmanagement/overview/">BudgetOrder</a>
-В целях оптимизации количества обрабатываемых данных, поэтому поле <strong>operation_date</strong> обязательно указывается в блоке WHERE
-Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.
-Поле статус может принимать четыре значения - &lsquo;PREPARED&rsquo;, &lsquo;IN PROCESS&rsquo;, &lsquo;DONE&rsquo;, &lsquo;ERROR&rsquo;</p>
+<p>Этот отчет предоставляет данные о финансовых операциях производимых через <a href="https://cloud.garpun.com/api_accountmanagement/overview/">BudgetOrder</a></p>
+<p>В целях оптимизации количества обрабатываемых данных, поэтому поле <strong>operation_date</strong> обязательно указывается в блоке WHERE</p>
+<p>Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.</p>
+<p>Поле статус может принимать четыре значения - &lsquo;PREPARED&rsquo;, &lsquo;IN PROCESS&rsquo;, &lsquo;DONE&rsquo;, &lsquo;ERROR&rsquo;</p>
 <ul>
-<li>PREPARED - операция подготовлена к выполнению, но не обрабатывалось - IN PROCESS - операция выполняется - DONE - операция выполнена успешно - ERROR - операция закончена неуспешно
-При расчёте доступного лимита для зачислений учитываются все статусы кроме ERROR
-Примеры запросов</li>
+<li>PREPARED - операция подготовлена к выполнению, но не обрабатывалось</li>
+<li>IN PROCESS - операция выполняется</li>
+<li>DONE - операция выполнена успешно</li>
+<li>ERROR - операция закончена неуспешно</li>
 </ul>
+<p>При расчёте доступного лимита для зачислений учитываются все статусы кроме ERROR
+Примеры запросов</p>
 <ol>
 <li>Получить лимит доступный вам для зачислений</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(credit_amount)<span style="color:#f92672">-</span><span style="color:#66d9ef">SUM</span>(debt_amount) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">limit</span> <span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(credit_amount)<span style="color:#f92672">-</span><span style="color:#66d9ef">SUM</span>(debt_amount) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">limit</span>
+<span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
 <span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
   <span style="color:#66d9ef">AND</span> status <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;ERROR&#39;</span>
 
 </code></pre></div><ol start="2">
 <li>Получить список операций и их статус</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> operation_id, account_login, status, debt_amount, credit_amount <span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> operation_id, operation_date, account_login, status, debt_amount, credit_amount
+<span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
 <span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
 </code></pre></div><table>
 <thead>
@@ -1149,7 +1154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <tr>
 <td>operation_id</td>
 <td>Уникальный id операции</td>
-<td>Type: UUID<br>Semantic role: DIMENSION</td>
+<td>Type: TEXT<br>Semantic role: DIMENSION</td>
 </tr>
 <tr>
 <td>status</td>
@@ -1193,12 +1198,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tr>
 <tr>
 <td>debt_amount</td>
-<td>Операция списания с лимита в валюте аккаунта</td>
+<td>Операция зачисления, уменьшает ваш лимит в МЕТА.<br>В этом поле отражены операции уменьшающие ваш лимит, например зачисление на аккаунт во внешней системе</td>
 <td>Type: DECIMAL<br>Semantic role: METRIC</td>
 </tr>
 <tr>
 <td>credit_amount</td>
-<td>Операция увеличения лимита в валюте аккаунта</td>
+<td>Операция списания, увеличивает ваш лимита в МЕТА.<br>В этом поле отражены операции увеличивающие ваш лимит, например возврат средств с аккаунта или увеличение вашего лимита через медиаплан.</td>
 <td>Type: DECIMAL<br>Semantic role: METRIC</td>
 </tr>
 </tbody>
