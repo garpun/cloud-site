@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Информация о зачислениях и списаниях на аккаунт внешней системы. (adplatform.balance_operation_report) — Garpun Cloud</title>
+    <title>Информация о финансовых операциях (adplatform.account_balance_report) — Garpun Cloud</title>
     <link rel="shortcut icon" href="https://cloud.garpun.com/images/favicon.ico" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MN8JDWL');</script>
 
   </head>
-  <body class="" data-url="/api_datahub/reports/adplatform__balance_operation_report/">
+  <body class="" data-url="/api_datahub/reports/adplatform__account_balance_report/">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN8JDWL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1011,10 +1011,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li data-nav-id="/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-item dd-item active"
+            <li data-nav-id="/api_datahub/reports/adplatform__account_balance_report/" class="devsite-nav-item dd-item active"
                         id="active_menu_item">
-                <a href="https://cloud.garpun.com/api_datahub/reports/adplatform__balance_operation_report/" class="devsite-nav-title">
-                    <span>Информация о зачислениях и списаниях на аккаунт внешней системы. (adplatform.balance_operation_report)</span>
+                <a href="https://cloud.garpun.com/api_datahub/reports/adplatform__account_balance_report/" class="devsite-nav-title">
+                    <span>Информация о финансовых операциях (adplatform.account_balance_report)</span>
                 </a>
             </li>
             
@@ -1085,7 +1085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
- <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Информация о зачислениях и списаниях на аккаунт внешней системы. (adplatform.balance_operation_report)
+ <a href='https://cloud.garpun.com/'>Garpun Cloud</a> > <a href='https://cloud.garpun.com/api_datahub/'>DataHub</a> > <a href='https://cloud.garpun.com/api_datahub/reports/'>Отчеты</a> > Информация о финансовых операциях (adplatform.account_balance_report)
 
 
 
@@ -1101,13 +1101,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div id="body-inner">
           
-            <h1>Информация о зачислениях и списаниях на аккаунт внешней системы. (adplatform.balance_operation_report)</h1>
+            <h1>Информация о финансовых операциях (adplatform.account_balance_report)</h1>
           
 
 
 
 <p>Этот отчет предоставляет данные о финансовых операциях производимых через <a href="https://cloud.garpun.com/api_accountmanagement/overview/">BudgetOrder</a></p>
-<p>В целях оптимизации количества обрабатываемых данных, поэтому поле <strong>operation_date</strong> обязательно указывается в блоке WHERE</p>
+<p>В целях оптимизации количества обрабатываемых данных, поэтому поле <strong>operation_time</strong> обязательно указывается в блоке WHERE</p>
 <p>Операции увеличивающие ваш кредитный лимит отражены в поле credit_amount, а уменьшающие в debt_amount.</p>
 <p>Поле статус может принимать четыре значения - &lsquo;PREPARED&rsquo;, &lsquo;IN PROCESS&rsquo;, &lsquo;DONE&rsquo;, &lsquo;ERROR&rsquo;</p>
 <ul>
@@ -1122,16 +1122,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li>Получить лимит доступный вам для зачислений</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(credit_amount)<span style="color:#f92672">-</span><span style="color:#66d9ef">SUM</span>(debt_amount) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">limit</span>
-<span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
-<span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
+
+<span style="color:#66d9ef">FROM</span> adplatform.account_balance_report
+
+<span style="color:#66d9ef">WHERE</span>  operation_time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
   <span style="color:#66d9ef">AND</span> status <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;ERROR&#39;</span>
 
 </code></pre></div><ol start="2">
 <li>Получить список операций и их статус</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> operation_id, operation_date, account_login, status, debt_amount, credit_amount
-<span style="color:#66d9ef">FROM</span> adplatform.balance_operation_report
-<span style="color:#66d9ef">WHERE</span>  operation_date <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> operation_id, operation_time, account_login, status, debt_amount, credit_amount
+
+<span style="color:#66d9ef">FROM</span> adplatform.account_balance_report
+
+<span style="color:#66d9ef">WHERE</span>  operation_time <span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;2020-10-01&#39;</span>
 </code></pre></div><table>
 <thead>
 <tr>
